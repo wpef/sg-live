@@ -2,11 +2,12 @@
     <NuxtLink class="cta flex items-center text-blue-900"
     :to="blok.link.url == '' ? blok.link.cached_url : blok.link.url"
     >
-      {{ blok.label }}
-      <img class="ml-2" src="assets/icons/next.svg">
+      <span>{{ blok.label }}</span>
+      <img class="ml-2" :src="iconSrc">
     </NuxtLink>
 </template>
  
 <script setup>
-defineProps({ blok: Object })
+const props = defineProps({ blok: Object });
+const iconSrc = computed(() => { return props.blok.white ? 'assets/icons/next-white.svg' : 'assets/icons/next.svg'})
 </script>
