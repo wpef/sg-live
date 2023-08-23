@@ -10,8 +10,6 @@ defineProps({ blok: Object })
 
 <style>
 .h1 {
-  color: var(--sg-noir-texte, #1E1E1E);
-
   /* SG/Head 1 */
   font-family: Inter;
   font-size: 64px;
@@ -23,8 +21,6 @@ defineProps({ blok: Object })
 }
 
 .h2 {
-  color: var(--sg-noir-texte, #1E1E1E);
-
   /* SG/Head 2 */
   font-family: Inter;
   font-size: 40px;
@@ -36,8 +32,6 @@ defineProps({ blok: Object })
 }
 
 .h3 {
-  color: var(--sg-noir-texte, #1E1E1E);
-
   /* SG/Head 3 */
   font-family: Inter;
   font-size: 26px;
@@ -49,8 +43,6 @@ defineProps({ blok: Object })
 }
 
 .h4 {
-  color: var(--sg-noir-texte, #1E1E1E);
-
   /* SG/Head 4 */
   font-family: Inter;
   font-size: 20px;
@@ -62,8 +54,6 @@ defineProps({ blok: Object })
 }
 
 .h5 {
-  color: var(--sg-noir-texte, #1E1E1E);
-
   /* SG/Head 5 */
   font-family: Inter;
   font-size: 20px;
@@ -75,8 +65,6 @@ defineProps({ blok: Object })
 }
 
 .h6 {
-  color: var(--sg-noir-texte, #1E1E1E);
-
   /* SG/Head 6 */
   font-family: Inter;
   font-size: 16px;
