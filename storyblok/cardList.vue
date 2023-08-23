@@ -1,17 +1,27 @@
 <template>
-  <div
-    v-editable="blok"
-    class="container mx-auto grid md:grid-cols-3 gap-12 my-12 place-items-center"
-  >
-  <h2>{{ blok.title }}</h2>
+  <section>
+  <h2 class="p1 border-b">{{ blok.title }}</h2>
+  <div class="flex flex-wrap flex-row w-full">
     <cardListItem
       v-for="blok in blok.items"
       :key="blok._uid"
       :blok="blok"
     />
   </div>
+</section>
 </template>
  
 <script setup>
 defineProps({ blok: Object })
 </script>
+
+<style scoped>
+h2 {
+  padding-bottom: 19px;
+  margin-bottom: 20px;
+}
+
+section {
+  padding-top: 25px;
+}
+</style>

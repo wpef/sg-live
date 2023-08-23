@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" class="px-16">
+  <div v-editable="blok" class="page px-16">
     <StoryblokComponent v-for="blok in blok.body" :key="blok._uid" :blok="blok" />
   </div>
 </template>
@@ -171,4 +171,12 @@ li {
   line-height: 132%;
   /* 18.48px */
   letter-spacing: -0.28px;
-}</style>
+}
+
+section, .page {
+  @apply mt-4 mb-6 pb-6;
+  max-width: 1440px;
+  margin: auto;
+}
+
+</style>
