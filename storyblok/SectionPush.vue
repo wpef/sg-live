@@ -6,10 +6,10 @@
       <h3 class="h4" v-if="blok.subtitle">{{ blok.subtitle }}</h3>
     </div>
 
-    <div v-if="blok.pushs.length > 0" class="w-full flex space-x-4">
+    <div v-if="blok.pushs.length > 0" class="push_list">
       <div v-for="push in blok.pushs" :key="blok._uid"
         :style="{ backgroundImage: `url(${push.background.filename})`, minHeight: '420px' }"
-        class="push w-1/3 h-auto relative">
+        class="push">
         <div class="push_content absolute left-6 bottom-6">
           <h4 class="text-white h3 mb-4">{{ push.title }}</h4>
           <CTA class="text-white" :blok="{ label: 'Découvrir', white: true, ...push }" />
@@ -21,23 +21,12 @@
 </template>
  
 <script setup>
-const props = defineProps({ blok: Object })
-
-// const sectionClasses = computed(() => {
-//   return 
-//   //   (props.blok.line === true ? 'border-t' :  "") + 
-//   //   (props.blok.right.length > 0 ? '' : 'flex-wrap flex-row')
-// })
-
-// // const titleClasses = computed(() => {
-// //   return  props.blok.right.length === 0 ? "border-b" : ""
-// // })
+defineProps({ blok: Object })
 </script>
 
 <style scoped>
 section.push_section {
   margin-top: 2.5rem;
-  padding-top: 39px;
   margin-bottom: 1rem;
 }
 
@@ -50,6 +39,17 @@ section.push_section {
 
 .push_section .h4 {
   padding-bottom: 18px;
+}
+
+.push_list {
+  @apply flex flex-wrap w-full;
+  @apply content-between justify-between;
+  @apply space-x-4;
+}
+.push {
+  @apply aspect-square shrink grow;
+  @apply bg-no-repeat bg-cover;
+  @apply relative;
 }
 
 </style>

@@ -32,7 +32,6 @@ const sectionClasses = computed(() => {
 <style scoped>
 section.text_section {
   margin-top: 2.5rem;
-  padding-top : 39px;
   margin-bottom: 1rem;
 }
 

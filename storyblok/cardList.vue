@@ -20,8 +20,4 @@ h2 {
   padding-bottom: 19px;
   margin-bottom: 20px;
 }
-
-section {
-  padding-top: 25px;
-}
 </style>

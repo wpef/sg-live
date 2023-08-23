@@ -9,6 +9,10 @@ defineProps({ blok: Object })
 </script>
 
 <style>
+.p1.text-white, .p2.text-white {
+  color : white;
+}
+
 .h1 {
   /* SG/Head 1 */
   font-family: Inter;
@@ -174,7 +178,7 @@ li {
 }
 
 section, .page {
-  @apply mt-4 mb-6 pb-6;
+  @apply mt-4 mb-6 pb-6 pt-4;
   max-width: 1440px;
   margin: auto;
 }

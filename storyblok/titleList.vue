@@ -15,7 +15,6 @@ const props = defineProps({ blok: Object })
 <style scoped>
 section.titleList_section {
   margin-top: 2.5rem;
-  padding-top : 39px;
 }
 
 section.titleList_section div {
