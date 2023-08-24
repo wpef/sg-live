@@ -1,5 +1,6 @@
 <template>
-  <div class="cardListItem" :style="sectionStyle">
+  <section class="textImage" :style="'background-color : ' + backgroundColor">
+    <div class="container">
     <div class="title w-1/2 pr-48">
       <h4 v-if="blok.title" class="h2">{{ blok.title }}</h4>
       <p v-if="blok.body" class="p2">{{ blok.body }}</p>
@@ -8,27 +9,18 @@
       <img v-if="blok.image" :src="blok.image.filename" :alt="blok.image.alt">
     </div>
   </div>
+  </section>
 </template>
 
 <script setup>
 const props = defineProps({ blok: Object });
-const sectionStyle = computed(function(){ 
-  let color = props.blok.backgroundColor === '' ? "#003966": props.blok.backgroundColor
-  
-  return {
-    backgroundColor: color,
-    boxShadow: '0 0 0 100vmax ' + color
-  }
- }); 
+const backgroundColor = computed(() => {  return props.blok.backgroundColor === '' ? "#003966" : props.blok.backgroundColor }); 
 </script>
 
 <style scoped>
-.cardListItem {
+.container {
   @apply flex flex-wrap flex-row;
   @apply py-12 my-2;
-
-  /*handle outside color*/
-  clip-path: inset(0 -100vmax); 
 }
 
 .title {

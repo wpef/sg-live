@@ -1,5 +1,5 @@
 <template>
-  <section :class="sectionClasses">
+  <section class="container" :class="sectionClasses">
 
     <div v-editable="blok" class="w-1/2 pr-36">
       <h2 v-if="blok.title">{{ blok.title }}</h2>

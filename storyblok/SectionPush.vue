@@ -1,5 +1,5 @@
 <template>
-  <section class="push_section flex flex-wrap flex-row">
+  <section class="container push_section flex flex-wrap flex-row">
     <div class="flex flex-wrap flex-row">
 
       <h2 class="h2 border-b" v-if="blok.title">{{ blok.title }}</h2>

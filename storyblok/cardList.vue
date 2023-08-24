@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="container">
   <h2 class="p1 border-b">{{ blok.title }}</h2>
   <div class="flex flex-wrap flex-row w-full">
     <cardListItem

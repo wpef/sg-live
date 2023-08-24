@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full flex flex-row space-x-6">
+  <section class="container w-full flex flex-row space-x-6">
       <div v-for="push in blok.items" :key="blok._uid"
         :style="{
           backgroundImage: `url(${push.backgroundImage.filename})`,

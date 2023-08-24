@@ -1,5 +1,5 @@
 <template>
-  <section class="titleList_section flex flex-row flex-wrap justify-end">
+  <section class="titleList_section container flex flex-row flex-wrap justify-end">
     <!-- <h1>Foulqui</h1> -->
     <div v-for="blok in blok.Items" :key="blok._uid" class="flex-col w-2/3">
       <h3 class="border-b">{{ blok.Title }}</h3>
