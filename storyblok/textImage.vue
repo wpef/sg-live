@@ -1,8 +1,5 @@
 <template>
-  <div class="cardListItem" :style="
-  'background-color : ' + blok.backgroundColor + ';' +
-  'box-shadow: 0 0 0 100vmax ' + blok.backgroundColor
-  ">
+  <div class="cardListItem" :style="sectionStyle">
     <div class="title w-1/2 pr-48">
       <h4 v-if="blok.title" class="h2">{{ blok.title }}</h4>
       <p v-if="blok.body" class="p2">{{ blok.body }}</p>
@@ -15,6 +12,14 @@
 
 <script setup>
 const props = defineProps({ blok: Object });
+const sectionStyle = computed(function(){ 
+  let color = props.blok.backgroundColor === '' ? "#003966": props.blok.backgroundColor
+  
+  return {
+    backgroundColor: color,
+    boxShadow: '0 0 0 100vmax ' + color
+  }
+ }); 
 </script>
 
 <style scoped>
