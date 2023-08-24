@@ -10,7 +10,7 @@
           <h4 class="h3 text-white mb-4 pr-32">{{ push.title }}</h4>
           <p class="p1 text-white">{{ push.description }}</p>
         </div>
-        <CTA v-if="push.cta" class="text-white absolute bottom-6" :blok="{ white:true, ...push.cta[0]}" />
+        <CTA v-if="push.cta[0] && push.cta[0].url" class="text-white absolute bottom-6" :blok="{ white:true, ...push.cta[0]}" />
       </div>
 
   </section>
