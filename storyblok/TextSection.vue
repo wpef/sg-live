@@ -3,7 +3,7 @@
 
     <div v-editable="blok" class="w-1/2 pr-36">
       <h2 v-if="blok.title">{{ blok.title }}</h2>
-      <h3 v-if="blok.subtitle">{{ blok.subtitle }}</h3>
+      <h3 v-if="blok.description">{{ blok.description }}</h3>
     </div>
 
     <div v-if="blok.right.length === 0" class="w-full border-b"></div>

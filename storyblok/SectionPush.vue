@@ -3,7 +3,7 @@
     <div class="flex flex-wrap flex-row">
 
       <h2 class="h2 border-b" v-if="blok.title">{{ blok.title }}</h2>
-      <h3 class="h4" v-if="blok.subtitle">{{ blok.subtitle }}</h3>
+      <h3 class="h4" v-if="blok.description">{{ blok.description }}</h3>
     </div>
 
     <div v-if="blok.pushs.length > 0" class="push_list">
