@@ -2,7 +2,7 @@
   <section class="container w-full flex flex-row space-x-6">
       <div v-for="push in blok.items" :key="blok._uid"
         :style="{
-          backgroundImage: `url(${push.backgroundImage.filename})`,
+          backgroundImage: `url(${push.image.filename})`,
           backgroundColor: push.backgroundColor,
           minHeight: '420px' }"
         class="w-1/2 p-8 relative">
