@@ -1,11 +1,11 @@
 <template>
-  <div class="text mb-4" :style="'columns : ' + blok.Columns" v-html="content">
+  <div class="text" :style="'columns : ' + blok.Columns" v-html="content">
   </div>
 </template>
 
 <style>
 .text h2 {
-  margin-bottom: 38px;
+  @apply pb-9;
 }
 
 .text h3 {
@@ -25,6 +25,10 @@
   /*Handle list items
   TODO : better handle */
   line-height: 1.8rem;
+}
+
+.text-white * { /*TODO : à voir*/
+  color : white;
 }
 
 </style>
