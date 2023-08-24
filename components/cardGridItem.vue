@@ -1,15 +1,22 @@
 <template>
-  <div class="cardGridItem">
+  <div class="cardGridItem" :style="{ borderColor :  white ? 'rgba(255, 255, 255, 0.20)' : '' }" >
     <div class="content">
-      <h4 v-if="blok.title" class="h5 pb-4">{{ blok.title }}</h4>
-      <p v-if="blok.description" class="p2">{{ blok.description }}</p>
+      <h4 v-if="blok.title" class="h5 pb-4" :class="white ? 'text-white' : null ">{{ blok.title }}</h4>
+      <p v-if="blok.description" class="p2" :class="white ? 'text-white' : null ">{{ blok.description }}</p>
     </div>
     <CTA v-if="blok.cta[0]" :blok="blok.cta[0]" />
+    <img v-if="icon && blok.image" :src="blok.image.filename" :alt="blok.image.alt" width="32px">
   </div>
 </template>
 
 <script setup>
-const props = defineProps({ blok: Object });
+const props = defineProps({ 
+  blok: Object,
+  white : Boolean,
+  icon : Boolean
+});
+
+// console.log(props.white)
 </script>
 
 <style scoped>
@@ -17,10 +24,9 @@ const props = defineProps({ blok: Object });
   @apply p-6;
   @apply relative;
   @apply aspect-square border;
-  /* @apply basis-1/3 flex-grow-0 ; */
 }
 
-.cardGridItem .cta {
+.cardGridItem .cta ,.cardGridItem img {
   @apply absolute bottom-4;
 }
 

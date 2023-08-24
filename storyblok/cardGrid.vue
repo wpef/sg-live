@@ -6,6 +6,7 @@
     <cardGridItem
       v-for="blok in blok.items"
       :key="blok._uid"
+      :white="false"
       :blok="blok"
     />
   </div>
