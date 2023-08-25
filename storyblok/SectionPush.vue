@@ -8,7 +8,7 @@
 
     <div v-if="blok.pushs.length > 0" class="push_list">
       <div v-for="push in blok.pushs" :key="blok._uid"
-        :style="{ backgroundImage: `url(${push.background.filename})`, minHeight: '420px' }"
+        :style="{ backgroundImage: `url(${push.background.filename})` }"
         class="push">
         <div class="push_content absolute left-6 bottom-6">
           <h4 class="text-white h3 mb-4">{{ push.title }}</h4>
@@ -26,28 +26,25 @@ defineProps({ blok: Object })
 
 <style scoped>
 section.push_section {
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
+  @apply mt-10 mb-4;
 }
 
 .push_section .h2 {
-  margin-bottom: 31px;
-  padding-bottom: 36px;
-
-  padding-right: 40%;
+  @apply mb-8 pb-9;
+  @apply md:w-2/3;
 }
 
 .push_section .h4 {
-  padding-bottom: 18px;
+  @apply pb-4;
 }
 
 .push_list {
   @apply flex flex-wrap w-full;
   @apply content-between justify-between;
-  @apply space-x-4;
+  @apply gap-4;
 }
 .push {
-  @apply aspect-square shrink grow;
+  @apply aspect-square shrink grow basis-96;
   @apply bg-no-repeat bg-cover;
   @apply relative;
 }

@@ -9,12 +9,11 @@
 }
 
 .text h3 {
-  font-weight: 500;
-  margin-bottom: 21px;
+  @apply font-medium mb-6;
 }
 
 .text {
-  column-gap: 49px;
+  @apply gap-2 md:gap-12;
 }
 
 .text p {
@@ -24,7 +23,7 @@
 .text h2~p, .text h3~p, .text h4~p, .text h5~p { 
   /*Handle list items
   TODO : better handle */
-  line-height: 1.8rem;
+  @apply leading-7;
 }
 
 .text-white * { /*TODO : à voir*/

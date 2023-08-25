@@ -14,15 +14,14 @@ const props = defineProps({ blok: Object })
 
 <style scoped>
 section.titleList_section {
-  margin-top: 2.5rem;
+  @apply mt-10;
 }
 
 section.titleList_section div {
-  margin-top: 17px;
+  @apply mt-4;
 }
 
 .titleList_section h3 {
-  padding-bottom: 10px;
-  margin-bottom: 31px;
+  @apply pb-2 mb-8;
 }
 </style>
