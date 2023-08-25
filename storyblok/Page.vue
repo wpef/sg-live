@@ -13,7 +13,7 @@ defineProps({ blok: Object })
   color : white;
 }
 
-.h1 {
+.h1, .text h1 {
   /* SG/Head 1 */
   font-family: Inter;
   font-size: 64px;
@@ -24,7 +24,7 @@ defineProps({ blok: Object })
   letter-spacing: -3.84px;
 }
 
-.h2 {
+.h2, .text h2 {
   /* SG/Head 2 */
   font-family: Inter;
   font-size: 40px;
@@ -35,7 +35,7 @@ defineProps({ blok: Object })
   letter-spacing: -2px;
 }
 
-.h3 {
+.h3, .text h3 {
   /* SG/Head 3 */
   font-family: Inter;
   font-size: 26px;
@@ -46,7 +46,7 @@ defineProps({ blok: Object })
   letter-spacing: -1.04px;
 }
 
-.h4 {
+.h4, .text h4 {
   /* SG/Head 4 */
   font-family: Inter;
   font-size: 20px;
@@ -57,7 +57,7 @@ defineProps({ blok: Object })
   letter-spacing: -0.8px;
 }
 
-.h5 {
+.h5, .text h5 {
   /* SG/Head 5 */
   font-family: Inter;
   font-size: 20px;
@@ -68,7 +68,7 @@ defineProps({ blok: Object })
   letter-spacing: -0.4px;
 }
 
-.h6 {
+.h6, .text h6 {
   /* SG/Head 6 */
   font-family: Inter;
   font-size: 16px;
@@ -143,28 +143,6 @@ defineProps({ blok: Object })
   /* 96px */
 }
 
-h2 {
-  color: var(--sg-texte-noir, #1E1E1E);
-  font-family: Inter;
-  font-size: 2.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 120%;
-  /* 3rem */
-  letter-spacing: -0.125rem;
-}
-
-h3 {
-  color: var(--sg-texte-noir, #1E1E1E);
-  font-family: Inter;
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 100%;
-  /* 1.25rem */
-  letter-spacing: -0.05rem;
-}
-
 p,
 li {
   color: var(--sg-gris-texte, #505050);
@@ -179,8 +157,6 @@ li {
 
 section {
   @apply mt-4 mb-6 pb-6 pt-4;
-  /* max-width: 1440px;
-  margin: auto; */
 }
 
 .container {

@@ -17,7 +17,6 @@ defineProps({ blok: Object })
 
 <style scoped>
 h2 {
-  padding-bottom: 19px;
-  margin-bottom: 20px;
+  @apply pb-5 mb-5;
 }
 </style>

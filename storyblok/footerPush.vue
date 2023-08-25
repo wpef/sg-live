@@ -1,9 +1,9 @@
 <template>
-  <section class="container w-full flex flex-row space-x-6">
+  <section class="footerPush container w-full flex flex-row space-x-6">
       <div v-for="push in blok.items" :key="blok._uid"
         :style="{
           backgroundImage: `url(${push.image.filename})`,
-          backgroundColor: push.backgroundColor,
+          backgroundColor: push.backgroundColor !== '' ? push.backgroundColor : '#4783EE' ,
           minHeight: '420px' }"
         class="w-1/2 p-8 relative">
         <div class="mb-24">

@@ -18,7 +18,7 @@
 }
 
 .text p {
-  margin-bottom: 36px;
+  @apply pb-4 mt-2;
 }
 
 .text h2~p, .text h3~p, .text h4~p, .text h5~p { 
