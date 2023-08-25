@@ -5,13 +5,13 @@
   }">
     <div class="container" :class="sectionClasses">
 
-      <div v-editable="blok" class="text w-1/2 pr-36">
-        <h2 v-if="blok.title" class="h2" :class="blok.backgroundImage ? 'text-white' : ''">{{ blok.title }}</h2>
+      <div v-editable="blok" class="text w-1/2 pr-40">
+        <h2 v-if="blok.title" class="h2" :class="blok.white ? 'text-white' : ''">{{ blok.title }}</h2>
         <h3 v-if="blok.subtitle" class="h3">{{ blok.subtitle }}</h3>
       </div>
       <div v-if="blok.right.length === 0" class="w-full border-b"></div>
-      <div v-if="blok.right.length > 0" class="w-1/2 mt-6 flex-row" :class="blok.backgroundImage ? 'text-white' : ''">
-        <StoryblokComponent v-for="blok in blok.right" :key="blok._uid" :blok="blok" />
+      <div v-if="blok.right.length > 0" class="w-1/2 mt-6 flex-row" :class="blok.white ? 'text-white' : ''">
+        <StoryblokComponent v-for="blok in blok.right" :key="blok._uid" :blok="blok" :white="blok.white" />
       </div>
       
     </div>

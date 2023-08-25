@@ -1,5 +1,5 @@
 <template>
-  <div class="text" :style="'columns : ' + blok.Columns" v-html="content">
+  <div class="text" :class="blok.tight ? 'pr-8 md:pr-60' : ''" :style="'columns : ' + blok.Columns" v-html="content">
   </div>
 </template>
 
