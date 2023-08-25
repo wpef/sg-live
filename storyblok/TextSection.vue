@@ -1,19 +1,20 @@
 <template>
-  <section class="textSection" :class="sectionClasses2" :style="{
+  <section class="textSection" :class="bgClasses" :style="{
     backgroundColor : blok.backgroundColor,
     backgroundImage : `url(${blok.backgroundImage?.filename})`,
   }">
-    <div class="container" :class="sectionClasses">
+    <div class="textSectionContainer container" :class="sectionClasses">
 
-      <div v-editable="blok" class="text w-1/2 pr-40">
+      <div class="textSectionTitle w-1/2">
         <h2 v-if="blok.title" class="h2" :class="blok.white ? 'text-white' : ''">{{ blok.title }}</h2>
         <h3 v-if="blok.subtitle" class="h3">{{ blok.subtitle }}</h3>
       </div>
-      <div v-if="blok.right.length === 0" class="w-full border-b"></div>
-      <div v-if="blok.right.length > 0" class="w-1/2 mt-6 flex-row" :class="blok.white ? 'text-white' : ''">
+      <div v-if="blok.right.length > 0" class="textSectionRight w-1/2 mt-6" :class="blok.white ? 'text-white' : ''">
         <StoryblokComponent v-for="blok in blok.right" :key="blok._uid" :blok="blok" :white="blok.white" />
       </div>
       
+      <div v-if="blok.right.length === 0" class="w-full border-b"></div>
+    
     </div>
   </section>
 </template>
@@ -22,18 +23,14 @@
 const props = defineProps({ blok: Object })
  
 const sectionClasses = computed(() => {
-  return "text_section flex " + 
+  return "flex " + 
     (props.blok.line === true ? 'border-t' :  "") + 
-    (props.blok.right.length > 0 ? '' : 'flex-wrap flex-row')
+    (props.blok.right.length > 0 ? '' : 'flex-wrap flex-row gap-4')
   })
 
-const sectionClasses2 = computed(() => {
-  return props.blok.backgroundImage ? 'bg-local bg-clip-border	bg-cover bg-center' : '';
+const bgClasses = computed(() => {
+  return props.blok.backgroundImage ? 'bg-cover bg-local bg-clip-border	bg-cover bg-center' : '';
 })
-
-// const titleClasses = computed(() => {
-//   return  props.blok.right.length === 0 ? "border-b" : ""
-// })
 </script>
 
 <style scoped>
@@ -41,12 +38,12 @@ const sectionClasses2 = computed(() => {
 .textSection {
   @apply pt-20 pb-16;
 }
-section.text_section {
-  @apply mt-10 mb-4;
-  @apply bg-cover;
+
+.textSectionContainer .textSectionTitle {
+  @apply pr-40;
 }
 
-.text_section h2 {
+.textSectionContainer h2 {
   @apply pb-9;
 }
 </style>

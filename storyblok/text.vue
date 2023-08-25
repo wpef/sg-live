@@ -1,5 +1,5 @@
 <template>
-  <div class="text" :class="blok.tight ? 'pr-8 md:pr-60' : ''" :style="'columns : ' + blok.Columns" v-html="content">
+  <div class="text" :class="blok.tight ? 'tight pr-8 md:pr-60' : ''" :style="'columns : ' + blok.Columns" v-html="content">
   </div>
 </template>
 
@@ -20,10 +20,19 @@
   @apply pb-4 mt-2;
 }
 
-.text h2~p, .text h3~p, .text h4~p, .text h5~p { 
+.text h2~p+p, .text h3~p+p, .text h4~p+p, .text h5~p+p { 
   /*Handle list items
   TODO : better handle */
   @apply leading-7;
+}
+
+.text.tight h2~p, .text.tight h3~p, .text.tight h4~p, .text.tight h5~p { 
+  @apply pr-36;
+
+  /* SG/Body 2 */
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.28px;
 }
 
 .text-white * { /*TODO : à voir*/
