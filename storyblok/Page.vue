@@ -42,9 +42,16 @@ div.hero {
 
 
 /*global*/
+
+
+/*forcing*/
 .p1.text-white,
 .p2.text-white {
   color: white;
+}
+
+.textImage p {
+  @apply p2;
 }
 
 .h1,
@@ -133,7 +140,7 @@ div.hero {
 }
 
 .p2 {
-  color: var(--sg-gris-hard, #505050);
+  /* color: var(--sg-gris-hard, #505050); */
 
   /* SG/Body 2 */
   font-family: Inter;

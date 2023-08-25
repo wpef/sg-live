@@ -3,7 +3,7 @@
     <div class="container">
     <div class="title w-1/2 pr-48">
       <h4 v-if="blok.title" class="h2">{{ blok.title }}</h4>
-      <p v-if="blok.body" class="p2">{{ blok.body }}</p>
+      <div v-if="blok.body" class="text-white text" v-html="content"></div>
     </div>
     <div class="thumb w-1/2 pl-12 h-auto">
       <img v-if="blok.image" :src="blok.image.filename" :alt="blok.image.alt">
@@ -14,7 +14,8 @@
 
 <script setup>
 const props = defineProps({ blok: Object });
-const backgroundColor = computed(() => {  return props.blok.backgroundColor === '' ? "#003966" : props.blok.backgroundColor }); 
+const backgroundColor = computed(() => {  return props.blok.backgroundColor === '' ? "#003966" : props.blok.backgroundColor });
+const content = computed(() => renderRichText(props.blok.body));
 </script>
 
 <style scoped>
