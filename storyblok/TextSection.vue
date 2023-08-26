@@ -3,19 +3,22 @@
     backgroundColor : blok.backgroundColor,
     backgroundImage : `url(${blok.backgroundImage?.filename})`,
   }">
-    <div class="textSectionContainer container" :class="sectionClasses">
+  <div class="container">
 
-      <div class="textSectionTitle w-1/2">
-        <h2 v-if="blok.title" class="h2" :class="blok.white ? 'text-white' : ''">{{ blok.title }}</h2>
-        <h3 v-if="blok.subtitle" class="h3">{{ blok.subtitle }}</h3>
+    <div class="textSectionContainer" :class="sectionClasses">
+      
+      <div class="textSectionTitle w-1/2" :class="blok.white ? 'text-white' : ''">
+        <h2 v-if="blok.title" class="h2">{{ blok.title }}</h2>
+        <h3 v-if="blok.subtitle" :class="blok.title ? 'h5' : 'h4'">{{ blok.subtitle }}</h3>
       </div>
       <div v-if="blok.right.length > 0" class="textSectionRight w-1/2 mt-6" :class="blok.white ? 'text-white' : ''">
         <StoryblokComponent v-for="blok in blok.right" :key="blok._uid" :blok="blok" :white="blok.white" />
       </div>
       
       <div v-if="blok.right.length === 0" class="w-full border-b"></div>
-    
+      
     </div>
+  </div>
   </section>
 </template>
  
@@ -37,6 +40,11 @@ const bgClasses = computed(() => {
 
 .textSection {
   @apply pt-20 pb-16;
+}
+
+.textSectionContainer {
+  @apply pt-9;
+  border-color: rgba(255, 255, 255, 0.20);
 }
 
 .textSectionContainer .textSectionTitle {
