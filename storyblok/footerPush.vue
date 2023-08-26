@@ -1,16 +1,19 @@
 <template>
-  <section class="footerPush container w-full flex flex-row space-x-6">
+  <section class="footerPush container w-full flex flex-row gap-6">
+
       <div v-for="push in blok.items" :key="blok._uid"
         :style="{
           backgroundImage: `url(${push.image.filename})`,
-          backgroundColor: push.backgroundColor !== '' ? push.backgroundColor : '#4783EE' ,
+          backgroundColor: push.backgroundColor,
           minHeight: '420px' }"
-        class="w-1/2 p-8 relative">
+        :class="push.backgroundColor !== '' ? '' : 'border'"
+        class="w-1/2 p-8 relative"
+        >
         <div class="mb-24">
-          <h4 class="h3 text-white mb-4 pr-32">{{ push.title }}</h4>
-          <p class="p1 text-white">{{ push.description }}</p>
+          <h4 class="h2 mb-4 pr-32" :class="push.white ? 'text-white' : ''">{{ push.title }}</h4>
+          <p class="p1" :class="push.white ? 'text-white' : ''">{{ push.description }}</p>
         </div>
-        <CTA v-if="push.cta[0] && push.cta[0].url" class="text-white absolute bottom-6" :blok="{ white:true, ...push.cta[0]}" />
+        <CTA v-if="push.cta[0] && push.cta[0].link" class="absolute bottom-6" :blok="push.cta[0]" />
       </div>
 
   </section>
@@ -18,7 +21,6 @@
  
 <script setup>
 const props = defineProps({ blok: Object })
-
 </script>
 
 <style scoped>
