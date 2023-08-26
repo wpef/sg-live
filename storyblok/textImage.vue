@@ -3,7 +3,7 @@
     <div class="container">
     <div class="title w-1/2 pr-48">
       <h4 v-if="blok.title" class="h2">{{ blok.title }}</h4>
-      <div v-if="blok.body" class="text-white text" v-html="content"></div>
+      <div v-if="blok.body" :class="blok.white ? 'text-white' : ''" class="text" v-html="content"></div>
     </div>
     <div class="thumb w-1/2 pl-12 h-auto">
       <img v-if="blok.image" :src="blok.image.filename" :alt="blok.image.alt">
@@ -26,11 +26,8 @@ const content = computed(() => renderRichText(props.blok.body));
 
 .title {
   @apply flex flex-wrap flex-row content-between;
-  @apply text-white;
   @apply pt-6 pb-4;
 }
 
-.p2 {
-  @apply text-white;
-}
+
 </style>

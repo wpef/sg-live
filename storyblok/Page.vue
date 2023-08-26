@@ -50,9 +50,12 @@ div.hero {
   color: white;
 }
 
-.textImage p {
+.textImage .text p {
   @apply p2;
+  color : #1E1E1E;
 }
+
+/* GENERAL */
 
 .h1,
 .text h1 {
@@ -205,6 +208,10 @@ li {
 .body section {
   @apply mt-4 mb-6 pb-6 pt-4;
 }
+
+
+
+/* FIXES */
 
 .container {
   @apply mt-4 mb-6 pb-6 pt-4 px-16;
