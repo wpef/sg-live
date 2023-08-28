@@ -175,15 +175,20 @@ div.hero {
 }
 
 .quote {
-  color: var(--sg-noir-texte, #1E1E1E);
+  color: var(--sg-noir-texte, #666);
 
   /* SG/Quote 1 */
   font-family: Inter;
-  font-size: 80px;
+  font-size: 5rem;
   font-style: normal;
   font-weight: 300;
   line-height: 120%;
   /* 96px */
+}
+
+blockquote h4:before, 
+blockquote h4:after {
+  @apply quote;
 }
 
 p,
