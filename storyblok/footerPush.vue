@@ -25,8 +25,9 @@ const props = defineProps({ blok: Object })
 
 <style scoped>
 
-.footerPush {
+section.footerPush {
   @apply flex flex-row gap-6;
+  @apply py-16;
 }
 
 .footerPush .item {
