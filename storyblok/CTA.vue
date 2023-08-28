@@ -1,6 +1,6 @@
 <template>
     <NuxtLink class="cta flex items-center"
-    :to="blok.link.url == '' ? blok.link.cached_url : blok.link.url"
+    :to="blok.link.url == '' ? '/' + blok.link.cached_url : blok.link.url"
     >
       <span :class="blok.white ? 'text-white' : 'text-[#3052B7]'">{{ blok.label }}</span>
       <img class="ml-2" :src="iconSrc">
