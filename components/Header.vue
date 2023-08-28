@@ -10,13 +10,13 @@ headerMenu.value = data.story.content.header_menu
 </script>
  
 <template>
-  <header class="w-full h-24 bg-[#f7f6fd]">
-    <div class="container h-full mx-auto flex items-center justify-between">
+  <header class="w-full h-24 fixed top-0 left-0 z-50">
+    <div class="container h-full mx-auto flex items-center justify-between text-white">
       <NuxtLink to="/">
-        <h1 class="text-[#50b0ae] text-3xl font-bold">Storyblok Nuxt</h1>
+        <h1 class="text-3xl">StoneGate</h1>
       </NuxtLink>
       <nav v-if="headerMenu">
-        <ul class="flex space-x-8 text-lg font-bold">
+        <ul class="h6 flex space-x-8">
           <li v-for="blok in headerMenu" :key="blok._uid">
             <NuxtLink :to="`/${blok.link.story.url}`" class="hover:text-[#50b0ae]">
               {{ blok.link.story.name }}
