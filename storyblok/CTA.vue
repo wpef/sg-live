@@ -12,5 +12,5 @@ const props = defineProps({
   blok: Object,
   white: Boolean
 });
-const iconSrc = computed(() => { return props.blok.white || props.white ? 'assets/icons/next-white.svg' : 'assets/icons/next.svg'})
+const iconSrc = computed(() => { return props.blok.white || props.white ? '/assets/icons/next-white.svg' : '/assets/icons/next.svg'})
 </script>
