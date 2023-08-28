@@ -1,16 +1,16 @@
 <template>
-  <section class="container push_section flex flex-wrap flex-row">
-    <div class="flex flex-wrap flex-row">
+  <section class="SectionPush container flex flex-wrap flex-row">
+    <div class="flex flex-wrap flex-col">
 
       <h2 class="h2 border-b" v-if="blok.title">{{ blok.title }}</h2>
-      <h3 class="h4" v-if="blok.description">{{ blok.description }}</h3>
+      <h3 class="h4" v-if="blok.subtitle">{{ blok.subtitle }}</h3>
     </div>
 
-    <div v-if="blok.pushs.length > 0" class="push_list">
+    <div v-if="blok.pushs.length > 0" class="wrapper">
       <div v-for="push in blok.pushs" :key="blok._uid"
         :style="{ backgroundImage: `url(${push.background.filename})` }"
         class="push">
-        <div class="push_content absolute left-6 bottom-6">
+        <div class="content absolute left-6 bottom-6">
           <h4 class="text-white h3 mb-4">{{ push.title }}</h4>
           <CTA class="text-white" :blok="{ label: 'Découvrir', white: true, ...push }" />
         </div>
@@ -25,20 +25,20 @@ defineProps({ blok: Object })
 </script>
 
 <style scoped>
-section.push_section {
+.SectionPush {
   @apply mt-10 mb-4;
 }
 
-.push_section .h2 {
+.SectionPush .h2 {
   @apply mb-8 pb-9;
-  @apply md:w-2/3;
+  @apply pr-96;
 }
 
-.push_section .h4 {
+.SectionPush .h4 {
   @apply pb-4;
 }
 
-.push_list {
+.wrapper {
   @apply flex flex-wrap w-full;
   @apply content-between justify-between;
   @apply gap-4;
