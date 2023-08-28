@@ -1,9 +1,15 @@
 <template>
-  <section class="titleList_section container flex flex-row flex-wrap justify-end">
-    <!-- <h1>Foulqui</h1> -->
-    <div v-for="blok in blok.Items" :key="blok._uid" class="flex-col w-2/3">
-      <h3 class="border-b">{{ blok.Title }}</h3>
-      <p class="w-2/3 float-right">{{ blok.content }}</p>
+  <section class="titleList container">
+    <div class="title">
+      <h2 class="h2" v-if="blok.title">{{ blok.title }}</h2>
+    </div>
+    <div class="border-t"></div>
+    <div class="wrapper flex flex-col">
+      <div class="item" v-for="blok in blok.Items" :key="blok._uid">
+        <h3 class="h4 w-3/4">{{ blok.title }}</h3>
+        <div class="border-t w-3/4"></div>
+        <p class="w-1/2 float-right">{{ blok.content }}</p>
+      </div>
     </div>
   </section>
 </template>
@@ -13,15 +19,25 @@ const props = defineProps({ blok: Object })
 </script>
 
 <style scoped>
-section.titleList_section {
-  @apply mt-10;
+.title {
+  @apply max-w-lg pr-40 mb-6;
 }
 
-section.titleList_section div {
-  @apply mt-4;
+.wrapper {
+  @apply flex flex-col;
+  @apply pt-20;
 }
 
-.titleList_section h3 {
-  @apply pb-2 mb-8;
+.item {
+  @apply flex flex-col justify-end items-end;
+  @apply pb-14;
+}
+
+.item h3 {
+  @apply pb-3;
+}
+
+.item p {
+  @apply pt-8;
 }
 </style>
