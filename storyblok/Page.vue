@@ -122,7 +122,7 @@ div.hero {
   letter-spacing: -0.32px;
 }
 
-.p1 {
+.p1, .p1 p {
   color: var(--sg-gris-hard, #505050);
 
   /* SG/Body 1 */
@@ -135,7 +135,7 @@ div.hero {
   letter-spacing: -0.32px;
 }
 
-.p2 {
+.p2 , .p2 p {
   /* color: var(--sg-gris-hard, #505050); */
 
   /* SG/Body 2 */
@@ -204,7 +204,7 @@ li {
 }
 
 .body section {
-  @apply mt-4 mb-6 pb-6 pt-4;
+  @apply pb-6 pt-4;
 }
 
 
