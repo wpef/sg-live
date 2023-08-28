@@ -47,7 +47,7 @@ const bgClasses = computed(() => {
   border-color: rgba(255, 255, 255, 0.20);
 }
 
-.textSectionTitle {
+.textSectionTitle > * {
   @apply max-w-lg;
 }
 
