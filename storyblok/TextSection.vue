@@ -27,7 +27,7 @@ const props = defineProps({ blok: Object })
  
 const sectionClasses = computed(() => {
   return "flex " + 
-    (props.blok.line === true ? 'border-t' :  "") + 
+    (props.blok.line === true ? 'border-t ' :  "") + 
     (props.blok.right.length > 0 ? '' : 'flex-wrap flex-row gap-4')
   })
 
@@ -47,8 +47,8 @@ const bgClasses = computed(() => {
   border-color: rgba(255, 255, 255, 0.20);
 }
 
-.textSectionContainer .textSectionTitle {
-  @apply pr-40;
+.textSectionTitle {
+  @apply max-w-lg;
 }
 
 .textSectionContainer .textSectionRight {

@@ -33,6 +33,7 @@ const props = defineProps({ blok: Object })
   @apply w-1/2 p-8;
   @apply relative;
   aspect-ratio: 6/5;
+  @apply bg-cover;
 }
 
 .footerPush .item h4 {
