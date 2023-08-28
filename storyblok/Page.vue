@@ -43,13 +43,6 @@ div.hero {
 
 /*global*/
 
-
-/*forcing*/
-.p1.text-white,
-.p2.text-white {
-  color: white;
-}
-
 .textImage .text p {
   @apply p2;
   color : #1E1E1E;
@@ -235,4 +228,17 @@ a {
   -moz-osx-font-smoothing: grayscale;
   font-smooth: never;
 }
+
+/*forcing*/
+.p1.text-white,
+.p2.text-white,
+.text.text-white p, 
+.text.text-white h2,
+.text.text-white h3,
+.text.text-white h4,
+.text.text-white h5,
+.text.text-white h6 {
+  color : white;
+}
+
 </style>

@@ -2,7 +2,7 @@
   <section class="textImage" :style="'background-color : ' + backgroundColor">
     <div class="container">
     <div class="title w-1/2 pr-48">
-      <h4 v-if="blok.title" class="h2">{{ blok.title }}</h4>
+      <h4 v-if="blok.title" :class="blok.white ? 'text-white' : ''" class="h2">{{ blok.title }}</h4>
       <div v-if="blok.body" :class="blok.white ? 'text-white' : ''" class="text" v-html="content"></div>
     </div>
     <div class="thumb w-1/2 pl-12 h-auto">
