@@ -1,6 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  build :  {
+    //Fix fsevent bug
+    transpile: ['fsevents']
+  },
   modules: [
     ['@storyblok/nuxt', { accessToken: 'P98lHCVtL7qDF2Qo2pFfBQtt' }],
     '@nuxtjs/tailwindcss',
