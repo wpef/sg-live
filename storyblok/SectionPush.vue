@@ -1,9 +1,11 @@
 <template>
   <section class="SectionPush container flex flex-wrap flex-row">
-    <div class="flex flex-wrap flex-col">
-
-      <h2 class="h2 border-b" v-if="blok.title">{{ blok.title }}</h2>
+    <div class="title w-full flex flex-wrap flex-col">
+    
+      <h2 class="h2" v-if="blok.title">{{ blok.title }}</h2>
+      <div class="border-t"></div>
       <h3 class="h4" v-if="blok.subtitle">{{ blok.subtitle }}</h3>
+
     </div>
 
     <div v-if="blok.pushs.length > 0" class="wrapper">
@@ -29,13 +31,13 @@ defineProps({ blok: Object })
   @apply mt-10 mb-4;
 }
 
-.SectionPush .h2 {
-  @apply mb-8 pb-9;
-  @apply pr-96;
+.title .h2 {
+  @apply pb-8;
+  @apply max-w-3xl;
 }
 
-.SectionPush .h4 {
-  @apply pb-4;
+.title .h4 {
+  @apply pt-9 pb-4;
 }
 
 .wrapper {
