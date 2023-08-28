@@ -7,11 +7,12 @@
         </div>
       </div>
       <div class="cardGrid grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-        <cardGridItem v-for="blok in blok.items"
+        <cardGridItem v-for="(blok, index) in blok.items"
           :key="blok._uid"
           :blok="blok"
           :white="textWhite"
           :icon="true"
+          :index="index+1"
         />
       </div>
     </div>
