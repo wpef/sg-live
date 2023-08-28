@@ -26,6 +26,10 @@
   @apply leading-7;
 }
 
+.text h2~p, .text h3~p, .text h4~p, .text h5~p { 
+  @apply mt-4;
+}
+
 .text.tight h2~p, .text.tight h3~p, .text.tight h4~p, .text.tight h5~p { 
 
   /* SG/Body 2 */
