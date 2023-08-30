@@ -1,6 +1,6 @@
 <template>
 
-  <div class="preFooter bg-[#191919]">
+  <div class="preFooter bg-[#191919] py-12">
     <div class="container">
       <div class="w-1/2 flex flex-row gap-4">
         <div class="w-1/2">
