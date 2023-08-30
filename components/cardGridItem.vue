@@ -20,8 +20,6 @@ const props = defineProps({
   icon: Boolean,
   index: Number
 });
-
-// console.log(props.white)
 </script>
 
 <style scoped>
