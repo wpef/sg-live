@@ -28,7 +28,7 @@
 </style>
 
 <script setup>
-const props = defineProps({ bloks: Array });r
+const props = defineProps({ bloks: Array });
 const blok1 = props.bloks[0];
 const sbloks = [props.bloks[1], props.bloks[2]];
 </script>

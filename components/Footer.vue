@@ -14,8 +14,8 @@ preFooterBloks.value = data.story.content.preFooterBlocks
  
 <template>
   <footer class="w-full">
-    <!--  #WIP 
-      <preFooter :bloks="preFooterBloks"/> -->
+    <!-- #WIP  -->
+      <preFooter :bloks="preFooterBloks"/>
     <div class="w-full">
       <nav v-if="footerMenu">
         <ul class="h6 flex space-x-8">
