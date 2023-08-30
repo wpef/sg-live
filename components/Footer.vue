@@ -4,28 +4,31 @@ const { data } = await storyblokApi.get('cdn/stories/config', {
   version: 'draft',
   resolve_links: 'url',
 })
- 
+
 const footerMenu = ref(null)
 const preFooterBloks = ref(null)
 footerMenu.value = data.story.content.footerMenu
 preFooterBloks.value = data.story.content.preFooterBlocks
 
+const logo = {
+  default : data.story.content.logo,
+  white : data.story.content.logo_white ?? data.story.content.logo
+}
 </script>
  
 <template>
   <footer class="w-full">
-    <!-- #WIP  -->
-      <preFooter :bloks="preFooterBloks"/>
-    <div class="w-full">
-      <nav v-if="footerMenu">
-        <ul class="h6 flex space-x-8">
-          <!-- <li v-for="blok in footerMenu" :key="blok._uid">
-            <NuxtLink :to="`/${blok.link.story.url}`" class="hover:text-[#50b0ae]">
-              {{ blok.link.story.name }}
-            </NuxtLink>
-          </li> -->
-        </ul>
-      </nav>
+    <preFooter :bloks="preFooterBloks" />
+    <div class="w-full bg-black pt-12">
+      <div class="container flex flex-row">
+
+        <div class="w-1/2">
+          <img class="w-44" :src="logo.white.filename" />
+        </div>
+        <div class="w-1/2">
+          <menuGrid :menu="footerMenu" />
+        </div>
+      </div>
     </div>
   </footer>
 </template>
