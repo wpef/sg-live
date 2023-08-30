@@ -19,11 +19,11 @@ preFooterBloks.value = data.story.content.preFooterBlocks
     <div class="w-full">
       <nav v-if="footerMenu">
         <ul class="h6 flex space-x-8">
-          <li v-for="blok in footerMenu" :key="blok._uid">
+          <!-- <li v-for="blok in footerMenu" :key="blok._uid">
             <NuxtLink :to="`/${blok.link.story.url}`" class="hover:text-[#50b0ae]">
               {{ blok.link.story.name }}
             </NuxtLink>
-          </li>
+          </li> -->
         </ul>
       </nav>
     </div>
