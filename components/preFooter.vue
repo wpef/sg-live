@@ -1,15 +1,17 @@
 <template>
 
-  <div class="preFooter container">
-    <div class="w-1/2 flex flex-row gap-4">
-      <div class="w-1/2">
-        <CardGridItem :blok="blok1" :white="true" />
-      </div>
-      <div class="w-1/2 flex flex-wrap flex-row gap-4">
-        <div v-for="blok in sbloks" class="footerblok">
-          <div class="content">
-            <h4 v-if="blok.title" class="h5 pb-4 text-white">{{ blok.title }}</h4>
-            <p v-if="blok.description" class="p2 text-white">{{ blok.description }}</p>
+  <div class="preFooter bg-[#191919]">
+    <div class="container">
+      <div class="w-1/2 flex flex-row gap-4">
+        <div class="w-1/2">
+          <CardGridItem :blok="blok1" :white="true" />
+        </div>
+        <div class="w-1/2 flex flex-wrap flex-row gap-4">
+          <div v-for="blok in sbloks" class="footerblok">
+            <div class="content">
+              <h4 v-if="blok.title" class="h5 pb-4 text-white">{{ blok.title }}</h4>
+              <p v-if="blok.description" class="p2 text-white">{{ blok.description }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -19,9 +21,8 @@
 </template>
 
 <style scoped>
-.preFooter{
+.preFooter .container {
   @apply flex flex-row-reverse;
-  background-color: #191919;;
 }
 .footerblok {
   @apply w-full;
