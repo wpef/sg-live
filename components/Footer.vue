@@ -14,14 +14,16 @@ const logo = {
   default : data.story.content.logo,
   white : data.story.content.logo_white ?? data.story.content.logo
 }
+
+const socialBar = data.story.content.socialBar
+const copyright = data.story.content.copyright
 </script>
  
 <template>
   <footer class="w-full">
     <preFooter :bloks="preFooterBloks" />
-    <div class="w-full bg-black pt-12">
+    <div class="footerBody w-full bg-black pt-12">
       <div class="container flex flex-row">
-
         <div class="w-1/2">
           <img class="w-44" :src="logo.white.filename" />
         </div>
@@ -29,6 +31,15 @@ const logo = {
           <menuGrid :menu="footerMenu" />
         </div>
       </div>
+      <div class="footerEnd container flex flex-row">
+          <div class="w-1/2 flex flex-col">
+            <SocialBar :iconLinks="socialBar"/>
+            <p class="pt-6 text-[#505050]">© {{copyright}}</p>
+          </div>
+          <div class="w-1/2">
+            <!-- <p class="">WIP Partners Banner</p> -->
+          </div>
+      </div>    
     </div>
   </footer>
 </template>
