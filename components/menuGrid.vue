@@ -7,7 +7,7 @@
       {{ col.title ?? titleLink.story.name }}
       </NuxtLink>
       <div class="listWrapper pt-3 pb-11">
-        <CTA class="item p1 pb-1" v-for="(item, index) in col.items" :key="col._uid"
+        <CTA class="item  text-[#666] p1 pb-1" v-for="(item, index) in col.items" :key="col._uid"
           :blok="{label : item.title, ...item, icon:false}"
         /> 
       </div>
