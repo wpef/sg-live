@@ -15,13 +15,12 @@ const props = defineProps({
   white: Boolean,
   icon : Boolean
 });
+
 const iconSrc = computed(() => { return props.blok.white || props.white ? '/assets/icons/next-white.svg' : '/assets/icons/next.svg'})
+
 const toUrl = function (blok) {
   const link = blok.link;
   const https = "https://";
-
-
-  // console.log('link.url.startsWith(https)', link.url.startsWith(https))
 
   if (link.linktype === 'story') {
     return '/' + link.cached_url
