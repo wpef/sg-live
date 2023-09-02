@@ -17,6 +17,8 @@ const logo = {
 
 const socialBar = data.story.content.socialBar
 const copyright = data.story.content.copyright
+const partnerBanner = data.story.content.partnersBanner
+
 </script>
  
 <template>
@@ -37,6 +39,7 @@ const copyright = data.story.content.copyright
             <p class="pt-6 text-[#505050]">© {{copyright}}</p>
           </div>
           <div class="w-1/2">
+            <PartnerBanner :logos="partnerBanner" />
             <!-- <p class="">WIP Partners Banner</p> -->
           </div>
       </div>    
