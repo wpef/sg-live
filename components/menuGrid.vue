@@ -1,8 +1,8 @@
 <template>
-  <div class="wrapper text-white">
+  <div class="wrapper ">
     <!-- {{ menu }} -->
     <div class="col" v-for="col in menu">
-      <NuxtLink class="h6"
+      <NuxtLink class="h6 text-white"
       :to="col.titleLink.url === '' ? '/' + col.titleLink.cached_url : col.titleLink.url">
       {{ col.title ?? titleLink.story.name }}
       </NuxtLink>
