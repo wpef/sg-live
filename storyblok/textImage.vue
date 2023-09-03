@@ -1,12 +1,19 @@
 <template>
   <section class="textImage" :style="'background-color : ' + backgroundColor">
     <div class="container">
-    <div class="title w-1/2 pr-48">
+    <div class="title md:w-1/2 md:pr-48">
       <h4 v-if="blok.title" :class="blok.white ? 'text-white' : ''" class="h2">{{ blok.title }}</h4>
       <div v-if="blok.body" :class="blok.white ? 'text-white' : ''" class="text" v-html="content"></div>
     </div>
-    <div class="thumb w-1/2 pl-12 h-auto">
-      <img v-if="blok.image" :src="blok.image.filename" :alt="blok.image.alt">
+    <div class="thumb md:w-1/2">
+      <NuxtImg
+        v-if="blok.image"
+        provider="storyblok"
+        :src="blok.image.filename" 
+        :alt="blok.image.alt"
+        height="680"
+        width="648"
+      />
     </div>
   </div>
   </section>
@@ -16,6 +23,7 @@
 const props = defineProps({ blok: Object });
 const backgroundColor = computed(() => {  return props.blok.backgroundColor === '' ? "#003966" : props.blok.backgroundColor });
 const content = computed(() => renderRichText(props.blok.body));
+console.log(content)
 </script>
 
 <style scoped>
@@ -26,7 +34,6 @@ const content = computed(() => renderRichText(props.blok.body));
 
 .title {
   @apply flex flex-wrap flex-row content-between;
-  @apply pt-6 pb-4;
 }
 
 

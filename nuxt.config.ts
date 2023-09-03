@@ -10,6 +10,11 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
   ],
+  image: {
+    storyblok: {
+      baseURL: 'https://a.storyblok.com'
+    }
+  },
   app : {
     head: {
       link: [
