@@ -1,5 +1,5 @@
 <template>
-  <section class="textImage" :style="'background-color : ' + backgroundColor">
+  <section class="textImage" :style="{ backgroundColor : blok.backgroundColor }">
     <div class="container">
     <div class="title md:w-1/2 md:pr-48">
       <h4 v-if="blok.title" :class="blok.white ? 'text-white' : ''" class="h2">{{ blok.title }}</h4>
@@ -21,7 +21,6 @@
 
 <script setup>
 const props = defineProps({ blok: Object });
-const backgroundColor = computed(() => {  return props.blok.backgroundColor === '' ? "#003966" : props.blok.backgroundColor });
 const content = computed(() => renderRichText(props.blok.body));
 console.log(content)
 </script>
