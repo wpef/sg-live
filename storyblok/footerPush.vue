@@ -26,19 +26,23 @@ const props = defineProps({ blok: Object })
 <style scoped>
 
 section.footerPush {
-  @apply flex flex-row gap-6;
+  @apply flex flex-row gap-6 flex-wrap md:flex-nowrap;
   @apply py-16;
 }
 
 .footerPush .item {
-  @apply w-1/2 p-8;
+  @apply h-[33.5rem];
+  @apply w-full md:w-1/2 p-8;
   @apply relative;
-  aspect-ratio: 6/5;
   @apply bg-cover;
 }
 
 .footerPush .item h4 {
-  @apply mb-4 pr-32;
+  @apply mb-4;
+}
+
+.contentTop {
+  @apply lg:pr-32;
 }
 
 </style>
