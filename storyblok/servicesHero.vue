@@ -1,5 +1,5 @@
 <template>
-  <section class="servicesHero2" :style="{ backgroundColor: blok.backgroundColor }">
+  <section class="servicesHero" :style="{ backgroundColor: blok.backgroundColor }">
     <div class="container flex flex-col h-2/3 pt-16">
       <div class="flex flex-row-reverse">
         <div v-if="blok.title || blok.subtitle" class="text md:w-1/2 pb-40 xl:pr-24">
@@ -28,7 +28,4 @@ const textWhite = computed(() => {
 </script>
 
 <style scoped>
-.servicesHero2 {
-  @apply pt-32 pb-16;
-}
 </style>
