@@ -2,6 +2,7 @@
   <main>
     <Header />
     <slot />
-    <Footer />
+    <!-- TODO : fix -->
+    <!-- <Footer /> -->
   </main>
 </template>
