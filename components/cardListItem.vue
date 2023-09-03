@@ -1,13 +1,21 @@
 <template>
   <div class="cardListItem">
     <div class="thumb">
-      <img v-if="blok.image" :src="blok.image.filename" :alt="blok.image.alt">
+      <!-- TODO : handle 100% width on mobile -->
+      <NuxtImg
+        v-if="blok.image"
+        provider="storyblok"
+        :src="blok.image.filename" 
+        :alt="blok.image.alt"
+        height="240"
+        width="430"
+      />
     </div>
     <div class="title">
       <h4 v-if="blok.title" class="h5">{{ blok.title }}</h4>
       <CTA v-if="blok.cta[0]" :blok="blok.cta[0]" />
     </div>
-    <p v-if="blok.description" class="p2 md:w-1/3">{{ blok.description }}</p>
+    <p v-if="blok.description" class="p2 w-full md:w-1/3">{{ blok.description }}</p>
   </div>
 </template>
 
@@ -17,8 +25,8 @@ const props = defineProps({ blok: Object });
 
 <style scoped>
 .cardListItem {
-  @apply flex flex-col flex-wrap md:flex-nowrap md:flex-row;
-  @apply py-4 my-2 md:gap-12;
+  @apply flex flex-col flex-wrap sm:flex-nowrap sm:flex-row;
+  @apply py-4 my-2 gap-4 lg:gap-12;
   @apply border-b;
 }
 
@@ -27,10 +35,10 @@ const props = defineProps({ blok: Object });
 }
 
 .cardListItem .title h4 {
-  @apply md:pr-64;
+  @apply lg:pr-64;
 }
 
 .cardListItem p {
-  @apply md:pl-12 py-2;
+  @apply lg:pl-12 py-2;
 }
 </style>
