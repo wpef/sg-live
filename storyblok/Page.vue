@@ -212,9 +212,9 @@ li {
 /* FIXES */
 
 .container {
-  @apply mt-4 mb-6 pb-6 pt-4 px-16;
+  @apply mt-4 mb-6 pb-6 pt-4 px-6 lg:px-16;
   /* à voir*/
-  max-width: 1440px;
+  max-width: 1440px !important;
   margin: auto;
 }
 
