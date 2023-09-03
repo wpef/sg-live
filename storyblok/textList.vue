@@ -15,7 +15,7 @@ ul li {
   font-size: 16px;
   line-height: 132%; /* 21.12px */
   letter-spacing: -0.32px;
-  background: url("/assets/icons/see.svg") no-repeat;
+  background: url("/icons/see.svg") no-repeat;
   
   @apply pl-8 mr-20 mb-6;
 }

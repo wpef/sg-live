@@ -16,7 +16,7 @@ const props = defineProps({
   icon : Boolean
 });
 
-const iconSrc = computed(() => { return props.blok.white || props.white ? '/assets/icons/next-white.svg' : '/assets/icons/next.svg'})
+const iconSrc = computed(() => { return props.blok.white || props.white ? '/icons/next-white.svg' : '/icons/next.svg'})
 
 const toUrl = function (blok) {
   const link = blok.link;
