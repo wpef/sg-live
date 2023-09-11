@@ -7,12 +7,12 @@
 
     <div class="textSectionContainer" :class="sectionClasses">
       
-      <div class="textSectionTitle w-1/2" :class="blok.white ? 'text-white' : ''">
+      <div class="textSectionTitle lg:w-1/2" :class="blok.white ? 'text-white' : ''">
         <h2 v-if="blok.title" class="h2">{{ blok.title }}</h2>
         <h3 v-if="blok.subtitle" :class="blok.title ? 'h5' : 'h4'">{{ blok.subtitle }}</h3>
       </div>
-      <div v-if="blok.right.length > 0" class="textSectionRight w-1/2 mt-6" :class="blok.white ? 'text-white' : ''">
-        <StoryblokComponent v-for="blok in blok.right" :key="blok._uid" :blok="blok" :white="blok.white" />
+      <div v-if="blok.right.length > 0" class="textSectionRight lg:w-1/2 mt-6" :class="blok.white ? 'text-white' : ''">
+        <StoryblokComponent v-for="textBlok in blok.right" :key="textBlok._uid" :blok="textBlok" />
       </div>
       
       <div v-if="blok.right.length === 0" class="w-full border-b"></div>
@@ -28,7 +28,7 @@ const props = defineProps({ blok: Object })
 const sectionClasses = computed(() => {
   return "flex " + 
     (props.blok.line === true ? 'border-t ' :  "") + 
-    (props.blok.right.length > 0 ? '' : 'flex-wrap flex-row gap-4')
+    (props.blok.right.length > 0 ? 'flex-col lg:flex-row' : 'flex-wrap flex-row gap-4')
   })
 
 const bgClasses = computed(() => {

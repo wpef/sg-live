@@ -7,7 +7,7 @@
 
     <div class="textSectionContainer" :class="sectionClasses">
       
-      <div class="textSectionTitle w-1/2" :class="blok.white ? 'text-white' : ''">
+      <div class="textSectionTitle lg:w-1/2" :class="blok.white ? 'text-white' : ''">
         <h2 v-if="blok.title" class="h2">{{ blok.title }}</h2>
         <h3 v-if="blok.subtitle" :class="blok.title ? 'h5' : 'h4'">{{ blok.subtitle }}</h3>
       </div>
@@ -25,7 +25,7 @@
 const props = defineProps({ blok: Object })
  
 const sectionClasses = computed(() => {
-  return "flex flex-wrap flex-row gap-4 ";
+  return "flex flex-wrap flex-col lg:flex-row gap-4 ";
 })
 </script>
 
