@@ -246,4 +246,10 @@ a {
   color : white;
 }
 
+.text-white li {
+  color : white !important;
+  background-image: url("/icons/see-white.svg") !important;
+}
+
+
 </style>
