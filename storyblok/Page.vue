@@ -314,10 +314,6 @@ li {
   letter-spacing: -0.28px;
 }
 
-.body section {
-  @apply pb-6 pt-4;
-}
-
 
 
 /* FIXES */
