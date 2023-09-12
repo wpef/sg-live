@@ -25,7 +25,7 @@ defineProps({ blok: Object })
 /*local*/
 div.hero {
   @apply pt-64;
-  @apply relative bg-cover;
+  @apply relative bg-cover bg-center;
   margin-top: 0 !important;
 }
 
@@ -57,11 +57,8 @@ div.hero {
 
   .h2,
   .text h2 {
-    /* SG/Head 2 */
-    font-size: 40px;
     font-weight: 400;
     line-height: 120%;
-    /* 48px */
     letter-spacing: -2px;
   }
 
@@ -180,12 +177,12 @@ div.hero {
 .text h2 {
   /* SG/Head 2 */
   font-family: Inter;
-  font-size: 40px;
+  @apply  md:text-[2.5rem] text-3xl;
   font-style: normal;
   font-weight: 400;
-  line-height: 120%;
+  line-height: 124%;
   /* 48px */
-  letter-spacing: -2px;
+  letter-spacing: -1.3px;
 }
 
 .h3,
