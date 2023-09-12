@@ -7,7 +7,7 @@
       <div class="container">
         <div class="heroTitle text-white">
           <h1 class="h1" v-if="blok.title">{{ blok.title }}</h1>
-          <h2 class="h2" v-if="blok.subtitle">{{ blok.subtitle }}</h2>
+          <h2 class="h4" v-if="blok.subtitle">{{ blok.subtitle }}</h2>
         </div>
       </div>
     </div>
@@ -26,14 +26,13 @@ defineProps({ blok: Object })
 div.hero {
   @apply pt-64;
   @apply relative bg-cover;
-  min-height: 30rem;
   margin-top: 0 !important;
 }
 
 .hero .heroTitle {
   @apply pr-6 lg:pr-96;
   @apply absolute bottom-12;
-  max-width: 1440px; 
+  max-width: 1440px;
 }
 
 .hero .heroTitle h1 {
@@ -49,17 +48,132 @@ div.hero {
 }
 
 /* GENERAL */
+/* Tailwind = lg: */ 
+@media (min-width: 1024px) {
+  .h1,
+  .text h1 {
+    letter-spacing: -.24rem;
+  }
+
+  .h2,
+  .text h2 {
+    /* SG/Head 2 */
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 120%;
+    /* 48px */
+    letter-spacing: -2px;
+  }
+
+  .h3,
+  .text h3 {
+    /* SG/Head 3 */
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 124%;
+    /* 32.24px */
+    letter-spacing: -1.04px;
+  }
+
+  .h4,
+  .text h4 {
+    /* SG/Head 4 */
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 132%;
+    /* 26.4px */
+    letter-spacing: -0.8px;
+  }
+
+  .h5,
+  .text h5 {
+    /* SG/Head 5 */
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 132%;
+    /* 26.4px */
+    letter-spacing: -0.4px;
+  }
+
+  .h6,
+  .text h6 {
+    /* SG/Head 6 */
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 132%;
+    /* 21.12px */
+    letter-spacing: -0.32px;
+  }
+
+  .p1, .p1 p {
+
+    /* SG/Body 1 */
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    /* 22.4px */
+    letter-spacing: -0.32px;
+  }
+
+  .p2 , .p2 p {
+
+    /* SG/Body 2 */
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 132%;
+    /* 18.48px */
+    letter-spacing: -0.28px;
+  }
+
+  .button1 {
+
+    /* SG/Bouton 1 */
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    /* 16px */
+    letter-spacing: -0.32px;
+  }
+
+  .button2 {
+
+    /* SG/Bouton 2 */
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    /* 16px */
+    letter-spacing: -0.32px;
+  }
+
+  .quote {
+    /* SG/Quote 1 */
+    font-size: 5rem;
+    font-weight: 300;
+    line-height: 120%;
+    /* 96px */
+  }
+
+  p,
+  li {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 132%;
+    /* 18.48px */
+    letter-spacing: -0.28px;
+  }
+  
+}
 
 .h1,
 .text h1 {
   /* SG/Head 1 */
   font-family: Inter;
-  font-size: 64px;
+  @apply text-4xl md:text-6xl;
   font-style: normal;
   font-weight: 400;
   line-height: 112%;
   /* 71.68px */
-  letter-spacing: -3.84px;
+  letter-spacing: -.12rem;
 }
 
 .h2,
