@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <div class="hero" v-if="blok.title || blok.subtitle" :class="blok.heroImage?.filename ? 'h-screen' : ''" :style="{
+    <div class="hero" v-if="blok.title || blok.subtitle" :class="blok.fullHeight ? 'h-screen' : 'h-[30rem]'" :style="{
       backgroundColor: blok.heroBgColor !== '' ? blok.heroBgColor : '#003966',
       backgroundImage: `url(${blok.heroImage?.filename})`,
     }">
@@ -31,7 +31,7 @@ div.hero {
 }
 
 .hero .heroTitle {
-  @apply pr-96;
+  @apply pr-6 lg:pr-96;
   @apply absolute bottom-12;
   max-width: 1440px; 
 }
