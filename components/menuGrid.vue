@@ -6,7 +6,7 @@
       :to="col.titleLink.url === '' ? '/' + col.titleLink.cached_url : col.titleLink.url">
       {{ col.title ?? titleLink.story.name }}
       </NuxtLink>
-      <div class="listWrapper pt-3 pb-11">
+      <div class="listWrapper">
         <CTA class="item  text-[#666] p1 pb-1" v-for="(item, index) in col.items" :key="col._uid"
           :blok="{label : item.title, ...item, icon:false}"
         /> 
@@ -23,6 +23,10 @@ const props = defineProps({
 
 <style scoped>
 .wrapper {
-  @apply grid grid-cols-2 gap-x-12;
+  @apply sm:grid sm:grid-cols-2 md:gap-x-12;
+}
+
+.listWrapper {
+  @apply py-4 md:pb-11;
 }
 </style>

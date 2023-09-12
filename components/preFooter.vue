@@ -2,8 +2,8 @@
 
   <div class="preFooter bg-[#191919] py-12">
     <div class="container">
-      <div class="w-1/2 flex flex-row gap-4">
-        <div class="w-1/2">
+      <div class="w-full lg:w-1/2 flex flex-col md:flex-row gap-4">
+        <div class="w-full lg:w-1/2">
           <div class="cardGridItem" :style="{
             borderColor: blok1.white ? 'rgba(255, 255, 255, 0.20)' : '',
             backgroundColor: blok1.backgroundColor
@@ -16,7 +16,7 @@
             <CTA v-if="blok1.cta[0]" :blok="blok1.cta[0]" />
           </div>
         </div>
-        <div class="sBloks w-1/2 flex flex-wrap flex-row gap-4">
+        <div class="sBloks md:w-1/2 flex flex-wrap flex-row gap-4">
           <div v-for="blok in sbloks" class="footerblok">
             <!-- TODO : handle CTA -->
             <div class="content">
@@ -37,7 +37,7 @@
 }
 
 .cardGridItem {
-  @apply h-60 p-6;
+  @apply h-full p-6;
   @apply relative;
 }
 

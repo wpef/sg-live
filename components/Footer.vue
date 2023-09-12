@@ -22,14 +22,14 @@ const partnerBanner = data.story.content.partnersBanner
 </script>
  
 <template>
-  <footer class="w-full">
+  <footer>
     <preFooter :bloks="preFooterBloks" />
     <div class="footerBody w-full bg-black pt-12">
-      <div class="container flex flex-row">
-        <div class="w-1/2">
+      <div class="container flex flex-col md:flex-row">
+        <div class="w-full pb-6 md:w-1/2">
           <img class="w-44" :src="logo.white.filename" />
         </div>
-        <div class="w-1/2">
+        <div class="w-full md:w-1/2">
           <menuGrid :menu="footerMenu" />
         </div>
       </div>
@@ -40,7 +40,6 @@ const partnerBanner = data.story.content.partnersBanner
           </div>
           <div class="w-1/2">
             <PartnerBanner :logos="partnerBanner" />
-            <!-- <p class="">WIP Partners Banner</p> -->
           </div>
       </div>    
     </div>
