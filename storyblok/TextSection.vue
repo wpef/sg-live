@@ -39,11 +39,10 @@ const bgClasses = computed(() => {
 <style scoped>
 
 .textSection {
-  @apply pt-20 pb-16;
+  @apply  py-16 md:pt-20;
 }
 
 .textSectionContainer {
-  @apply pt-9;
   border-color: rgba(255, 255, 255, 0.20);
 }
 
@@ -52,7 +51,7 @@ const bgClasses = computed(() => {
 }
 
 .textSectionContainer .textSectionRight {
-  @apply pr-24;
+  @apply md:pr-24;
 }
 .textSectionContainer h2 {
   @apply pb-9;
