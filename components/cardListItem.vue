@@ -35,10 +35,10 @@ const props = defineProps({ blok: Object });
 }
 
 .cardListItem .title h4 {
-  @apply lg:pr-64;
+  @apply pr-6 xl:pr-64;
 }
 
 .cardListItem p {
-  @apply lg:pl-12 py-2;
+  @apply xl:pl-12 py-2;
 }
 </style>
