@@ -302,8 +302,8 @@ blockquote h4:after {
   @apply quote;
 }
 
-p,
-li {
+.page p,
+.page li {
   color: var(--sg-gris-texte, #505050);
   font-family: Inter;
   font-size: 16px;
