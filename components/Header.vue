@@ -1,4 +1,5 @@
 <script setup>
+import { ref, onMounted } from 'vue';
 const storyblokApi = useStoryblokApi()
 const { data } = await storyblokApi.get('cdn/stories/config', {
   version: 'draft',
@@ -14,7 +15,21 @@ const logo = {
   white : data.story.content.logo_white ?? data.story.content.logo
 }
 
-let hoveredMenu = ref(null);
+const menuItems = ref(null);
+const hoveredMenu = ref(null);
+
+onMounted(() => {
+  if (menuItems.value) {
+    menuItems.value.forEach((item, index) => {
+      item.addEventListener('mouseover', () => {
+        hoveredMenu.value = index;
+      });
+      item.addEventListener('mouseout', () => {
+        hoveredMenu.value = null;
+      });
+    });
+  }
+});
 
 </script>
  
@@ -28,9 +43,10 @@ let hoveredMenu = ref(null);
       </NuxtLink>
       <nav class="h-full" v-if="headerMenu">
         <ul class="h-full flex items-center space-x-8">
-          <li class="h-full flex flex-col justify-between items-center pt-12 z-50"
+          <li class="h-full flex flex-col justify-between items-center pt-12"
             v-for="(blok, index) in headerMenu"
             :key="blok._uid"
+            ref="menuItems"
           >
 
             <NuxtLink  v-if="blok.component == 'menu_link'" :to="`/${blok.link.cached_url}`" class="hover:text-[#2650BE]">
@@ -38,8 +54,6 @@ let hoveredMenu = ref(null);
             </NuxtLink>
 
             <NuxtLink v-if="blok.component == 'menu_col'"
-              v-on:mouseover="hoveredMenu = index"
-              v-on:mouseleave="hoveredMenu = null"
             :to="`/${blok.titleLink.cached_url}`" class="hover:text-[#2650BE]">
               {{ blok.title }}
             </NuxtLink>
