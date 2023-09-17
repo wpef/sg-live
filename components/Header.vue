@@ -16,7 +16,7 @@ const logo = {
  
 <template>
   <header>
-    <div class="container h-full mx-auto flex items-center justify-between">
+    <div class="h-full mx-auto flex items-center justify-between">
       <NuxtLink to="/">
         <h1 class="text-3xl hidden">StoneGate</h1>
         <img id="logo-full" class="logo hidden" :src="logo.default.filename">
@@ -24,9 +24,9 @@ const logo = {
       </NuxtLink>
       <nav class="h-full" v-if="headerMenu">
         <ul class="h-full flex items-center space-x-8">
-          <li v-for="blok in headerMenu" :key="blok._uid">
+          <li class="h-full flex flex-col justify-between items-center pt-12" v-for="blok in headerMenu" :key="blok._uid">
 
-            <NuxtLink v-if="blok.component == 'menu_link'" :to="`/${blok.link.cached_url}`" class="hover:text-[#2650BE]">
+            <NuxtLink  v-if="blok.component == 'menu_link'" :to="`/${blok.link.cached_url}`" class="hover:text-[#2650BE]">
               {{ blok.link.story?.name || blok.link.title }}
             </NuxtLink>
 
@@ -34,6 +34,7 @@ const logo = {
               {{ blok.title }}
             </NuxtLink>
 
+            <div class=""></div>
           </li>
         </ul>
       </nav>
@@ -62,20 +63,26 @@ a {
 
 header {
   @apply bg-gradient-to-b from-black/50 to-80%;
-  @apply hover:bg-gradient-to-b hover:from-white hover:to-white;
+  @apply hover:bg-gradient-to-b hover:from-white hover:to-white;  
+}
+header > div {
+  max-width: 1440px !important;
+  @apply px-6 lg:px-16;
 }
 
 header:hover #logo-full {
   @apply block;
   @apply transition ease-in-out;
-
 }
+
 header:hover #logo-white {
   @apply hidden;
   @apply transition ease-in-out;
 
 }
-header:hover nav a.router-link-active {
-  @apply underline underline-offset-4 decoration-4 decoration-[#2650BE];
+
+a.router-link-active + div {
+  @apply h-1 w-full;
+  @apply bg-[#2650BE];
 }
 </style>
