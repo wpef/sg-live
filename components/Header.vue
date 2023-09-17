@@ -15,22 +15,21 @@ const logo = {
   white : data.story.content.logo_white ?? data.story.content.logo
 }
 
-const menuItems = ref(null);
 const hoveredMenu = ref(null);
+const debounceTimer = ref(null);
 
-onMounted(() => {
-  if (menuItems.value) {
-    menuItems.value.forEach((item, index) => {
-      item.addEventListener('mouseover', () => {
-        hoveredMenu.value = index;
-      });
-      item.addEventListener('mouseout', () => {
-        hoveredMenu.value = null;
-      });
-    });
-  }
-});
 
+
+const handleMouseOver = (index) => {
+  clearTimeout(debounceTimer.value);
+  hoveredMenu.value = index;
+};
+
+const handleMouseOut = () => {
+  debounceTimer.value = setTimeout(() => {
+    hoveredMenu.value = null;
+  }, 300); // 300ms delay
+};
 </script>
  
 <template>
@@ -46,7 +45,8 @@ onMounted(() => {
           <li class="h-full flex flex-col justify-between items-center pt-12"
             v-for="(blok, index) in headerMenu"
             :key="blok._uid"
-            ref="menuItems"
+            @mouseover="handleMouseOver(index)"
+            @mouseleave="handleMouseOut"
           >
 
             <NuxtLink  v-if="blok.component == 'menu_link'" :to="`/${blok.link.cached_url}`" class="hover:text-[#2650BE]">
@@ -65,9 +65,12 @@ onMounted(() => {
     </div>
   </header>
   <div v-for="(blok, index) in headerMenu" :key="blok._uid" class="expand_placeholder">
-    <div class="w-full fixed top-24 z-50 bg-white" 
+    <div class="w-full fixed top-0 pt-20 z-40 bg-white" 
       v-show="hoveredMenu === index"
-      v-if=" blok.items">
+      v-if=" blok.items"
+      @mouseover="handleMouseOver(index)"
+      @mouseleave="handleMouseOut"
+    >
       <MenuGrid class="container" :menu="blok.items"/>
     </div>
   </div>
@@ -75,7 +78,7 @@ onMounted(() => {
 
 <style>
 header {
-  @apply w-full h-24 fixed top-0 left-0 z-30;
+  @apply w-full h-24 fixed top-0 left-0 z-50;
   @apply text-white hover:text-black;
   @apply hover:border-b hover:border-[#E6E6E6];
   @apply transition ease-in-out;
