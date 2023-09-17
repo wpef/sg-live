@@ -1,6 +1,6 @@
 <template>
   <section class="titleList" :style="'background-color : ' + blok.backgroundColor">
-    <div class="container">
+    <div class="container" v-editable="blok">
 
       <div v-if="blok.title" class="title" data-aos="fade-up">
         <h2 :class="whiteClass" class="h2">{{ blok.title }}</h2>

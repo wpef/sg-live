@@ -1,6 +1,6 @@
 <template>
   <section class="separator">
-    <div class="container">
+    <div class="container" v-editable="blok">
       <div :class="blok.line ? 'border-t' : ''"></div>
   </div>
   </section>

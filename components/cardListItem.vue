@@ -1,5 +1,5 @@
 <template>
-  <div class="cardListItem">
+  <div class="cardListItem" v-editable="blok">
     <div class="thumb">
       <!-- TODO : handle 100% width on mobile -->
       <NuxtImg

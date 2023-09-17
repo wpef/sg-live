@@ -1,6 +1,6 @@
 <template>
   <section class="testimonial" :style="'background-color : ' + blok.backgroundColor">
-    <div class="container">
+    <div class="container" v-editable="blok">
       <div class="title w-1/2">
         <blockquote class="relative" data-aos="fade-up" data-aos-delay="200">
           <h4 v-if="blok.quote" :class="blok.white ? 'text-white' : ''" class="h5">{{ blok.quote }}</h4>

@@ -1,6 +1,6 @@
 <template>
   <section class="textImage" :style="{ backgroundColor : blok.backgroundColor }">
-    <div class="container">
+    <div class="container" v-editable="blok">
     <div class="title">
       <h2 v-if="blok.title" :class="blok.white ? 'text-white' : ''" data-aos="fade-up" class="h2">{{ blok.title }}</h2>
       <div v-if="blok.body" :class="blok.white ? 'text-white' : ''" class="text" data-aos="fade-up" v-html="content"></div>

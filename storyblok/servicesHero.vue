@@ -1,6 +1,6 @@
 <template>
   <section class="servicesHero" :style="{ backgroundColor: blok.backgroundColor }">
-    <div class="container flex flex-col h-2/3 pt-16">
+    <div class="container flex flex-col h-2/3 pt-16" v-editable="blok">
       <div class="flex flex-row-reverse">
         <div v-if="blok.title || blok.subtitle" class="text md:w-1/2 pb-40 xl:pr-24">
           <h2 v-if="blok.title" class="pb-8" :class="textWhite ? 'text-white':''" data-aos="fade-up">{{ blok.title ?? blok.subtitle }}</h2>

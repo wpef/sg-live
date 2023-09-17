@@ -1,5 +1,5 @@
 <template>
-  <div class="cardGridItem" :style="{
+  <div class="cardGridItem" v-editable="blok" :style="{
     borderColor: white ? 'rgba(255, 255, 255, 0.20)' : '',
     backgroundColor: blok.backgroundColor === '' ? 'white' : blok.backgroundColor }"
   >

@@ -1,5 +1,5 @@
 <template>
-  <div class="item" :class="'item-' + index">
+  <div class="item" v-editable="blok" :class="'item-' + index">
     <div class="itemTitle w-3/4" @click="isOpen = !isOpen" data-aos="fade-up">
       <h3 class="h4" :class="white ? 'text-white' : ''">{{ blok.title }}</h3>
       <svg class="icon"  :class="isOpen ? 'open' : 'closed'" v-if="expand" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"

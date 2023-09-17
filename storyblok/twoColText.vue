@@ -3,7 +3,7 @@
     backgroundColor : blok.backgroundColor,
     backgroundImage : `url(${blok.backgroundImage?.filename})`,
   }">
-  <div class="container">
+  <div class="container" v-editable="blok">
 
     <div class="textSectionContainer" :class="sectionClasses">
       

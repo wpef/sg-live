@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <div class="hero" v-if="blok.title || blok.subtitle" :class="blok.fullHeight ? 'h-screen' : 'h-[30rem]'" :style="{
+    <div v-editable="blok" class="hero" v-if="blok.title || blok.subtitle" :class="blok.fullHeight ? 'h-screen' : 'h-[30rem]'" :style="{
       backgroundColor: blok.heroBgColor !== '' ? blok.heroBgColor : '#003966',
       backgroundImage: `url(${blok.heroImage?.filename})`,
     }">

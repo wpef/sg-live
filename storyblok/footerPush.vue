@@ -1,11 +1,12 @@
 <template>
-  <section class="footerPush container">
+  <section class="footerPush container" v-editable="blok">
 
     <div v-for="(push, index) in blok.items" :key="blok._uid" :style="{
       backgroundImage: `url(${push.image.filename})`,
       backgroundColor: push.backgroundColor
     }" :class="push.backgroundColor !== '' ? '' : 'border'" class="item"
-      data-aos="fade-up" :data-aos-delay="100 * index">
+      data-aos="fade-up" :data-aos-delay="100 * index"
+      v-editable="push">
       <div class="contentTop">
         <h4 class="h2" :class="push.white ? 'text-white' : ''" data-aos="fade-up" :data-aos-delay="150 * index">
           {{ push.title }}</h4>

@@ -1,5 +1,5 @@
 <template>
-  <section class="SectionPush container flex flex-wrap flex-row">
+  <section class="SectionPush container flex flex-wrap flex-row" v-editable="blok">
     <div class="title w-full flex flex-wrap flex-col">
     
       <h2 data-aos="fade-up" class="h2" v-if="blok.title">{{ blok.title }}</h2>
@@ -14,6 +14,7 @@
         class="push"
         data-aos="fade-up"
         :data-aos-delay="100*index"
+        v-editable="push"
         >
         <div class="content absolute left-6 bottom-6">
           <h4 class="text-white h3 mb-4">{{ push.title }}</h4>

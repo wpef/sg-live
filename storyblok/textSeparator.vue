@@ -1,5 +1,5 @@
 <template>
-  <div :class="blok.line ? 'border-t ' : '' + space"></div>
+  <div :class="blok.line ? 'border-t ' : '' + space" v-editable="blok"></div>
 </template>
 <script setup>
 const props = defineProps({ blok: Object })

@@ -1,13 +1,13 @@
 <template>
-  <section class="container">
+  <section class="container"  v-editable="blok" >
   <h2 class="h2 border-b"
     data-aos="fade-up"
   >{{ blok.title }}</h2>
   <div class="flex flex-wrap flex-row w-full">
     <cardListItem
-      v-for="blok in blok.items"
-      :key="blok._uid"
-      :blok="blok"
+      v-for="item in blok.items"
+      :key="item._uid"
+      :blok="item"
       data-aos="fade-up"
     />
   </div>
