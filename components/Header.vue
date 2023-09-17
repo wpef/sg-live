@@ -76,7 +76,7 @@ const handleMouseOut = () => {
   </div>
 </template>
 
-<style>
+<style scoped>
 header {
   @apply w-full h-24 fixed top-0 left-0 z-50;
   @apply text-white hover:text-black;

@@ -17,7 +17,7 @@
 defineProps({ blok: Object })
 </script>
 
-<style>
+<style scoped>
 .text h1 {
   font-size: 6em;
 }
