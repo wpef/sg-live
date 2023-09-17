@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper ">
+  <div class="grid wrapper" :class="'grid-cols-' + cols">
     <!-- {{ menu }} -->
     <div class="col" v-for="col in menu">
       <NuxtLink class="h6"
@@ -17,13 +17,15 @@
  
 <script setup>
 const props = defineProps({
-  menu: Object
+  menu: Object,
+  cols: { type: Number, required: false, default: 2 },
+
 })
 </script>
 
 <style scoped>
 .wrapper {
-  @apply sm:grid sm:grid-cols-2 md:gap-x-12;
+  @apply md:gap-x-12;
 }
 
 .listWrapper {

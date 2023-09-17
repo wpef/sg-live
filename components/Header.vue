@@ -15,9 +15,9 @@ const logo = {
   white : data.story.content.logo_white ?? data.story.content.logo
 }
 
+// const hoveredMenu = 1;
 const hoveredMenu = ref(null);
 const debounceTimer = ref(null);
-
 
 
 const handleMouseOver = (index) => {
@@ -71,7 +71,7 @@ const handleMouseOut = () => {
       @mouseover="handleMouseOver(index)"
       @mouseleave="handleMouseOut"
     >
-      <MenuGrid class="container" :menu="blok.items"/>
+      <MenuGrid class="container" :menu="blok.items" :cols="4"/>
     </div>
   </div>
 </template>
