@@ -368,5 +368,9 @@ a {
   background-image: url("/icons/see-white.svg") !important;
 }
 
+.footerBody a.h6 {
+  @apply !text-white;
+}
+
 
 </style>

@@ -2,13 +2,13 @@
   <div class="wrapper ">
     <!-- {{ menu }} -->
     <div class="col" v-for="col in menu">
-      <NuxtLink class="h6 text-white"
+      <NuxtLink class="h6"
       :to="col.titleLink.url === '' ? '/' + col.titleLink.cached_url : col.titleLink.url">
       {{ col.title ?? titleLink.story.name }}
       </NuxtLink>
       <div class="listWrapper">
         <CTA class="item  text-[#666] p1 pb-1" v-for="(item, index) in col.items" :key="col._uid"
-          :blok="{label : item.title, ...item, icon:false}"
+          :blok="{label : item.title ?? item.link.story?.name, ...item, icon:false}"
         /> 
       </div>
     </div>

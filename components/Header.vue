@@ -5,13 +5,17 @@ const { data } = await storyblokApi.get('cdn/stories/config', {
   resolve_links: 'url',
 })
  
-const headerMenu = ref(null)
-headerMenu.value = data.story.content.header_menu
+const headerMenu = data.story.content.header_menu
+
+// console.log(headerMenu[1])
 
 const logo = {
   default : data.story.content.logo,
   white : data.story.content.logo_white ?? data.story.content.logo
 }
+
+let hoveredMenu = ref(null);
+
 </script>
  
 <template>
@@ -24,13 +28,19 @@ const logo = {
       </NuxtLink>
       <nav class="h-full" v-if="headerMenu">
         <ul class="h-full flex items-center space-x-8">
-          <li class="h-full flex flex-col justify-between items-center pt-12" v-for="blok in headerMenu" :key="blok._uid">
+          <li class="h-full flex flex-col justify-between items-center pt-12 z-50"
+            v-for="(blok, index) in headerMenu"
+            :key="blok._uid"
+          >
 
             <NuxtLink  v-if="blok.component == 'menu_link'" :to="`/${blok.link.cached_url}`" class="hover:text-[#2650BE]">
               {{ blok.link.story?.name || blok.link.title }}
             </NuxtLink>
 
-            <NuxtLink v-if="blok.component == 'menu_col'" :to="`/${blok.titleLink.cached_url}`" class="hover:text-[#2650BE]">
+            <NuxtLink v-if="blok.component == 'menu_col'"
+              v-on:mouseover="hoveredMenu = index"
+              v-on:mouseleave="hoveredMenu = null"
+            :to="`/${blok.titleLink.cached_url}`" class="hover:text-[#2650BE]">
               {{ blok.title }}
             </NuxtLink>
 
@@ -40,11 +50,18 @@ const logo = {
       </nav>
     </div>
   </header>
+  <div v-for="(blok, index) in headerMenu" :key="blok._uid" class="expand_placeholder">
+    <div class="w-full fixed top-24 z-50 bg-white" 
+      v-show="hoveredMenu === index"
+      v-if=" blok.items">
+      <MenuGrid class="container" :menu="blok.items"/>
+    </div>
+  </div>
 </template>
 
-<style scoped>
+<style>
 header {
-  @apply w-full h-24 fixed top-0 left-0 z-50;
+  @apply w-full h-24 fixed top-0 left-0 z-30;
   @apply text-white hover:text-black;
   @apply hover:border-b hover:border-[#E6E6E6];
   @apply transition ease-in-out;
