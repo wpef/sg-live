@@ -22,7 +22,6 @@
 <script setup>
 const props = defineProps({ blok: Object });
 const content = computed(() => renderRichText(props.blok.body));
-console.log(content)
 </script>
 
 <style scoped>
