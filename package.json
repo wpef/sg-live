@@ -17,6 +17,8 @@
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@storyblok/nuxt": "^5.5.2",
+    "aos": "^2.3.4",
+    "taos": "^1.0.5",
     "vue-icomoon": "^0.6.1"
   }
 }

@@ -2,10 +2,10 @@
   <section class="textImage" :style="{ backgroundColor : blok.backgroundColor }">
     <div class="container">
     <div class="title">
-      <h2 v-if="blok.title" :class="blok.white ? 'text-white' : ''" class="h2">{{ blok.title }}</h2>
-      <div v-if="blok.body" :class="blok.white ? 'text-white' : ''" class="text" v-html="content"></div>
+      <h2 v-if="blok.title" :class="blok.white ? 'text-white' : ''" data-aos="fade-up" class="h2">{{ blok.title }}</h2>
+      <div v-if="blok.body" :class="blok.white ? 'text-white' : ''" class="text" data-aos="fade-up" v-html="content"></div>
     </div>
-    <div class="thumb w-full lg:w-1/2">
+    <div class="thumb w-full lg:w-1/2"  data-aos="fade-up" data-aos-delay="500">
       <NuxtImg
         v-if="blok.image"
         provider="storyblok"

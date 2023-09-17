@@ -1,20 +1,19 @@
 <template>
   <section class="footerPush container">
 
-      <div v-for="push in blok.items" :key="blok._uid"
-        :style="{
-          backgroundImage: `url(${push.image.filename})`,
-          backgroundColor: push.backgroundColor
-          }"
-        :class="push.backgroundColor !== '' ? '' : 'border'"
-        class="item"
-        >
-        <div class="contentTop">
-          <h4 class="h2" :class="push.white ? 'text-white' : ''">{{ push.title }}</h4>
-          <p class="p1" :class="push.white ? 'text-white' : ''">{{ push.description }}</p>
-        </div>
-        <CTA v-if="push.cta[0] && push.cta[0].link" class="absolute bottom-6" :blok="push.cta[0]" />
+    <div v-for="(push, index) in blok.items" :key="blok._uid" :style="{
+      backgroundImage: `url(${push.image.filename})`,
+      backgroundColor: push.backgroundColor
+    }" :class="push.backgroundColor !== '' ? '' : 'border'" class="item"
+      data-aos="fade-up" :data-aos-delay="100 * index">
+      <div class="contentTop">
+        <h4 class="h2" :class="push.white ? 'text-white' : ''" data-aos="fade-up" :data-aos-delay="150 * index">
+          {{ push.title }}</h4>
+        <p class="p1" :class="push.white ? 'text-white' : ''" data-aos="fade-up" :data-aos-delay="200 * index">
+          {{ push.description }}</p>
       </div>
+      <CTA v-if="push.cta[0] && push.cta[0].link" class="absolute bottom-6" :blok="push.cta[0]" />
+    </div>
 
   </section>
 </template>
@@ -24,7 +23,6 @@ const props = defineProps({ blok: Object })
 </script>
 
 <style scoped>
-
 section.footerPush {
   @apply flex flex-row gap-6 flex-wrap md:flex-nowrap;
   @apply py-16;
@@ -44,5 +42,4 @@ section.footerPush {
 .contentTop {
   @apply lg:pr-32;
 }
-
 </style>

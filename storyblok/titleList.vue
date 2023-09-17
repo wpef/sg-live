@@ -2,7 +2,7 @@
   <section class="titleList" :style="'background-color : ' + blok.backgroundColor">
     <div class="container">
 
-      <div v-if="blok.title" class="title">
+      <div v-if="blok.title" class="title" data-aos="fade-up">
         <h2 :class="whiteClass" class="h2">{{ blok.title }}</h2>
       </div>
       <div v-if="blok.title" class="border-t"></div>

@@ -1,11 +1,14 @@
 <template>
   <section class="container">
-  <h2 class="h2 border-b">{{ blok.title }}</h2>
+  <h2 class="h2 border-b"
+    data-aos="fade-up"
+  >{{ blok.title }}</h2>
   <div class="flex flex-wrap flex-row w-full">
     <cardListItem
       v-for="blok in blok.items"
       :key="blok._uid"
       :blok="blok"
+      data-aos="fade-up"
     />
   </div>
 </section>

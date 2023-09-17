@@ -4,10 +4,12 @@
     <div class="cardGridItem"></div>
     <div class="cardGridItem"></div>
     <cardGridItem
-      v-for="blok in blok.items"
+      v-for="(blok, index) in blok.items"
       :key="blok._uid"
       :white="false"
       :blok="blok"
+      data-aos="fade-up"
+      :data-aos-delay="100*index"
     />
   </div>
 </section>

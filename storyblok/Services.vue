@@ -1,11 +1,11 @@
 <template>
   <section class="services" :style="{backgroundColor : sectionStyle}">
     <div class="container flex flex-row h-2/3 pt-16">
-      <div class="shrink-0 basis-80 pr-24">
+      <div class="shrink-0 basis-80 pr-24" data-aos="fade-up">
         <h2 class="text-white h4" v-if="blok.title">{{ blok.title }}</h2>
       </div>
       <div v-if="blok.items.length > 0" class="servicesList flex flex-wrap">
-        <div v-for="item in blok.items" :key="blok._uid" class="serviceItem">
+        <div v-for="(item,index) in blok.items" :key="blok._uid" class="serviceItem" data-aos="fade-right" :data-aos-delay="100*index">
           <div class="serviceContent relative">
             <h4 class="text-white h5 mb-4">{{ item.title }}</h4>
             <p class="text-white p2">{{ item.description }}</p>

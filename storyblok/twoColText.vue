@@ -8,11 +8,11 @@
     <div class="textSectionContainer" :class="sectionClasses">
       
       <div class="textSectionTitle lg:w-1/2" :class="blok.white ? 'text-white' : ''">
-        <h2 v-if="blok.title" class="h2">{{ blok.title }}</h2>
-        <h3 v-if="blok.subtitle" :class="blok.title ? 'h5' : 'h4'">{{ blok.subtitle }}</h3>
+        <h2 data-aos="fade-up" v-if="blok.title" class="h2">{{ blok.title }}</h2>
+        <h3 data-aos="fade-up" data-aos-delay="200" v-if="blok.subtitle" :class="blok.title ? 'h5' : 'h4'">{{ blok.subtitle }}</h3>
       </div>
 
-      <div class="textSection w-full flex gap-32" :class="blok.white ? 'text-white' : ''">
+      <div class="textSection w-full flex gap-32" :class="blok.white ? 'text-white' : ''" data-aos="fade-up">
         <StoryblokComponent v-for="blok in blok.items" :key="blok._uid" :blok="blok" :class="'w-1/2'" />
       </div>
             

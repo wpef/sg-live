@@ -1,6 +1,6 @@
 <template>
   <div class="item" :class="'item-' + index">
-    <div class="itemTitle w-3/4" @click="isOpen = !isOpen">
+    <div class="itemTitle w-3/4" @click="isOpen = !isOpen" data-aos="fade-up">
       <h3 class="h4" :class="white ? 'text-white' : ''">{{ blok.title }}</h3>
       <svg class="icon"  :class="isOpen ? 'open' : 'closed'" v-if="expand" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
         fill="none">
@@ -8,8 +8,8 @@
       </svg>
 
     </div>
-    <div class="border-t w-3/4"></div>
-    <p v-if="!expand || (expand && isOpen)" class="w-1/2 float-right transition-all" :class="white ? 'text-white ' : ''">{{ blok.content }}</p>
+    <div class="border-t w-3/4" data-aos="fade-up"></div>
+    <p v-if="!expand || (expand && isOpen)" class="w-1/2 float-right transition-all" :class="white ? 'text-white ' : ''"  data-aos="fade-up" data-aos-delay='500'>{{ blok.content }}</p>
   </div>
 </template>
 

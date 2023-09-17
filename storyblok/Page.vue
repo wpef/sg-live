@@ -6,8 +6,18 @@
     }">
       <div class="container">
         <div class="heroTitle text-white">
-          <h1 class="h1" v-if="blok.title">{{ blok.title }}</h1>
-          <h2 class="h4" v-if="blok.subtitle">{{ blok.subtitle }}</h2>
+          <h1 class="h1" 
+            v-if="blok.title" 
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-anchor-placement="bottom"
+          >{{ blok.title }}</h1>
+          <h2 class="h4" v-if="blok.subtitle"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-once="true"
+            data-aos-anchor-placement="bottom"
+          >{{ blok.subtitle }}</h2>
         </div>
       </div>
     </div>

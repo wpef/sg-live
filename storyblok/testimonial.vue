@@ -2,12 +2,12 @@
   <section class="testimonial" :style="'background-color : ' + blok.backgroundColor">
     <div class="container">
       <div class="title w-1/2">
-        <blockquote class="relative">
+        <blockquote class="relative" data-aos="fade-up" data-aos-delay="200">
           <h4 v-if="blok.quote" :class="blok.white ? 'text-white' : ''" class="h5">{{ blok.quote }}</h4>
         </blockquote>
-        <div v-if="blok.signature" :class="blok.white ? 'text-white' : ''" class="signature p2" v-html="content"></div>
+        <div v-if="blok.signature" :class="blok.white ? 'text-white' : ''" class="signature p2"  data-aos="fade-up" data-aos-delay="500" v-html="content"></div>
       </div>
-      <div class="thumb w-1/2 h-auto">
+      <div class="thumb w-1/2 h-auto"  data-aos="fade-up">
         <img v-if="blok.image" :src="blok.image.filename" :alt="blok.image.alt">
       </div>
     </div>
