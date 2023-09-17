@@ -33,14 +33,14 @@ const handleMouseOut = () => {
 </script>
  
 <template>
-  <header>
+  <header :class="hoveredMenu !== null ? 'hover' : ''">
     <div class="h-full mx-auto flex items-center justify-between">
       <NuxtLink to="/">
         <h1 class="text-3xl hidden">StoneGate</h1>
         <img id="logo-full" class="logo hidden" :src="logo.default.filename">
         <img id="logo-white" class="logo" :src="logo.white.filename">
       </NuxtLink>
-      <nav class="h-full" v-if="headerMenu">
+      <nav class="hidden lg:block h-full" v-if="headerMenu">
         <ul class="h-full flex items-center space-x-8">
           <li class="h-full flex flex-col justify-between items-center pt-12"
             v-for="(blok, index) in headerMenu"
@@ -65,7 +65,7 @@ const handleMouseOut = () => {
     </div>
   </header>
   <div v-for="(blok, index) in headerMenu" :key="blok._uid" class="expand_placeholder">
-    <div class="w-full fixed top-0 pt-20 z-40 bg-white" 
+    <div class="w-full fixed top-0 pt-32 z-40 bg-white" 
       v-show="hoveredMenu === index"
       v-if=" blok.items"
       @mouseover="handleMouseOver(index)"
@@ -80,8 +80,14 @@ const handleMouseOut = () => {
 header {
   @apply w-full h-24 fixed top-0 left-0 z-50;
   @apply text-white hover:text-black;
-  @apply hover:border-b hover:border-[#E6E6E6];
+  @apply hover:border-b hover:border-[#E6E6E6]; 
   @apply transition ease-in-out;
+}
+
+header.hover {
+  @apply text-black;
+  @apply border-b border-[#E6E6E6];
+  @apply bg-gradient-to-b from-white to-white;
 }
 
 a {
@@ -99,16 +105,19 @@ header {
   @apply bg-gradient-to-b from-black/50 to-80%;
   @apply hover:bg-gradient-to-b hover:from-white hover:to-white;  
 }
+
 header > div {
   max-width: 1440px !important;
   @apply px-6 lg:px-16;
 }
 
+header.hover #logo-full,
 header:hover #logo-full {
   @apply block;
   @apply transition ease-in-out;
 }
 
+header.hover #logo-white,
 header:hover #logo-white {
   @apply hidden;
   @apply transition ease-in-out;
