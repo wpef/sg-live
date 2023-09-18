@@ -1,12 +1,12 @@
 <template>
   <section class="dyptic" :style="'background-color : ' + blok.backgroundColor">
     <div class="container" v-editable="blok">
-      <div class="thmumb-l w-1/2" data-aos="fade-up">
-        <h4 v-if="blok.title" :class="blok.white ? 'text-white' : ''" class="p1 pb-4">{{ blok.title }}</h4>
+      <div class="thmumb-l md:w-1/2" data-aos="fade-up">
+        <h4 v-if="blok.title || blok.title2" :class="blok.white ? 'text-white' : ''" class="p1 pb-4">{{ blok.title }}</h4>
         <img v-if="blok.image" :src="blok.image.filename" :alt="blok.image.alt">
       </div>
-      <div class="thumb-r w-1/2" data-aos="fade-up" data-aos-delay="200">
-        <h4 v-if="blok.title2" :class="blok.white ? 'text-white' : ''" class="p1 pb-4">{{ blok.title2 }}</h4>
+      <div class="thumb-r md:w-1/2" data-aos="fade-up" data-aos-delay="200">
+        <h4 v-if="blok.title || blok.title2" :class="blok.white ? 'text-white' : ''" class="p1 pb-4">{{ blok.title2 }}</h4>
         <img v-if="blok.image" :src="blok.image2.filename" :alt="blok.image2.alt">
       </div>
     </div>
@@ -19,6 +19,6 @@ const props = defineProps({ blok: Object });
 
 <style scoped>
 .container {
-  @apply flex flex-wrap flex-row;
+  @apply flex flex-col md:flex-row gap-8;
 }
 </style>
