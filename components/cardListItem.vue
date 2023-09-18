@@ -13,9 +13,10 @@
     </div>
     <div class="title">
       <h4 v-if="blok.title" class="h5">{{ blok.title }}</h4>
-      <CTA v-if="blok.cta[0]" :blok="blok.cta[0]" />
+      <CTA class="hidden md:show" v-if="blok.cta[0]" :blok="blok.cta[0]" />
     </div>
     <p v-if="blok.description" class="p2 w-full md:w-1/3">{{ blok.description }}</p>
+    <CTA class="md:hidden" v-if="blok.cta[0]" :blok="blok.cta[0]" />
   </div>
 </template>
 
