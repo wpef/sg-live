@@ -1,13 +1,13 @@
 <template>
   <section class="testimonial" :style="'background-color : ' + blok.backgroundColor">
     <div class="container" v-editable="blok">
-      <div class="title w-1/2">
+      <div class="title lg:w-1/2">
         <blockquote class="relative" data-aos="fade-up" data-aos-delay="200">
           <h4 v-if="blok.quote" :class="blok.white ? 'text-white' : ''" class="h5">{{ blok.quote }}</h4>
         </blockquote>
         <div v-if="blok.signature" :class="blok.white ? 'text-white' : ''" class="signature p2"  data-aos="fade-up" data-aos-delay="500" v-html="content"></div>
       </div>
-      <div class="thumb w-1/2 h-auto"  data-aos="fade-up">
+      <div class="thumb lg:w-1/2 h-auto"  data-aos="fade-up">
         <img v-if="blok.image" :src="blok.image.filename" :alt="blok.image.alt">
       </div>
     </div>
@@ -21,12 +21,12 @@ const content = computed(() => renderRichText(props.blok.signature));
 
 <style scoped>
 .container {
-  @apply flex flex-row gap-24;
+  @apply flex flex-col-reverse lg:flex-row lg:gap-24;
 }
 
 .title {
   @apply flex flex-wrap flex-row content-between gap-24 items-center;
-  @apply pl-16 pr-24 pt-16 pb-4;
+  @apply pl-10 lg:pl-16 pr-12 lg:pr-24 pt-8 lg:pt-16 pb-4;
 }
 
 .signature p {
