@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" class="text" :class="blok.tight ? 'tight' : ''" :style="'columns : ' + blok.Columns" v-html="content">
+  <div class="text" :class="blok.tight ? 'tight' : ''" :style="'columns : ' + blok.Columns" v-html="content">
   </div>
 </template>
 

@@ -14,7 +14,7 @@
         <h3 v-if="blok.subtitle" :class="blok.title ? 'h5' : 'h4'"  data-aos="fade-up">{{ blok.subtitle }}</h3>
       </div>
       <div v-if="blok.right.length > 0" class="textSectionRight lg:w-1/2 mt-6" :class="blok.white ? 'text-white' : ''" data-aos="fade-up" data-aos-delay='300'>
-        <StoryblokComponent v-for="(textBlok, index) in blok.right" :key="textBlok._uid" :blok="textBlok" data-aos="fade-up"/>
+        <StoryblokComponent v-for="(textBlok, index) in blok.right" v-editable="blok" :key="textBlok._uid" :blok="textBlok" data-aos="fade-up"/>
       </div>
       
       <div v-if="blok.right.length === 0" class="w-full border-b"></div>

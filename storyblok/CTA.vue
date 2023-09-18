@@ -1,6 +1,5 @@
 <template>
-  <!-- {{ blok.link }} -->
-  <NuxtLink v-editable="blok" class="cta flex items-center"
+  <NuxtLink class="cta flex items-center"
     :class="blok.white ? 'text-white' : 'text-[#3052B7]'"
     :to="toUrl(blok)"
     >
