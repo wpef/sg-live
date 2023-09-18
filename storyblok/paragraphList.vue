@@ -20,7 +20,7 @@ const props = defineProps({
 }
 
 .wrapper {
-  @apply grid grid-cols-2 gap-x-12;
+  @apply grid md:grid-cols-2 gap-x-4 md:gap-x-12;
 }
 
 .item {

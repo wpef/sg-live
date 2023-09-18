@@ -5,6 +5,8 @@
   }">
   <div class="container" v-editable="blok">
 
+    <div v-if="props.blok.line" class="border-t w-full mt-8 mb-12" data-aos="fade-up"></div>
+    
     <div class="textSectionContainer" :class="sectionClasses">
       
       <div class="textSectionTitle lg:w-1/2" :class="blok.white ? 'text-white' : ''" >
@@ -27,7 +29,6 @@ const props = defineProps({ blok: Object })
  
 const sectionClasses = computed(() => {
   return "flex " + 
-    (props.blok.line === true ? 'border-t ' :  "") + 
     (props.blok.right.length > 0 ? 'flex-col lg:flex-row' : 'flex-wrap flex-row gap-4')
   })
 
@@ -37,10 +38,6 @@ const bgClasses = computed(() => {
 </script>
 
 <style scoped>
-
-.textSection {
-  @apply  py-16 md:pt-20;
-}
 
 .textSectionContainer {
   border-color: rgba(255, 255, 255, 0.20);
