@@ -1,7 +1,7 @@
 <template>
   <section class="services" :style="{backgroundColor : sectionStyle}">
-    <div class="container flex flex-row h-2/3 pt-16">
-      <div class="shrink-0 basis-80 pr-24" v-editable="blok" data-aos="fade-up">
+    <div class="container">
+      <div class="w-full lg:w-1/2 xl:pr-24" v-editable="blok" data-aos="fade-up">
         <h2 class="text-white h4" v-if="blok.title">{{ blok.title }}</h2>
       </div>
       <div v-if="blok.items.length > 0" class="servicesList flex flex-wrap">
@@ -27,7 +27,8 @@ const sectionStyle = computed(() => {
 <style scoped>
 
 .services .container {
-  @apply pt-28 pb-20;
+  @apply pt-16 pb-20;
+  @apply flex flex-col lg:flex-row h-2/3 gap-8;
 }
 .serviceItem {
   @apply flex basis-1/3 flex-grow flex-shrink-0;
