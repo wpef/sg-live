@@ -22,11 +22,11 @@ const whiteClass = props.blok.white ? 'text-white' : ''
 
 <style scoped>
 .title {
-  @apply max-w-lg pr-40 mb-6;
+  @apply max-w-lg lg:pr-40 mb-6;
 }
 
 .wrapper {
   @apply flex flex-col;
-  @apply pt-20;
+  @apply pt-8 lg:pt-20;
 }
 </style>

@@ -1,15 +1,15 @@
 <template>
   <div class="item" v-editable="blok" :class="'item-' + index">
-    <div class="itemTitle w-3/4" @click="isOpen = !isOpen" data-aos="fade-up">
+    <div class="itemTitle w-full lg:w-3/4" @click="isOpen = !isOpen" data-aos="fade-up">
       <h3 class="h4" :class="white ? 'text-white' : ''">{{ blok.title }}</h3>
-      <svg class="icon"  :class="isOpen ? 'open' : 'closed'" v-if="expand" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+      <svg  v-if="expand" class="icon"  :class="isOpen ? 'open' : 'closed'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
         fill="none">
         <path d="M13 10.5L8 5.5L3 10.5" :stroke="white ? '#FFF' : '#0B1B33'" />
       </svg>
 
     </div>
-    <div class="border-t w-3/4" data-aos="fade-up"></div>
-    <p v-if="!expand || (expand && isOpen)" class="w-1/2 float-right transition-all" :class="white ? 'text-white ' : ''"  data-aos="fade-up" data-aos-delay='500'>{{ blok.content }}</p>
+    <div class="border-t w-full lg:w-3/4" data-aos="fade-up"></div>
+    <p v-if="!expand || (expand && isOpen)" class="w-5/6 lg:w-1/2 float-right transition-all" :class="white ? 'text-white ' : ''"  data-aos="fade-up" data-aos-delay='500'>{{ blok.content }}</p>
   </div>
 </template>
 
