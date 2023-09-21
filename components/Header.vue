@@ -5,15 +5,15 @@ const { data } = await storyblokApi.get('cdn/stories/config', {
   version: 'draft',
   resolve_links: 'url',
 })
- 
+
 const headerMenu = data.story.content.header_menu
 
-// console.log(headerMenu[1])
-
 const logo = {
-  default : data.story.content.logo,
-  white : data.story.content.logo_white ?? data.story.content.logo
+  default: data.story.content.logo,
+  white: data.story.content.logo_white ?? data.story.content.logo
 }
+
+const headerCTA = data.story.content.header_cta
 
 // const hoveredMenu = 1;
 const hoveredMenu = ref(null);
@@ -42,19 +42,15 @@ const handleMouseOut = () => {
       </NuxtLink>
       <nav class="hidden lg:block h-full" v-if="headerMenu">
         <ul class="h-full flex items-center space-x-8">
-          <li class="h-full flex flex-col justify-between items-center pt-12"
-            v-for="(blok, index) in headerMenu"
-            :key="blok._uid"
-            @mouseover="handleMouseOver(index)"
-            @mouseleave="handleMouseOut"
-          >
+          <li class="h-full flex flex-col justify-between items-center pt-12" v-for="(blok, index) in headerMenu"
+            :key="blok._uid" @mouseover="handleMouseOver(index)" @mouseleave="handleMouseOut">
 
-            <NuxtLink  v-if="blok.component == 'menu_link'" :to="`/${blok.link.cached_url}`" class="hover:text-[#2650BE]">
+            <NuxtLink v-if="blok.component == 'menu_link'" :to="`/${blok.link.cached_url}`" class="hover:text-[#2650BE]">
               {{ blok.link.story?.name || blok.link.title }}
             </NuxtLink>
 
-            <NuxtLink v-if="blok.component == 'menu_col'"
-            :to="`/${blok.titleLink.cached_url}`" class="hover:text-[#2650BE]">
+            <NuxtLink v-if="blok.component == 'menu_col'" :to="`/${blok.titleLink.cached_url}`"
+              class="hover:text-[#2650BE]">
               {{ blok.title }}
             </NuxtLink>
 
@@ -62,16 +58,16 @@ const handleMouseOut = () => {
           </li>
         </ul>
       </nav>
+      <NuxtLink class="hidden md:flex items-center text-white bg-[#3052B7] px-5 py-3 rounded" :to="headerCTA[0].link.url" target="_blank">
+        <span>{{ headerCTA[0].label }}</span>
+        <img class="ml-2" src="/icons/up-white.svg">
+      </NuxtLink>
     </div>
   </header>
   <div v-for="(blok, index) in headerMenu" :key="blok._uid" class="expand_placeholder">
-    <div class="w-full fixed top-0 pt-32 z-40 bg-white" 
-      v-show="hoveredMenu === index"
-      v-if=" blok.items"
-      @mouseover="handleMouseOver(index)"
-      @mouseleave="handleMouseOut"
-    >
-      <MenuGrid class="container" :menu="blok.items" :cols="4"/>
+    <div class="w-full fixed top-0 pt-32 z-40 bg-white" v-show="hoveredMenu === index" v-if="blok.items"
+      @mouseover="handleMouseOver(index)" @mouseleave="handleMouseOut">
+      <MenuGrid class="container" :menu="blok.items" :cols="4" />
     </div>
   </div>
 </template>
@@ -80,7 +76,7 @@ const handleMouseOut = () => {
 header {
   @apply w-full h-24 fixed top-0 left-0 z-50;
   @apply text-white hover:text-black;
-  @apply hover:border-b hover:border-[#E6E6E6]; 
+  @apply hover:border-b hover:border-[#E6E6E6];
   @apply transition ease-in-out;
 }
 
@@ -93,7 +89,7 @@ header.hover {
 a {
   font-size: 1rem;
   font-weight: 500;
-  line-height: 100%; /* 1rem */
+  line-height: 100%;
   letter-spacing: -0.02rem;
 }
 
@@ -103,10 +99,10 @@ a {
 
 header {
   @apply bg-gradient-to-b from-black/50 to-80%;
-  @apply hover:bg-gradient-to-b hover:from-white hover:to-white;  
+  @apply hover:bg-gradient-to-b hover:from-white hover:to-white;
 }
 
-header > div {
+header>div {
   max-width: 1440px !important;
   @apply px-6 lg:px-16;
 }
@@ -124,7 +120,7 @@ header:hover #logo-white {
 
 }
 
-a.router-link-active + div {
+a.router-link-active+div {
   @apply h-1 w-full;
   @apply bg-[#2650BE];
 }
