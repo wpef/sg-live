@@ -1,7 +1,5 @@
 <template>
-  <div class="cardGridItem" v-editable="blok" :style="{
-    borderColor: white ? 'rgba(255, 255, 255, 0.20)' : '',
-    backgroundColor: blok.backgroundColor === '' ? 'white' : blok.backgroundColor }"
+  <div class="cardGridItem" :style="style" v-editable="blok"
   >
     <div class="content" data-aos-delay="200">
       <h4 v-if="blok.title" class="h5 pb-4" :class="white ? 'text-white' : null">{{ blok.title }}</h4>
@@ -20,6 +18,14 @@ const props = defineProps({
   icon: Boolean,
   index: Number
 });
+
+const style = computed(() => {
+  return { 
+    '--bg-color' : props.blok.backgroundColor === '' ? 'white' : props.blok.backgroundColor,
+    '--border-color' :  props.white ? 'rgba(255, 255, 255, 0.20)' : '#CCC',
+    '--bg-hover-color' :  props.blok.backgroundColor === '' || props.blok.backgroundColor === 'white' ? 'rgba(71, 131, 238, .15)' : 'rgba(38, 80, 190, .15)'
+  }
+})
 </script>
 
 <style scoped>
@@ -27,6 +33,14 @@ const props = defineProps({
   @apply p-6;
   @apply relative;
   @apply aspect-square border;
+  background-color: var(--bg-color);
+  border-color: var(--border-color);
+  @apply transition-all	delay-0 hover:shadow-lg;
+}
+
+
+.cardGridItem:hover {
+  background-color: var(--bg-hover-color);
 }
 
 p.number,
