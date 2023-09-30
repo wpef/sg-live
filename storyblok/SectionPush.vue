@@ -53,6 +53,7 @@ defineProps({ blok: Object })
   @apply aspect-square shrink grow basis-96;
   @apply bg-no-repeat bg-cover;
   @apply relative;
+  @apply transition-all duration-75 hover:brightness-75;
 }
 
 </style>
