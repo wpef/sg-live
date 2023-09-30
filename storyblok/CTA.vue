@@ -1,10 +1,11 @@
 <template>
-  <NuxtLink class="cta flex items-center"
+  <NuxtLink class="cta flex items-center gap-1"
     :class="blok.white ? 'text-white' : 'text-[#3052B7]'"
     :to="toUrl(blok)"
     >
+      <img class="icon-left" v-if="blok.icon !== false" :src="iconSrc">
       <span>{{ blok.label }}</span>
-      <img v-if="blok.icon !== false" class="ml-2" :src="iconSrc">
+      <img class="icon-right" v-if="blok.icon !== false" :src="iconSrc">
     </NuxtLink>
 </template>
  
@@ -31,3 +32,21 @@ const toUrl = function (blok) {
   }
 }
 </script>
+
+<style scoped>
+.cta {
+  @apply h-6;
+}
+
+.icon-left, a:hover .icon-right {
+  @apply w-0;
+}
+
+.icon-right, a:hover .icon-left {
+  @apply w-6;
+}
+
+img { 
+  @apply transition-all duration-200;
+}
+</style>
