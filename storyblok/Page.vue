@@ -40,7 +40,7 @@ div.hero {
 }
 
 .hero .heroTitle {
-  @apply pr-6 lg:pr-96;
+  @apply pr-12 lg:pr-48 xl:pr-[42rem];
   @apply absolute bottom-12;
   max-width: 1440px;
 }

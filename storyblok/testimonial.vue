@@ -22,6 +22,7 @@ const content = computed(() => renderRichText(props.blok.signature));
 <style scoped>
 .container {
   @apply flex flex-col-reverse lg:flex-row lg:gap-24;
+  @apply pt-32 pb-12; 
 }
 
 .title {
