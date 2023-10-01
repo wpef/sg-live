@@ -32,7 +32,7 @@ defineProps({ blok: Object })
 
 <style scoped>
 .SectionPush {
-  @apply mt-10 mb-4;
+  @apply mt-10 pb-24;
 }
 
 .title .h2 {

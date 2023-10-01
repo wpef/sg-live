@@ -24,4 +24,8 @@ defineProps({ blok: Object })
   @apply md:relative;
   @apply md:aspect-square;
 }
+
+.cardGrid {
+  @apply pt-28 pb-12; 
+}
 </style>

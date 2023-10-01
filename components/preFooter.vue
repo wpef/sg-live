@@ -10,7 +10,7 @@
           }">
             <div class="content">
               <!-- TODO : handle CTA -->
-              <h4 v-if="blok1.title" class="h5 pb-4" :class="blok1.white ? 'text-white' : null">{{ blok1.title }}</h4>
+              <h4 v-if="blok1.title" class="h5 pb-1" :class="blok1.white ? 'text-white' : null">{{ blok1.title }}</h4>
               <p v-if="blok1.description" class="p2" :class="blok1.white ? 'text-white' : null">{{ blok1.description }}</p>
             </div>
             <CTA v-if="blok1.cta[0]" :blok="blok1.cta[0]" />
@@ -20,7 +20,7 @@
           <div v-for="blok in sbloks" class="footerblok">
             <!-- TODO : handle CTA -->
             <div class="content">
-              <h4 v-if="blok.title" class="h5 pb-4 text-white">{{ blok.title }}</h4>
+              <h4 v-if="blok.title" class="h5 pb-1 text-white">{{ blok.title }}</h4>
               <p v-if="blok.description" class="p2 text-white">{{ blok.description }}</p>
             </div>
           </div>

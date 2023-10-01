@@ -5,7 +5,7 @@
       <div v-if="blok.title" class="title" data-aos="fade-up">
         <h2 :class="whiteClass" class="h2">{{ blok.title }}</h2>
       </div>
-      <div v-if="blok.title" class="border-t"></div>
+      <div v-if="blok.title" class="border-t pb-12"></div>
 
       <div class="wrapper">
         <TitleListItem  v-for="(item, index) in blok.Items" :key="blok._uid" :blok="item" :white="blok.white" :expand="blok.expand" :index="index"/>
@@ -27,6 +27,6 @@ const whiteClass = props.blok.white ? 'text-white' : ''
 
 .wrapper {
   @apply flex flex-col;
-  @apply pt-8 lg:pt-20;
+  @apply pb-12; 
 }
 </style>

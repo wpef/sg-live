@@ -24,6 +24,6 @@ h2 {
 }
 
 section {
-  @apply pt-28 pb-16 md:pt-36 md:pb-32;
+  @apply pt-20 pb-16 md:pt-36 md:pb-32;
 }
 </style>

@@ -37,7 +37,7 @@ const content = computed(() => renderRichText(props.blok.body));
 }
 
 .title h2 {
-  @apply pb-5;
+  @apply pt-8 pb-5;
 }
 
 .title .text {

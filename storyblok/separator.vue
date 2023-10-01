@@ -1,7 +1,9 @@
 <template>
   <section class="separator">
     <div class="container" v-editable="blok">
-      <div :class="blok.line ? 'border-t' : ''"></div>
+      <!-- todo : handle pour de vrai -->
+      <!-- handle background color -->
+      <!-- <div :class="blok.line ? 'border-t' : ''"></div> -->
   </div>
   </section>
 </template>

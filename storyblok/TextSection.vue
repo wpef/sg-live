@@ -3,10 +3,7 @@
     backgroundColor : blok.backgroundColor,
     backgroundImage : `url(${blok.backgroundImage?.filename})`,
   }">
-  <div class="container" v-editable="blok">
-
-    <div v-if="props.blok.line" class="border-t w-full mt-8 mb-12" data-aos="fade-up"></div>
-    
+  <div class="container" v-editable="blok">    
     <div class="textSectionContainer" :class="sectionClasses">
       
       <div class="textSectionTitle lg:w-1/2" :class="blok.white ? 'text-white' : ''" >

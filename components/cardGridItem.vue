@@ -49,6 +49,10 @@ p.number,
   @apply absolute bottom-4;
 }
 
+p.number {
+  @apply text-3xl;
+}
+
 .content {
   /* @apply flex flex-wrap flex-row content-between; */
 }</style>

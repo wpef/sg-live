@@ -27,7 +27,7 @@ const sectionStyle = computed(() => {
 <style scoped>
 
 .services .container {
-  @apply pt-16 pb-20;
+  @apply pt-24 pb-20;
   @apply flex flex-col lg:flex-row h-2/3 gap-8;
 }
 .serviceItem {
