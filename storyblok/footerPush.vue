@@ -30,10 +30,14 @@ section.footerPush {
 }
 
 .footerPush .item {
-  @apply h-80 lg:h-[33.5rem];
+  @apply h-96 lg:h-[33.5rem];
   @apply w-full md:w-1/2 p-8;
   @apply relative;
   @apply bg-cover;
+}
+
+.footerPush .item .h2 {
+  @apply text-[1.7rem];
 }
 
 .footerPush .item h4 {

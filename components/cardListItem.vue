@@ -45,10 +45,10 @@ const style = computed(() => {
 }
 
 .cardListItem .title h4 {
-  @apply pr-6 xl:pr-64;
+  @apply pr-6 xl:pr-64 pt-4;
 }
 
 .cardListItem p {
-  @apply xl:pl-12 py-2;
+  @apply xl:pl-12 pb-2;
 }
 </style>

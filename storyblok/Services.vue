@@ -27,14 +27,14 @@ const sectionStyle = computed(() => {
 <style scoped>
 
 .services .container {
-  @apply pt-24 pb-20;
-  @apply flex flex-col lg:flex-row h-2/3 gap-8;
+  @apply pt-24 lg:pb-20;
+  @apply flex flex-col lg:flex-row h-2/3 gap-12 lg:gap-8;
 }
 .serviceItem {
   @apply flex basis-1/3 flex-grow flex-shrink-0;
-  @apply pr-16 mb-6;
+  @apply pr-16 mb-24 lg:mb-6;
   @apply border-l pl-6;
-  @apply h-96;
+  @apply h-64 lg:h-96;
   border-color: rgba(255, 255, 255, 0.20);
 }
 

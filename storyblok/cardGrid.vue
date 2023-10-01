@@ -1,8 +1,8 @@
 <template>
   <section class="container">
   <div class="cardGrid grid sm:grid-cols-2 md:grid-cols-4 gap-6"  v-editable="blok" >
-    <div class="cardGridItem"></div>
-    <div class="cardGridItem"></div>
+    <div class="cardGridItem empty"></div>
+    <div class="cardGridItem empty"></div>
     <cardGridItem
       v-for="(blok, index) in blok.items"
       :key="blok._uid"
@@ -25,7 +25,11 @@ defineProps({ blok: Object })
   @apply md:aspect-square;
 }
 
+.cardGridItem.empty {
+  @apply hidden md:block;
+}
+
 .cardGrid {
-  @apply pt-28 pb-12; 
+  @apply md:pb-12; 
 }
 </style>

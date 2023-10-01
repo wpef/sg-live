@@ -9,7 +9,7 @@
 
     </div>
     <div class="border-t w-full lg:w-3/4" data-aos="fade-up"></div>
-    <p v-if="!expand || (expand && isOpen)" class="w-5/6 lg:w-1/2 float-right transition-all" :class="white ? 'text-white ' : ''"  data-aos="fade-up" data-aos-delay='500'>{{ blok.content }}</p>
+    <p v-if="!expand || (expand && isOpen)" class="lg:w-1/2 float-right transition-all" :class="white ? 'text-white ' : ''"  data-aos="fade-up" data-aos-delay='500'>{{ blok.content }}</p>
   </div>
 </template>
 

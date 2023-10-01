@@ -20,14 +20,19 @@ const content = computed(() => renderRichText(props.blok.signature));
 </script>
 
 <style scoped>
+
 .container {
-  @apply flex flex-col-reverse lg:flex-row lg:gap-24;
-  @apply pt-32 pb-12; 
+  @apply flex flex-col-reverse lg:flex-row lg:gap-24 gap-8;
+  @apply pt-12 lg:pt-32 pb-12; 
 }
 
 .title {
   @apply flex flex-wrap flex-row content-between gap-24 items-center;
-  @apply pl-10 lg:pl-16 pr-12 lg:pr-24 pt-8 lg:pt-16 pb-4;
+  @apply pl-6 lg:pl-16 pr-6 lg:pr-24 pt-8 lg:pt-16 pb-4;
+}
+
+.signature {
+  @apply -mt-16 lg:mt-0;
 }
 
 .signature p {
@@ -39,7 +44,7 @@ blockquote h4:before {
   content: open-quote;
 
   @apply absolute;
-  @apply -left-11 -top-10;
+  @apply -left-6 -top-12;
 }
 
 blockquote h4:after {

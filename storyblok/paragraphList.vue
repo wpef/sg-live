@@ -24,10 +24,10 @@ const props = defineProps({
 }
 
 .item {
-  @apply pb-14;
+  @apply pb-12 lg:pb-14;
 }
 
 .item h4 {
-  @apply pb-6;
+  @apply pb-2 lg:pb-6;
 }
 </style>
