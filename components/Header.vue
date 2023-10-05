@@ -30,15 +30,26 @@ const handleMouseOut = () => {
     hoveredMenu.value = null;
   }, 300); // 300ms delay
 };
+
+onMounted(() => {
+  window.addEventListener('scroll', e => {
+    if(window.scrollY > 5)
+      handleMouseOver(-1)
+    else if (hoveredMenu !== null)
+      handleMouseOut();
+  })
+})
 </script>
  
 <template>
   <header :class="hoveredMenu !== null ? 'hover' : ''">
     <div class="h-full mx-auto flex items-center justify-between">
-      <NuxtLink to="/">
+      <NuxtLink class="pb-8" to="/">
         <h1 class="text-3xl hidden">StoneGate</h1>
-        <img id="logo-full" class="logo hidden" :src="logo.default.filename">
-        <img id="logo-white" class="logo" :src="logo.white.filename">
+        <div class="logo">
+          <img id="logo-full" :src="logo.default.filename">
+          <img id="logo-white" :src="logo.white.filename">
+        </div>
       </NuxtLink>
       <nav class="hidden lg:block h-full" v-if="headerMenu">
         <ul class="h-full flex items-center space-x-8">
@@ -58,33 +69,57 @@ const handleMouseOut = () => {
           </li>
         </ul>
       </nav>
-      <NuxtLink class="hidden md:flex items-center gap-2 text-white bg-[#3052B7] px-5 py-3 rounded cta" :to="headerCTA[0].link.url" target="_blank">
-        <img class="icon-left" src="/icons/up-white.svg">
-        <span>{{ headerCTA[0].label }}</span>
-        <img class="icon-right" src="/icons/up-white.svg">
-      </NuxtLink>
+      <Button :link="headerCTA[0]"/>
     </div>
   </header>
   <div v-for="(blok, index) in headerMenu" :key="blok._uid" class="expand_placeholder">
-    <div class="w-full fixed top-0 pt-32 z-40 bg-white" v-show="hoveredMenu === index" v-if="blok.items"
+    <Transition>
+      <div class="w-full fixed top-0 pt-32 z-40 bg-white" v-show="hoveredMenu == index" v-if="blok.items"
       @mouseover="handleMouseOver(index)" @mouseleave="handleMouseOut">
       <MenuGrid class="container" :menu="blok.items" :cols="4" />
     </div>
+  </Transition>
   </div>
 </template>
 
 <style scoped>
 header {
   @apply w-full h-24 fixed top-0 left-0 z-50;
-  @apply text-white hover:text-black;
-  @apply hover:border-b hover:border-[#E6E6E6];
-  @apply transition ease-in-out;
+  @apply text-white;
+  @apply transition-all delay-300 duration-300;
+  @apply border-b-0 border-b-transparent;
+  @apply bg-none;
 }
 
-header.hover {
+header:hover, header.hover {
   @apply text-black;
   @apply border-b border-[#E6E6E6];
-  @apply bg-gradient-to-b from-white to-white;
+  @apply bg-white;
+}
+
+header.hover #logo-full,
+header:hover #logo-full {
+  @apply opacity-100;
+}
+
+header.hover #logo-white,
+header:hover #logo-white {
+  @apply opacity-0;
+}
+
+header>div {
+  max-width: 1440px !important;
+  @apply px-6 lg:px-16;
+}
+
+.v-enter-active,
+.v-leave-active {
+  @apply opacity-100 transition-all duration-300;
+}
+
+.v-enter-from,
+.v-leave-to {
+  @apply opacity-0;
 }
 
 a {
@@ -94,64 +129,12 @@ a {
   letter-spacing: -0.02rem;
 }
 
-.cta {
-  position: relative;
-}
-
-.cta .icon-left {
-  @apply -translate-x-2 absolute opacity-0 duration-300;
-}
-
-.cta .icon-right {
-  @apply translate-x-0  duration-300;
-}
-
-.cta span {
-  @apply translate-x-0 duration-300;
-}
-
-.cta:hover span {
-  @apply translate-x-8;
-}
-
-.cta:hover .icon-right {
-  @apply -translate-x-2 opacity-0;
-}
-
-.cta:hover .icon-left {
-  @apply translate-x-0 opacity-100;
-}
-
-.cta .icon-left, .cta a:hover .icon-right{
-  /* @apply -translate-x-10; */
-}
-
-.logo {
+.logo, .logo > * {
   @apply w-48;
+  @apply transition-all delay-300 duration-300;
+  @apply absolute pb-6;
 }
 
-header {
-  @apply bg-gradient-to-b from-black/50 to-80%;
-  @apply hover:bg-gradient-to-b hover:from-white hover:to-white;
-}
-
-header>div {
-  max-width: 1440px !important;
-  @apply px-6 lg:px-16;
-}
-
-header.hover #logo-full,
-header:hover #logo-full {
-  @apply block;
-  @apply transition ease-in-out;
-}
-
-header.hover #logo-white,
-header:hover #logo-white {
-  @apply hidden;
-  @apply transition ease-in-out;
-
-}
 
 a.router-link-active+div {
   @apply h-1 w-full;
