@@ -27,8 +27,8 @@ const content = computed(() => renderRichText(props.blok.signature));
 }
 
 .title {
-  @apply flex flex-wrap flex-row content-between gap-24 items-center;
-  @apply pl-6 lg:pl-16 pr-6 lg:pr-24 pt-8 lg:pt-16 pb-4;
+  @apply flex flex-wrap flex-row content-between items-center;
+  @apply pl-6 lg:pl-16 pr-6 lg:pr-24 py-3;
 }
 
 .signature {
@@ -50,6 +50,6 @@ blockquote h4:before {
 blockquote h4:after {
   content: close-quote;
 
-  @apply absolute pl-4;
+  @apply absolute h-0 pl-4;
 }
 </style>
