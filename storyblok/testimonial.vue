@@ -28,12 +28,10 @@ const content = computed(() => renderRichText(props.blok.signature));
 
 .title {
   @apply flex flex-wrap flex-row content-between items-center;
+  @apply gap-12 lg:gap-24 py-3 pt-8 lg:pt-16 pb-4;
   @apply pl-6 lg:pl-16 pr-6 lg:pr-24 py-3;
 }
 
-.signature {
-  @apply -mt-16 lg:mt-0;
-}
 
 .signature p {
   padding-bottom: unset;
