@@ -103,7 +103,9 @@ header:hover #logo-full {
 }
 
 header.hover #logo-white,
-header:hover #logo-white {
+header:hover #logo-white,
+#logo-full
+{
   @apply opacity-0;
 }
 

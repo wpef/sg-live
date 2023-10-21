@@ -1,7 +1,7 @@
 <template>
   <section class="services" :style="{backgroundColor : sectionStyle}">
     <div class="container">
-      <div class="w-full lg:w-1/2 xl:pr-24" v-editable="blok" data-aos="fade-up">
+      <div class="w-full xl:pr-24" v-editable="blok" data-aos="fade-up">
         <h2 class="text-white h4" v-if="blok.title">{{ blok.title }}</h2>
       </div>
       <div v-if="blok.items.length > 0" class="servicesList flex flex-wrap">
