@@ -368,8 +368,14 @@ a {
   background-image: url("/icons/see-white.svg") !important;
 }
 
+/* glbal components */
+
 .footerBody a.h6 {
   @apply !text-white;
+}
+
+.burgerMenu .navHead {
+  @apply h4;
 }
 
 

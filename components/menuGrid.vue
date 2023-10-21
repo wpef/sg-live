@@ -3,8 +3,8 @@
     <!-- {{ menu }} -->
     <div class="col" v-for="col in menu">
       <NuxtLink class="h6"
-      :to="col.titleLink.url === '' ? '/' + col.titleLink.cached_url : col.titleLink.url">
-      {{ col.title ?? titleLink.story.name }}
+      :to="col.titleLink?.url === '' ? '/' + col.titleLink.cached_url : col.titleLink?.url">
+      {{ col.title ?? titleLink?.story.name }}
       </NuxtLink>
       <div class="listWrapper">
         <CTA class="item  text-[#666] p1 pb-1" v-for="(item, index) in col.items" :key="col._uid"
@@ -19,7 +19,6 @@
 const props = defineProps({
   menu: Object,
   cols: { type: Number, required: false, default: 2 },
-
 })
 </script>
 

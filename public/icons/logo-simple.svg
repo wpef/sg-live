@@ -1,0 +1,15 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Logo simple" clip-path="url(#clip0_453_3464)">
+<path id="Vector" d="M7.92417 22.8623V31.9997L0 27.45L7.92417 22.8623Z" fill="white"/>
+<path id="Vector_2" d="M31.6966 27.45L23.7725 31.9997V22.8623L31.6966 27.45Z" fill="white"/>
+<path id="Vector_3" d="M15.8483 0L23.7725 4.58768L7.92417 13.7251L0 9.13744L15.8483 0Z" fill="white"/>
+<path id="Vector_4" d="M31.6966 9.13765L23.7725 13.7253V4.58789L31.6966 9.13765Z" fill="white"/>
+<path id="Vector_5" d="M7.92417 13.7254V22.8628L0 27.4505V9.1377L7.92417 13.7254Z" fill="white"/>
+<path id="Vector_6" d="M31.6966 9.1377V27.4505L23.7725 22.8628V13.7254L31.6966 9.1377Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_453_3464">
+<rect width="32" height="32" fill="white"/>
+</clipPath>
+</defs>
+</svg>

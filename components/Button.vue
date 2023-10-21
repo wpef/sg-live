@@ -1,6 +1,6 @@
 <template>
 
-  <NuxtLink class="hidden md:flex items-center gap-2 text-white bg-[#3052B7] px-5 py-3 rounded cta" :to="link.link.url" target="_blank">
+  <NuxtLink class="cta" :to="link.link.url" target="_blank">
     <img class="icon-left" src="/icons/up-white.svg">
     <span>{{ link.label }}</span>
     <img class="icon-right" src="/icons/up-white.svg">
@@ -18,7 +18,8 @@ defineProps({
 <style scoped>
 
 .cta {
-  position: relative;
+  @apply relative justify-between items-center gap-2;
+  @apply text-white bg-[#3052B7] px-5 py-3 rounded;
 }
 
 .cta .icon-left {

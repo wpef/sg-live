@@ -18,6 +18,7 @@ const headerCTA = data.story.content.header_cta
 // const hoveredMenu = 1;
 const hoveredMenu = ref(null);
 const debounceTimer = ref(null);
+const burgerOpen = ref(null);
 
 
 const handleMouseOver = (index) => {
@@ -31,6 +32,7 @@ const handleMouseOut = () => {
   }, 300); // 300ms delay
 };
 
+
 onMounted(() => {
   window.addEventListener('scroll', e => {
     if(window.scrollY > 5)
@@ -39,14 +41,19 @@ onMounted(() => {
       handleMouseOut();
   })
 })
+
+const toggleBurger = () => {
+  burgerOpen.value = burgerOpen.value ? null : true;
+}
+
 </script>
  
 <template>
-  <header :class="hoveredMenu !== null ? 'hover' : ''">
+  <header @mouseenter="handleMouseOver(-1)" :class="!burgerOpen && hoveredMenu !== null ? 'hover' : ''">
     <div class="h-full mx-auto flex items-center justify-between">
       <NuxtLink class="pb-8" to="/">
         <h1 class="text-3xl hidden">StoneGate</h1>
-        <div class="logo">
+        <div v-if="!burgerOpen" class="logo">
           <img id="logo-full" :src="logo.default.filename">
           <img id="logo-white" :src="logo.white.filename">
         </div>
@@ -69,7 +76,7 @@ onMounted(() => {
           </li>
         </ul>
       </nav>
-      <Button :link="headerCTA[0]"/>
+      <Button class="hidden lg:flex" :link="headerCTA[0]"/>
     </div>
   </header>
   <div v-for="(blok, index) in headerMenu" :key="blok._uid" class="expand_placeholder">
@@ -80,30 +87,49 @@ onMounted(() => {
     </div>
   </Transition>
   </div>
+  <Transition>
+    <img v-if="!burgerOpen && hoveredMenu === null" class="burgerIcon" src="/icons/burger.svg" @click="toggleBurger">
+  </Transition>
+  <Transition>
+    <img v-if="!burgerOpen && hoveredMenu !== null" class="burgerIcon " src="/icons/burger-black.svg" @click="toggleBurger">
+  </Transition>
+  <Transition>
+    <img v-if="burgerOpen" class="burgerIcon" src="/icons/x.svg" @click="toggleBurger">
+  </Transition>
+    <Transition>
+    <div v-if="burgerOpen" class="burgerMenu z-40">
+      <BurgerMenu @click="toggleBurger" :cta="headerCTA[0]" :menu="headerMenu"/>
+    </div>
+  </Transition>
 </template>
 
 <style scoped>
+
+.burgerIcon {
+  @apply lg:hidden;
+  @apply fixed right-5 top-10 z-50;
+}
+
+
 header {
   @apply w-full h-24 fixed top-0 left-0 z-50;
   @apply text-white;
-  @apply transition-all delay-300 duration-300;
+  @apply transition-all duration-300;
   @apply border-b-0 border-b-transparent;
   @apply bg-none;
 }
 
-header:hover, header.hover {
+header.hover {
   @apply text-black;
   @apply border-b border-[#E6E6E6];
   @apply bg-white;
 }
 
-header.hover #logo-full,
-header:hover #logo-full {
+header.hover #logo-full {
   @apply opacity-100;
 }
 
 header.hover #logo-white,
-header:hover #logo-white,
 #logo-full
 {
   @apply opacity-0;
@@ -132,14 +158,24 @@ a {
 }
 
 .logo, .logo > * {
-  @apply w-48;
-  @apply transition-all delay-300 duration-300;
+  @apply w-48 h-16;
+  @apply transition-all duration-300;
   @apply absolute pb-6;
 }
 
+header>div {
+  max-width: 1440px !important;
+  @apply px-6 lg:px-16;
+}
 
 a.router-link-active+div {
   @apply h-1 w-full;
   @apply bg-[#2650BE];
 }
+
+/* Burger */
+.burgerMenu {
+  @apply fixed w-full h-full bg-[#003966];
+}
+
 </style>
