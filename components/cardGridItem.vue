@@ -35,7 +35,7 @@ const style = computed(() => {
   @apply aspect-square border;
   background-color: var(--bg-color);
   border-color: var(--border-color);
-  @apply transition-all	delay-0 hover:shadow-lg;
+  @apply transition-all	delay-0;
 }
 
 
@@ -52,7 +52,4 @@ p.number,
 p.number {
   @apply text-3xl;
 }
-
-.content {
-  /* @apply flex flex-wrap flex-row content-between; */
-}</style>
+</style>

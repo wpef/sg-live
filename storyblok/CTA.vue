@@ -38,15 +38,27 @@ const toUrl = function (blok) {
   @apply h-6;
 }
 
-.icon-left, a:hover .icon-right {
-  @apply w-0;
+.cta .icon-left {
+  @apply -translate-x-2 absolute opacity-0 duration-300;
 }
 
-.icon-right, a:hover .icon-left {
-  @apply w-6;
+.cta .icon-right {
+  @apply translate-x-0  duration-300;
 }
 
-img { 
-  @apply transition-all duration-200;
+.cta span {
+  @apply translate-x-0 duration-300;
+}
+
+.cta:hover span {
+  @apply translate-x-8;
+}
+
+.cta:hover .icon-right {
+  @apply -translate-x-2 opacity-0;
+}
+
+.cta:hover .icon-left {
+  @apply translate-x-0 opacity-100;
 }
 </style>

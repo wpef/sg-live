@@ -9,18 +9,22 @@
     </div>
 
     <div v-if="blok.pushs.length > 0" class="wrapper">
-      <div v-for="(push,index) in blok.pushs" :key="blok._uid"
-        :style="{ backgroundImage: `url(${push.background.filename})` }"
+
+      <div v-for="(push,index) in blok.pushs"
+        :key="blok._uid"
         class="push"
         data-aos="fade-up"
         :data-aos-delay="100*index"
         v-editable="push"
-        >
+      >
+      <div class="background" :style="{ backgroundImage : `url(${push.background.filename})`}"></div>
+
         <div class="content absolute left-6 bottom-6">
           <h4 class="text-white h3 mb-4">{{ push.title }}</h4>
           <CTA class="text-white" :blok="{ label: 'Découvrir', white: true, ...push }" />
         </div>
       </div>
+
     </div>
 
   </section>
@@ -33,6 +37,12 @@ defineProps({ blok: Object })
 <style scoped>
 .SectionPush {
   @apply mt-10 pb-24;
+}
+
+.background {
+  @apply w-full h-full absolute;
+  @apply hover:brightness-75;
+  @apply transition-all duration-200;
 }
 
 .title .h2 {
@@ -53,7 +63,6 @@ defineProps({ blok: Object })
   @apply aspect-square shrink grow basis-96;
   @apply bg-no-repeat bg-cover;
   @apply relative;
-  @apply transition-all duration-75 hover:brightness-75;
 }
 
 </style>
