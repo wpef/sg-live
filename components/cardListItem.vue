@@ -1,6 +1,5 @@
 <template>
   <div class="cardListItem" :style="style" v-editable="blok">
-    <div class="thumb">
       <!-- TODO : handle 100% width on mobile -->
       <NuxtImg
         v-if="blok.image"
@@ -10,7 +9,6 @@
         height="240"
         width="430"
       />
-    </div>
     <div class="title">
       <h4 v-if="blok.title" class="h5">{{ blok.title }}</h4>
       <CTA class="hidden lg:flex" v-if="blok.cta[0]" :blok="blok.cta[0]" />
@@ -51,4 +49,5 @@ const style = computed(() => {
 .cardListItem p {
   @apply xl:pl-12 pb-2;
 }
+
 </style>
