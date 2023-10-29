@@ -6,8 +6,8 @@
         provider="storyblok"
         :src="blok.image.filename" 
         :alt="blok.image.alt"
-        height="240"
         width="430"
+        height="240"
       />
     <div class="title">
       <h4 v-if="blok.title" class="h5">{{ blok.title }}</h4>
@@ -43,11 +43,14 @@ const style = computed(() => {
 }
 
 .cardListItem .title h4 {
-  @apply pr-6 xl:pr-64 pt-4;
+  @apply pr-6 pt-3;
 }
 
 .cardListItem p {
-  @apply xl:pl-12 pb-2;
+  @apply xl:pl-12 pb-2 pt-4;
 }
 
+.title {
+  @apply md:w-1/3;
+}
 </style>
