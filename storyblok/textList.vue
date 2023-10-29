@@ -8,12 +8,13 @@
 li {
   color: var(--sg-gris-texte, #505050);
   font-size: 16px;
-  line-height: 132%; /* 21.12px */
+  margin-bottom: .88rem;
+  line-height: 1.4rem;
   letter-spacing: -0.32px;
   background-repeat: no-repeat;
-  background-image: url("/icons/see.svg");
+  background-image: url("/icons/check.svg");
   
-  @apply pl-8 mr-12 mb-6;
+  @apply pl-8 mr-12;
 }
 </style>
  
