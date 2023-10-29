@@ -4,7 +4,7 @@
     :to="toUrl(blok)"
     >
       <img class="icon-left" v-if="blok.icon !== false" :src="iconSrc">
-      <span>{{ blok.label }}</span>
+      <span :class="blok.icon !== false ? 'icon' : ''">{{ blok.label }}</span>
       <img class="icon-right" v-if="blok.icon !== false" :src="iconSrc">
     </NuxtLink>
 </template>
@@ -46,11 +46,11 @@ const toUrl = function (blok) {
   @apply translate-x-0  duration-300;
 }
 
-.cta span {
+.cta span.icon {
   @apply translate-x-0 duration-300;
 }
 
-.cta:hover span {
+.cta:hover span.icon {
   @apply translate-x-8;
 }
 
