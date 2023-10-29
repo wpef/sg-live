@@ -21,4 +21,9 @@ const props = defineProps({ blok: Object });
 .container {
   @apply flex flex-col md:flex-row gap-8;
 }
+
+img {
+  height: 33.5rem;
+  object-fit: cover;
+}
 </style>
