@@ -40,7 +40,7 @@ defineProps({ blok: Object })
 }
 
 h2 {
-  @apply mb-4;
+  @apply mb-3;
   @apply xl:pr-48;
 }
 </style>
