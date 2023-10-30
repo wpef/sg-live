@@ -4,15 +4,18 @@
       backgroundImage: `url(${blok.bgImage.filename})`,
     }">
       <div class="container">
-        <h2 class="h3 text-white" 
-            v-if="blok.title" 
-            data-aos="fade-up"
+        <div class="wrapper">
+
+          <h2 class="h3 text-white" 
+          v-if="blok.title" 
+          data-aos="fade-up"
           >{{ blok.title }}</h2>
           <CTA v-if="blok.cta[0]"
-            :blok="blok.cta[0]"
-            data-aos="fade-up"
+          :blok="blok.cta[0]"
+          data-aos="fade-up"
           />
         </div>
+      </div>
     </div>
 </template>
  
@@ -29,11 +32,14 @@ defineProps({ blok: Object })
 
 .container {
   @apply pr-12 lg:pr-48 xl:pr-[42rem];
-  @apply absolute bottom-4;
   max-width: 1440px;
 }
 
+.wrapper {
+  @apply absolute bottom-4;
+}
+
 h2 {
-  @apply mb-5;
+  @apply mb-4;
 }
 </style>
