@@ -36,7 +36,7 @@ defineProps({ blok: Object })
 }
 
 .wrapper {
-  @apply absolute bottom-4;
+  @apply absolute bottom-14;
 }
 
 h2 {
