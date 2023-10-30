@@ -21,7 +21,7 @@
 
         <div class="content absolute left-6 bottom-6">
           <h4 class="text-white h3 mb-4">{{ push.title }}</h4>
-          <CTA class="text-white" :blok="{ label: 'Découvrir', white: true, ...push }" />
+          <CTA class="text-white" :blok="{ label: 'Discover', white: true, ...push }" />
         </div>
       </div>
 

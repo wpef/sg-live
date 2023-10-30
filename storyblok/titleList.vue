@@ -22,7 +22,7 @@ const whiteClass = props.blok.white ? 'text-white' : ''
 
 <style scoped>
 .title {
-  @apply max-w-lg lg:pr-40 mb-6;
+  @apply max-w-lg mb-6;
 }
 
 .wrapper {
