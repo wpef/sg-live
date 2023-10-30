@@ -29,7 +29,7 @@ defineProps({ blok: Object })
 
 .container {
   @apply pr-12 lg:pr-48 xl:pr-[42rem];
-  @apply absolute bottom-12;
+  @apply absolute bottom-4;
   max-width: 1440px;
 }
 
