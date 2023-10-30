@@ -53,8 +53,7 @@ div.hero {
 /*global*/
 
 .textImage .text p {
-  @apply p2;
-  color : #1E1E1E;
+  @apply p1;
 }
 
 /* GENERAL */
