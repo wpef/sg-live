@@ -27,6 +27,6 @@ const whiteClass = props.blok.white ? 'text-white' : ''
 
 .wrapper {
   @apply flex flex-col;
-  @apply lg:pb-12; 
+  @apply lg:pb-14; 
 }
 </style>

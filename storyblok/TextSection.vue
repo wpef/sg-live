@@ -49,6 +49,6 @@ const bgClasses = computed(() => {
   @apply md:pr-24;
 }
 .textSectionContainer h2 {
-  @apply pb-9;
+  @apply pb-6;
 }
 </style>
