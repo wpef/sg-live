@@ -38,7 +38,6 @@ const style = computed(() => {
 
 .content {
   @apply absolute;
-  @apply lg:pr-32 p-8;
   @apply w-full h-full;
   @apply bg-cover;
   background-color: var(--bg-color);
@@ -46,7 +45,8 @@ const style = computed(() => {
 }
 
 .textContent {
-  @apply absolute top-0 p-8;
+  @apply lg:pr-32 p-8;
+  @apply absolute top-0;
 }
 
 .item:hover .content {
