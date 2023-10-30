@@ -38,7 +38,7 @@ const bgClasses = computed(() => {
 
 .textSectionContainer {
   border-color: rgba(255, 255, 255, 0.20);
-  @apply pt-16 lg:pt-32 lg:pb-12; /* TODO : default padding */
+  @apply py-16 lg:py-32; /* TODO : default padding */
 }
 
 .textSectionTitle > * {
