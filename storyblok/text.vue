@@ -20,12 +20,6 @@
   @apply pb-4 mt-2;
 }
 
-.text h2~p+p, .text h3~p+p, .text h4~p+p, .text h5~p+p { 
-  /*Handle list items
-  TODO : better handle */
-  @apply leading-7;
-}
-
 .text h2~p, .text h3~p, .text h4~p, .text h5~p { 
   @apply mt-4;
 }
