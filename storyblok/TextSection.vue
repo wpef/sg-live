@@ -4,7 +4,7 @@
     backgroundImage : `url(${blok.backgroundImage?.filename})`,
   }">
   <div class="container" v-editable="blok">
-    <div v-if="blok.line === true" class="border border-t -mb-12 mt-12"></div>
+    <div v-if="blok.line === true" class="line -mb-7 mt-7"></div>
     <div class="textSectionContainer" :class="sectionClasses">      
       <div class="textSectionTitle lg:w-1/2" :class="blok.white ? 'text-white' : ''" >
         <h2 v-if="blok.title" class="h2"  data-aos="fade-up">{{ blok.title }}</h2>
@@ -50,5 +50,10 @@ const bgClasses = computed(() => {
 }
 .textSectionContainer h2 {
   @apply pb-6;
+}
+
+.line {
+  height : 1px;
+  background-color: #CCCCCC;
 }
 </style>
