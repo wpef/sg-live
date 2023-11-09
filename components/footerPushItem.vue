@@ -1,7 +1,7 @@
 <template>
-  <div :key="push._uid" :style="style" :class="push.backgroundColor !== '' ? '' : 'border'" class="item" data-aos="fade-up"
+  <div :style="style" :class="push.backgroundColor !== '' ? '' : 'border'" class="item" data-aos="fade-up"
     :data-aos-delay="100 * index" v-editable="push">
-    <div class="content" :style="{ backgroundImage : `url(${props.push.image.filename})`}">
+    <div class="content" :style="{ backgroundImage : `url(${props.push.image?.filename})`}">
     </div>
     <div class="textContent">
       <h4 class="h2" :class="push.white ? 'text-white' : ''" data-aos="fade-up" :data-aos-delay="150 * index">
@@ -9,7 +9,7 @@
         <p class="p1" :class="push.white ? 'text-white' : ''" data-aos="fade-up" :data-aos-delay="200 * index">
           {{ push.description }}</p>
     </div>
-    <CTA v-if="push.cta[0] && push.cta[0].link" class="absolute bottom-6 p-8" :blok="push.cta[0]" />
+    <CTA v-if="push.cta && push.cta[0] && push.cta[0].link" class="absolute bottom-6 p-8" :blok="push.cta[0]" />
   </div>
 </template>
  
