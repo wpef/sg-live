@@ -47,7 +47,7 @@ defineProps({ blok: Object })
 
 .title .h2 {
   @apply pb-8;
-  @apply max-w-3xl;
+  @apply max-w-lg;
 }
 
 .title .h4 {
