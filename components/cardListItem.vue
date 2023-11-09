@@ -4,8 +4,9 @@
       <NuxtImg
         v-if="blok.image"
         provider="storyblok"
-        :src="blok.image.filename" 
-        :alt="blok.image.alt"
+        :src="blok.image?.filename" 
+        :alt="blok.image?.alt"
+        :modifiers="{ filters: { focal: blok.image?.focus } }"
         width="430"
         height="240"
       />
@@ -25,6 +26,7 @@ const style = computed(() => {
     '--bg-hover-color' :  'rgba(71, 131, 238, .15)'
   }
 })
+
 </script>
 
 <style scoped>

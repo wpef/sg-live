@@ -9,8 +9,9 @@
       <NuxtImg
         v-if="blok.image"
         provider="storyblok"
-        :src="blok.image.filename" 
-        :alt="blok.image.alt"
+        :src="blok.image?.filename" 
+        :alt="blok.image?.alt"
+        :modifiers="{ filters: { focal: blok.image?.focus } }"
         height="680"
         width="648"
       />
