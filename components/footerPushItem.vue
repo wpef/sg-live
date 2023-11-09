@@ -1,7 +1,7 @@
 <template>
   <div :key="push._uid" :style="style" :class="push.backgroundColor !== '' ? '' : 'border'" class="item" data-aos="fade-up"
     :data-aos-delay="100 * index" v-editable="push">
-    <div class="content" :class="props.push.image.filename?'brightness-75':''" :style="{ backgroundImage : `url(${props.push.image.filename})`}">
+    <div class="content" :style="{ backgroundImage : `url(${props.push.image.filename})`}">
     </div>
     <div class="textContent">
       <h4 class="h2" :class="push.white ? 'text-white' : ''" data-aos="fade-up" :data-aos-delay="150 * index">
