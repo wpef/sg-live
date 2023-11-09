@@ -1,8 +1,8 @@
 <template>
   <section class="container">
   <div class="cardGrid grid sm:grid-cols-2 md:grid-cols-4 gap-6"  v-editable="blok" >
-    <div class="cardGridItem empty"></div>
-    <div class="cardGridItem empty"></div>
+    <div v-if="blok.items.length > 4" class="cardGridItem empty"></div>
+    <div v-if="blok.items.length > 4" class="cardGridItem empty"></div>
     <cardGridItem
       v-for="(blok, index) in blok.items"
       :key="blok._uid"
