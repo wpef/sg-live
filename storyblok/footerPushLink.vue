@@ -1,7 +1,7 @@
 <template>
   <section class="footerPush container" v-editable="blok">
 
-    <footerPushItem v-for="(push, index) in [data1, data2]" :key="index" :push="push.content.footerPush[0]" :index="index"/>
+    <footerPushItem v-for="(push, index) in [data1, data2]" :key="index" v-if="push?.content?.footerPush" :push="push.content.footerPush[0]" :index="index"/>
 
   </section>
 </template>
