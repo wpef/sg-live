@@ -1,5 +1,5 @@
 <template>
-  <div :style="style" :class="push.backgroundColor !== '' ? '' : 'border'" class="item" data-aos="fade-up"
+  <div v-if="push" :style="style" :class="push.backgroundColor !== '' ? '' : 'border'" class="item" data-aos="fade-up"
     :data-aos-delay="100 * index" v-editable="push">
     <div class="content" :style="{ backgroundImage : `url(${props.push.image?.filename})`}">
     </div>
