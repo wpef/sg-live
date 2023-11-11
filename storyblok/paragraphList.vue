@@ -20,14 +20,22 @@ const props = defineProps({
 }
 
 .wrapper {
-  @apply grid md:grid-cols-2 gap-x-4 md:gap-x-6;
+  @apply grid md:grid-cols-2 gap-x-4 gap-y-12 md:gap-x-12 md:gap-y-14;
 }
 
-.item {
+/* .item {
   @apply pb-12 lg:pb-14;
-}
+} */
 
 .item h4 {
   @apply pb-2 lg:pb-6;
+}
+
+.item .p2 {
+  @apply text-sm;
+}
+
+.item .p2 {
+  color : rgba(255, 255, 255, 0.50);
 }
 </style>

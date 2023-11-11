@@ -319,7 +319,6 @@ blockquote h4:after {
   font-style: normal;
   font-weight: 400;
   line-height: 132%;
-  /* 18.48px */
   letter-spacing: -0.28px;
 }
 
