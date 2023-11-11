@@ -26,7 +26,7 @@ const props = defineProps({ blok: Object })
  
 const sectionClasses = computed(() => {
   return "flex " + 
-    (props.blok.right.length > 0 ? 'flex-col lg:flex-row gap-12' : 'flex-wrap flex-row gap-4') +
+    (props.blok.right.length > 0 ? 'flex-col lg:flex-row gap-12' : 'flex-wrap flex-row gap-4 lg:!pb-2') +
     ( !props.blok.backgroundColor && !props.blok.backgroundImage?.filename ? ' lg:!pt-32' : ' lg:!pb-10')
   })
 
