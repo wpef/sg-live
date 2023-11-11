@@ -26,7 +26,8 @@ const props = defineProps({ blok: Object })
  
 const sectionClasses = computed(() => {
   return "flex " + 
-    (props.blok.right.length > 0 ? 'flex-col lg:flex-row gap-12' : 'flex-wrap flex-row gap-4')
+    (props.blok.right.length > 0 ? 'flex-col lg:flex-row gap-12' : 'flex-wrap flex-row gap-4') +
+    ( !props.blok.backgroundColor && !props.blok.backgroundImage?.filename ? ' lg:!pt-32' : ' lg:!pb-10')
   })
 
 const bgClasses = computed(() => {
@@ -38,7 +39,7 @@ const bgClasses = computed(() => {
 
 .textSectionContainer {
   border-color: rgba(255, 255, 255, 0.20);
-  @apply py-16 lg:py-32; /* TODO : default padding */
+  @apply py-20;
 }
 
 .textSectionTitle > * {
