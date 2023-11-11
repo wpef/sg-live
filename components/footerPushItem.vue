@@ -54,10 +54,6 @@ const style = computed(() => {
   transform: scale(1.1);
 }
 
-.item .h2 {
-  @apply text-[1.7rem];
-}
-
 .item h4 {
   @apply mb-4;
 }
