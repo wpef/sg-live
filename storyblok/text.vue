@@ -38,7 +38,7 @@
 }
 
 .text.tight {
-  @apply pr-8 md:pr-40;
+  @apply pr-8 md:pr-56;
 }
 
 .text-white p,
