@@ -17,6 +17,7 @@
 .item {
   @apply flex flex-col justify-end items-end;
   @apply pb-14;
+;
 }
 
 .itemTitle {
@@ -27,8 +28,12 @@
   @apply pb-3;
 }
 
+/* .item .border-t {
+  @apply md:pr-24; 
+} */
+
 .item p {
-  @apply pt-8;
+  @apply pt-8 md:pr-24;
 }
 
 .icon {

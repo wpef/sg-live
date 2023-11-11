@@ -44,10 +44,6 @@ const bgClasses = computed(() => {
 .textSectionTitle > * {
   @apply max-w-lg;
 }
-
-.textSectionContainer .textSectionRight {
-  @apply md:pr-24;
-}
 .textSectionContainer h2 {
   @apply pb-6;
 }

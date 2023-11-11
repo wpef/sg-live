@@ -4,6 +4,11 @@
 </template>
 
 <style>
+
+.text {
+  @apply md:pr-24;
+}
+
 .text h2 {
   @apply pb-9;
 }
