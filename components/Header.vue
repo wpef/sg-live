@@ -22,23 +22,62 @@ const burgerOpen = ref(null);
 
 
 const handleMouseOver = (index) => {
-  clearTimeout(debounceTimer.value);
   hoveredMenu.value = index;
 };
 
 const handleMouseOut = () => {
-  debounceTimer.value = setTimeout(() => {
     hoveredMenu.value = null;
-  }, 300); // 300ms delay
 };
+
+const handleScroll = (header) => {
+  if(window.scrollY == 0) {
+    header.classList.remove('sticked');
+  }
+  else if (!header.classList.contains('sticked'))
+    header.classList.add('sticked');
+}
 
 
 onMounted(() => {
+  const header = document.getElementById('header');
+  const navItems = document.querySelectorAll('.navItem');
+  const expands = document.querySelectorAll('.expand');
+  handleScroll(header);
+
   window.addEventListener('scroll', e => {
-    if(window.scrollY > 5)
-      handleMouseOver(-1)
-    else if (hoveredMenu !== null)
-      handleMouseOut();
+    handleScroll(header);
+  })
+
+  header.addEventListener('mouseenter', e => {
+    if (!header.classList.contains('hover'))
+      header.classList.add('hover');
+  })
+
+  header.addEventListener( 'mouseleave' , e => {
+    setTimeout(() => {
+      if (!hoveredMenu.value) {
+        header.classList.remove('hover');
+      }
+    }, 150);
+  })
+
+  navItems.forEach((exp) => { 
+      exp.addEventListener('mouseenter', e => {
+        hoveredMenu.value = e.target.dataset.index;
+      })
+      exp.addEventListener('mouseleave', e => {
+        hoveredMenu.value = null;
+      })
+  })
+
+  expands.forEach((exp) => { 
+      exp.addEventListener('mouseenter', e => {
+        hoveredMenu.value = e.target.dataset.index;
+      })
+      exp.addEventListener('mouseleave', e => {
+        hoveredMenu.value = null;
+        header.classList.remove('hover');
+      })
   })
 })
 
@@ -49,7 +88,7 @@ const toggleBurger = () => {
 </script>
  
 <template>
-  <header @mouseenter="handleMouseOver(-1)" :class="!burgerOpen && hoveredMenu !== null ? 'hover' : ''">
+  <header id="header">
     <div class="h-full mx-auto flex items-center justify-between">
       <NuxtLink class="pb-8" to="/">
         <h1 class="text-3xl hidden">StoneGate</h1>
@@ -60,8 +99,8 @@ const toggleBurger = () => {
       </NuxtLink>
       <nav class="hidden lg:block h-full" v-if="headerMenu">
         <ul class="h-full flex items-center space-x-8">
-          <li class="h-full flex flex-col justify-between items-center pt-12" v-for="(blok, index) in headerMenu"
-            :key="blok._uid" @mouseover="handleMouseOver(index)" @mouseleave="handleMouseOut">
+          <li class="navItem h-full flex flex-col justify-between items-center pt-12" v-for="(blok, index) in headerMenu" :data-index="index"
+            :key="blok._uid">
 
             <NuxtLink v-if="blok.component == 'menu_link'" :to="`/${blok.link.cached_url}`" class="hover:text-[#2650BE]">
               {{ blok.link.story?.name || blok.link.title }}
@@ -81,8 +120,7 @@ const toggleBurger = () => {
   </header>
   <div v-for="(blok, index) in headerMenu" :key="blok._uid" class="expand_placeholder">
     <Transition>
-      <div class="w-full fixed top-0 pt-32 z-40 bg-white" v-show="hoveredMenu == index" v-if="blok.items"
-      @mouseover="handleMouseOver(index)" @mouseleave="handleMouseOut">
+      <div class="expand w-full fixed top-0 pt-32 z-40 bg-white" v-show="hoveredMenu == index" v-if="blok.items" :data-index="index">
       <MenuGrid class="container" :menu="blok.items" :cols="4" />
     </div>
   </Transition>
