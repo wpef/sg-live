@@ -17,17 +17,7 @@ const headerCTA = data.story.content.header_cta
 
 // const hoveredMenu = 1;
 const hoveredMenu = ref(null);
-const debounceTimer = ref(null);
 const burgerOpen = ref(null);
-
-
-const handleMouseOver = (index) => {
-  hoveredMenu.value = index;
-};
-
-const handleMouseOut = () => {
-    hoveredMenu.value = null;
-};
 
 const handleScroll = (header) => {
   if(window.scrollY == 0) {
@@ -89,7 +79,7 @@ const toggleBurger = () => {
  
 <template>
   <header id="header">
-    <div class="h-full mx-auto flex items-center justify-between">
+    <div>
       <NuxtLink class="pb-8" to="/">
         <h1 class="text-3xl hidden">StoneGate</h1>
         <div v-if="!burgerOpen" class="logo">
@@ -97,21 +87,20 @@ const toggleBurger = () => {
           <img id="logo-white" :src="logo.white.filename">
         </div>
       </NuxtLink>
-      <nav class="hidden lg:block h-full" v-if="headerMenu">
-        <ul class="h-full flex items-center space-x-8">
-          <li class="navItem h-full flex flex-col justify-between items-center pt-12" v-for="(blok, index) in headerMenu" :data-index="index"
+      <nav v-if="headerMenu">
+        <ul>
+          <li class="navItem" :class="hoveredMenu == index ? 'hover' : '' " v-for="(blok, index) in headerMenu" :data-index="index"
             :key="blok._uid">
 
-            <NuxtLink v-if="blok.component == 'menu_link'" :to="`/${blok.link.cached_url}`" class="hover:text-[#2650BE]">
+            <NuxtLink v-if="blok.component == 'menu_link'" :to="`/${blok.link.cached_url}`">
               {{ blok.link.story?.name || blok.link.title }}
             </NuxtLink>
 
-            <NuxtLink v-if="blok.component == 'menu_col'" :to="`/${blok.titleLink.cached_url}`"
-              class="hover:text-[#2650BE]">
+            <NuxtLink v-if="blok.component == 'menu_col'" :to="`/${blok.titleLink.cached_url}`">
               {{ blok.title }}
             </NuxtLink>
 
-            <div class=""></div>
+            <div class="subline"></div>
           </li>
         </ul>
       </nav>
@@ -176,7 +165,31 @@ header.hover #logo-white,
 header>div {
   max-width: 1440px !important;
   @apply px-6 lg:px-16;
+  @apply h-full mx-auto flex items-center justify-between;
 }
+
+nav {
+  @apply hidden lg:block h-full;
+}
+
+nav ul {
+  @apply h-full flex items-center space-x-8;
+}
+
+.navItem {
+  @apply  h-full flex flex-col justify-between items-center pt-12;
+}
+
+.navItem.hover > a {
+  @apply text-[#2650BE];
+}
+
+.navItem.hover > .subline, a.router-link-active+.subline {
+  @apply h-1 w-full;
+  @apply bg-[#2650BE];
+}
+
+
 
 .v-enter-active,
 .v-leave-active {
@@ -204,11 +217,6 @@ a {
 header>div {
   max-width: 1440px !important;
   @apply px-6 lg:px-16;
-}
-
-a.router-link-active+div {
-  @apply h-1 w-full;
-  @apply bg-[#2650BE];
 }
 
 /* Burger */
