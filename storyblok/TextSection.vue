@@ -10,36 +10,60 @@
         <h2 v-if="blok.title" class="h2"  data-aos="fade-up">{{ blok.title }}</h2>
         <h3 v-if="blok.subtitle" :class="blok.title ? 'h5' : 'h4'"  data-aos="fade-up">{{ blok.subtitle }}</h3>
       </div>
-      <div v-if="blok.right.length > 0" class="textSectionRight lg:w-1/2" :class="blok.white ? 'text-white' : ''" data-aos="fade-up" data-aos-delay='300'>
+      <div v-if="!isTitle" class="textSectionRight lg:w-1/2" :class="blok.white ? 'text-white' : ''" data-aos="fade-up" data-aos-delay='300'>
         <StoryblokComponent v-for="(textBlok, index) in blok.right" v-editable="blok" :key="textBlok._uid" :blok="textBlok" data-aos="fade-up"/>
       </div>
       
-      <div v-if="blok.right.length === 0" class="w-full border-b"></div>
+      <div v-if="isTitle" class="w-full border-b"></div>
       
-    </div>
+    </div> 
   </div>
   </section>
 </template>
  
 <script setup>
 const props = defineProps({ blok: Object })
+// console.log(props.blok.right.length)
  
 const sectionClasses = computed(() => {
-  return "flex " + 
-    (props.blok.right.length > 0 ? 'flex-col lg:flex-row gap-12' : 'flex-wrap flex-row gap-4 lg:!pb-2') +
-    ( !props.blok.backgroundColor && !props.blok.backgroundImage?.filename ? ' lg:!pt-32' : ' lg:!pb-10')
+  return ( props.blok.backgroundColor !== '' && props.backgroundImage?.filename !== '' ? 'hasBg' : 'isWhite') + 
+    (props.blok.right.length === 0 ? ' isTitle' : ' isText')
   })
 
 const bgClasses = computed(() => {
   return props.blok.backgroundImage ? 'bg-cover bg-local bg-clip-border	bg-cover bg-center' : '';
+})
+
+const hasBg = computed(()=>{
+  return props.blok.backgroundColor !== '' & props.backgroundImage?.filename !== ''
+})
+
+const isTitle =  computed(()=>{
+  return props.blok.right.length ===   0
 })
 </script>
 
 <style scoped>
 
 .textSectionContainer {
-  border-color: rgba(255, 255, 255, 0.20);
-  @apply py-20;
+  @apply flex py-10;
+  border-color: rgba(255, 255, 255, 0.20);  
+}
+
+.textSectionContainer.isText {
+  @apply flex-col lg:flex-row gap-12;
+}
+.textSectionContainer.isTitle {
+ @apply flex-row flex-wrap gap-4;  /*A voir*/
+ @apply pb-2;
+}
+
+.textSectionContainer.hasBg {
+  @apply lg:pt-14 lg:pb-14;
+}
+
+.textSectionContainer.textSectionContainer.isText.isWhite {
+  @apply py-20 lg:pt-32;
 }
 
 .textSectionTitle > * {
