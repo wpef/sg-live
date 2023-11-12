@@ -92,6 +92,8 @@ const toggleBurger = () => {
           <li class="navItem" :class="hoveredMenu == index ? 'hover' : '' " v-for="(blok, index) in headerMenu" :data-index="index"
             :key="blok._uid">
 
+            <div class="line"></div>
+
             <NuxtLink v-if="blok.component == 'menu_link'" :to="`/${blok.link.cached_url}`">
               {{ blok.link.story?.name || blok.link.title }}
             </NuxtLink>
@@ -100,7 +102,7 @@ const toggleBurger = () => {
               {{ blok.title }}
             </NuxtLink>
 
-            <div class="subline"></div>
+            <div class="line subline"></div>
           </li>
         </ul>
       </nav>
@@ -177,7 +179,7 @@ nav ul {
 }
 
 .navItem {
-  @apply  h-full flex flex-col justify-between items-center pt-12;
+  @apply  h-full flex flex-col justify-center;
 }
 
 .navItem.hover > a {
@@ -187,6 +189,10 @@ nav ul {
 .navItem.hover > .subline, a.router-link-active+.subline {
   @apply h-1 w-full;
   @apply bg-[#2650BE];
+}
+
+.line {
+  @apply mt-auto;
 }
 
 
