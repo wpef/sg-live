@@ -171,7 +171,7 @@ header>div {
 }
 
 nav {
-  @apply hidden lg:block h-full;
+  @apply hidden lg:block h-full lg:pl-48;
 }
 
 nav ul {
@@ -184,6 +184,10 @@ nav ul {
 
 .navItem.hover > a {
   @apply text-[#2650BE];
+}
+
+.navItem.hover > a, .navItem > a.router-link-active {
+  margin-top: 4px; /* compense subline */
 }
 
 .navItem.hover > .subline, a.router-link-active+.subline {
