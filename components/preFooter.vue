@@ -1,34 +1,23 @@
 <template>
-
   <div class="preFooter bg-[#191919] py-12">
     <div class="container">
       <div class="w-full lg:w-1/2 flex flex-col md:flex-row gap-4">
-        <div class="w-full lg:w-1/2">
-          <div class="cardGridItem" :style="{
-            borderColor: blok1.white ? 'rgba(255, 255, 255, 0.20)' : '',
-            backgroundColor: blok1.backgroundColor
-          }">
+        <NuxtLink :to="'/'" class="w-full lg:w-1/2">
+          <div class="cardGridItem" :style="style">
             <div class="content">
-              <!-- TODO : handle CTA -->
               <h4 v-if="blok1.title" class="h5 pb-1" :class="blok1.white ? 'text-white' : null">{{ blok1.title }}</h4>
-              <p v-if="blok1.description" class="p2" :class="blok1.white ? 'text-white' : null">{{ blok1.description }}</p>
-            </div>
-            <CTA v-if="blok1.cta[0]" :blok="blok1.cta[0]" />
-          </div>
-        </div>
-        <div class="sBloks md:w-1/2 flex flex-wrap flex-row gap-4">
-          <div v-for="blok in sbloks" class="footerblok">
-            <!-- TODO : handle CTA -->
-            <div class="content">
-              <h4 v-if="blok.title" class="h5 pb-1 text-white">{{ blok.title }}</h4>
-              <p v-if="blok.description" class="p2 text-white">{{ blok.description }}</p>
+              <p v-if="blok1.description" class="p2" :class="blok1.white ? 'text-white' : null">{{ blok1.description }}
+              </p>
             </div>
           </div>
-        </div>
+        </NuxtLink>
+        
+        <sBloks :sbloks="sbloks"/>
       </div>
+
+    
     </div>
   </div>
-
 </template>
 
 <style scoped>
@@ -39,20 +28,8 @@
 .cardGridItem {
   @apply h-full p-6;
   @apply relative;
-}
-
-.footerblok {
-  @apply w-full;
-  @apply p-6;
-  border : 1px solid #333333;
-}
-
-.sBloks .content {
-  @apply flex flex-col;
-}
-
-.sBloks .content > p {
-  color : #666;
+  background-color: var(--bg-color);
+  border-color: var(--border-color);
 }
 </style>
 
@@ -60,4 +37,13 @@
 const props = defineProps({ bloks: Array });
 const blok1 = props.bloks[0];
 const sbloks = [props.bloks[1], props.bloks[2]];
+
+const style = computed(() => {
+  return { 
+    '--bg-color' : blok1.backgroundColor,
+    '--border-color' :  blok1.white ? 'rgba(255, 255, 255, 0.20)' : '',
+  }
+})
+// console.log(blok1);
+// console.log(sbloks);
 </script>
