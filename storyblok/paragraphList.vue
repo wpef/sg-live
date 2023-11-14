@@ -35,7 +35,7 @@ const props = defineProps({
   @apply text-sm;
 }
 
-.item .p2 {
+.hasBg .item .p2 {
   color : rgba(255, 255, 255, 0.50);
 }
 </style>
