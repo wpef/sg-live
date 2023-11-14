@@ -34,9 +34,6 @@ const toUrl = function (blok) {
 </script>
 
 <style scoped>
-.cta {
-  @apply h-6;
-}
 
 .cta .icon-left {
   @apply -translate-x-2 absolute opacity-0 duration-300;

@@ -202,8 +202,6 @@ nav ul {
   @apply mt-auto;
 }
 
-
-
 .v-enter-active,
 .v-leave-active {
   @apply opacity-100 transition-all duration-300;
