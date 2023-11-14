@@ -4,7 +4,7 @@
 <div class="body">
   <section class="textImage" :style="{ backgroundColor : blok.backgroundColor }">
     <div class="container" v-editable="blok">
-    <div class="text">
+    <div class="textInfo">
       <div class="info-wrapper">
 
         <div class="infos lg:w-1/2"  v-for="blok in blok.infos" :key="blok._uid" :blok="blok">
@@ -46,13 +46,13 @@ const content = computed(() => renderRichText(props.blok.body));
   @apply py-6 lg:py-12;
 }
 
-.text {
+.textInfo {
   @apply flex flex-wrap flex-row content-between;
   @apply lg:w-1/2;
   @apply pb-14 md:pb-0;
 }
 
-.text .p {
+.textInfo .p {
   @apply pb-0;
 }
 

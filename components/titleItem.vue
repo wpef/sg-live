@@ -1,6 +1,6 @@
 <template>
     <h2 class="title h4" data-aos="fade-up">{{ blok.title }}</h2>
-    <p class="transition-all content" data-aos="fade-up" v-for="line in content">{{ line }}</p>
+    <p class="p1 transition-all content" data-aos="fade-up" v-for="line in content">{{ line }}</p>
 </template>
 
 <style scoped>
