@@ -10,7 +10,7 @@
         <NuxtLink v-if="head.component === 'menu_col'" :to="'/' + head.titleLink.cached_url">{{ head.title ??
           head.titleLink?.story?.name ?? '' }}</NuxtLink>
         <div v-if="head.component === 'menu_col'" class="navSub">
-          <NuxtLink v-for="(item, index) in head.items" :key="item._uid" :to="titleLink" class="item h6">{{
+          <NuxtLink v-for="(item, index) in head.items" :key="item._uid" :to="'/' + item.titleLink.cached_url" class="item h6">{{
             item.title ?? item.titleLink.story?.name }}
           </NuxtLink>
         </div>
