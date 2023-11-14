@@ -23,10 +23,9 @@
  
 <script setup>
 const props = defineProps({ blok: Object })
-// console.log(props.blok.right.length)
  
 const sectionClasses = computed(() => {
-  return ( props.blok.backgroundColor !== '' && props.backgroundImage?.filename !== '' ? 'hasBg' : 'isWhite') + 
+  return  props.blok.backgroundColor !== undefined && props.blok.backgroundColor !== '' && props.backgroundImage?.filename !== '' ? 'hasBg' : 'isWhite' + 
     (props.blok.right.length === 0 ? ' isTitle' : ' isText')
   })
 
@@ -34,16 +33,13 @@ const bgClasses = computed(() => {
   return props.blok.backgroundImage ? 'bg-cover bg-local bg-clip-border	bg-cover bg-center' : '';
 })
 
-const hasBg = computed(()=>{
-  return props.blok.backgroundColor !== '' & props.backgroundImage?.filename !== ''
-})
-
 const isTitle =  computed(()=>{
   return props.blok.right.length ===   0
 })
+
 </script>
 
-<style scoped>
+<style scoped>&
 
 .textSectionContainer {
   @apply flex py-10;
