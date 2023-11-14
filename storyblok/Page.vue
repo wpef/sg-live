@@ -1,26 +1,6 @@
 <template>
   <div class="page">
-    <div v-editable="blok" class="hero" v-if="blok.title || blok.subtitle" :class="blok.fullHeight ? 'h-screen' : 'h-[30rem]'" :style="{
-      backgroundColor: blok.heroBgColor !== '' ? blok.heroBgColor : '#003966',
-      backgroundImage: `url(${blok.heroImage?.filename})`,
-    }">
-      <div class="container">
-        <div class="heroTitle text-white">
-          <h1 class="h1" 
-            v-if="blok.title" 
-            data-aos="fade-up"
-            data-aos-once="true"
-            data-aos-anchor-placement="bottom"
-          >{{ blok.title }}</h1>
-          <h2 class="h4" v-if="blok.subtitle"
-            data-aos="fade-up"
-            data-aos-delay="200"
-            data-aos-once="true"
-            data-aos-anchor-placement="bottom"
-          >{{ blok.subtitle }}</h2>
-        </div>
-      </div>
-    </div>
+    <PageHero v-if="blok.title || blok.subtitle" :blok="blok"/>
     <div class="body">
     <StoryblokComponent v-for="blok in blok.body" :key="blok._uid" :blok="blok" />
     </div>
@@ -32,24 +12,6 @@ defineProps({ blok: Object })
 </script>
 
 <style>
-/*local*/
-div.hero {
-  @apply pt-64;
-  @apply relative bg-cover bg-center;
-  margin-top: 0 !important;
-}
-
-.hero .heroTitle {
-  @apply pr-12 lg:pr-48 xl:pr-[42rem];
-  @apply absolute bottom-12;
-  max-width: 1440px;
-}
-
-.hero .heroTitle h1 {
-  @apply pb-6;
-}
-
-
 /*global*/
 
 .textImage .text p {
