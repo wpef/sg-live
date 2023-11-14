@@ -28,7 +28,6 @@ const props = defineProps({
 })
 
 // console.log(props.menu)
-console.log(props.menu)
 </script>
 
 <style scoped>
