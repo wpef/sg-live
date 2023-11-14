@@ -149,6 +149,10 @@ header {
   @apply bg-none;
 }
 
+header.sticked {
+  @apply h-20;
+}
+
 header.hover, header.sticked {
   @apply text-black;
   @apply border-b border-[#E6E6E6];
