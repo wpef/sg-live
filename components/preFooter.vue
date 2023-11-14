@@ -2,7 +2,7 @@
   <div class="preFooter bg-[#191919] py-12">
     <div class="container">
       <div class="w-full lg:w-1/2 flex flex-col md:flex-row gap-4">
-        <NuxtLink :to="'/'" class="w-full lg:w-1/2">
+        <NuxtLink :to="toUrl(blok1.cta[0])" class="w-full lg:w-1/2">
           <div class="cardGridItem" :style="style">
             <div class="content">
               <h4 v-if="blok1.title" class="h5 pb-1" :class="blok1.white ? 'text-white' : null">{{ blok1.title }}</h4>
@@ -44,6 +44,19 @@ const style = computed(() => {
     '--border-color' :  blok1.white ? 'rgba(255, 255, 255, 0.20)' : '',
   }
 })
-// console.log(blok1);
+
+const toUrl = function (blokCta) {
+  const link = blokCta.link;
+  const https = "https://";
+
+  if (link.linktype === 'story') {
+    return '/' + link.cached_url
+  }
+  if (link.linktype == 'url') {
+    if (link.url.startsWith(https))
+      return link.url
+    return https + link.url
+  }
+}
 // console.log(sbloks);
 </script>
