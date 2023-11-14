@@ -58,7 +58,7 @@ const content = computed(() => renderRichText(props.blok.body));
 
 .info-wrapper {
   @apply w-full;
-  @apply flex flex-row gap-4;
+  @apply flex flex-row flex-wrap gap-4;
 }
 
 .booking-wrapper .content {
