@@ -32,6 +32,7 @@ onMounted(() => {
   const header = document.getElementById('header');
   const navItems = document.querySelectorAll('.navItem');
   const expands = document.querySelectorAll('.expand');
+  hoveredMenu.value = null;
   handleScroll(header);
 
   window.addEventListener('scroll', e => {
@@ -148,17 +149,19 @@ header {
   @apply bg-none;
 }
 
-header.hover {
+header.hover, header.sticked {
   @apply text-black;
   @apply border-b border-[#E6E6E6];
   @apply bg-white;
 }
 
-header.hover #logo-full {
+header.hover #logo-full,
+header.sticked #logo-full {
   @apply opacity-100;
 }
 
 header.hover #logo-white,
+header.sticked #logo-white,
 #logo-full
 {
   @apply opacity-0;
