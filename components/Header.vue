@@ -69,6 +69,10 @@ onMounted(() => {
         hoveredMenu.value = null;
         header.classList.remove('hover');
       })
+      exp.addEventListener('click', e => {
+        hoveredMenu.value = null;
+        header.classList.remove('hover');
+      })
   })
 })
 
