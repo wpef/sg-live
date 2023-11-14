@@ -7,7 +7,7 @@
     <div class="text">
       <div class="info-wrapper">
 
-        <div class="infos w-1/2"  v-for="blok in blok.infos" :key="blok._uid" :blok="blok">
+        <div class="infos lg:w-1/2"  v-for="blok in blok.infos" :key="blok._uid" :blok="blok">
           <TitleItem :blok="blok"/>
         </div>
       
@@ -57,8 +57,7 @@ const content = computed(() => renderRichText(props.blok.body));
 }
 
 .info-wrapper {
-  @apply w-full;
-  @apply flex flex-row flex-wrap gap-4;
+  @apply w-full flex flex-row flex-wrap lg:flex-nowrap gap-4;
 }
 
 .booking-wrapper .content {
