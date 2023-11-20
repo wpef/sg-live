@@ -25,8 +25,19 @@
 const props = defineProps({ blok: Object })
  
 const sectionClasses = computed(() => {
-  return  props.blok.backgroundColor !== undefined && props.blok.backgroundColor !== '' && props.backgroundImage?.filename !== '' ? 'hasBg' : 'isWhite' + 
-    (props.blok.right.length === 0 ? ' isTitle' : ' isText')
+  let ret = ''
+  if (props.blok.backgroundColor !== undefined && props.blok.backgroundColor !== '' && props.backgroundImage?.filename !== '')
+    ret += 'hasBg '
+  else 
+    ret += 'isWhite '
+
+  if (props.blok.right.length === 0)
+    ret += 'isTitle'
+  else
+    ret += 'isText'
+
+
+    return ret;
   })
 
 const bgClasses = computed(() => {
@@ -72,6 +83,6 @@ const isTitle =  computed(()=>{
 .line {
   height : 1px;
   background-color: #CCCCCC;
-  margin-bottom : -90px; 
+  @apply -mb-0 md:-mb-20;
 }
 </style>
