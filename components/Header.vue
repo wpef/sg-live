@@ -122,10 +122,10 @@ const toggleBurger = () => {
   </Transition>
   </div>
   <Transition>
-    <img v-if="!burgerOpen && hoveredMenu === null" class="burgerIcon" src="/icons/burger.svg" @click="toggleBurger">
+    <img v-if="!burgerOpen" class="burgerIcon burgerIconWhite" src="/icons/burger.svg" @click="toggleBurger">
   </Transition>
   <Transition>
-    <img v-if="!burgerOpen && hoveredMenu !== null" class="burgerIcon " src="/icons/burger-black.svg" @click="toggleBurger">
+    <img v-if="!burgerOpen" class="burgerIcon burgerIconBlack" src="/icons/burger-black.svg" @click="toggleBurger">
   </Transition>
   <Transition>
     <img v-if="burgerOpen" class="burgerIcon" src="/icons/x.svg" @click="toggleBurger">
@@ -161,6 +161,21 @@ header.hover, header.sticked {
   @apply text-black;
   @apply border-b border-[#E6E6E6];
   @apply bg-white;
+}
+
+header:not(.sticked)~.burgerIconWhite,
+header.sticked~.burgerIconBlack {
+  opacity: 1;
+}
+
+.burgerIconBlack {
+  top : 33px
+}
+
+
+header.sticked~.burgerIconWhite,
+header:not(.sticked)~.burgerIconBlack {
+  opacity : 0
 }
 
 header.hover #logo-full,
