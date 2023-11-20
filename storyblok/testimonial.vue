@@ -47,7 +47,16 @@ blockquote h4:before {
 
 blockquote h4:after {
   content: close-quote;
-
   @apply absolute h-0 pl-4;
 }
+
+blockquote h4:before, 
+blockquote h4:after {
+  color: var(--sg-noir-texte, #666);
+  font-size: 5rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+}
+
 </style>

@@ -14,272 +14,70 @@
 }
 
 /* GENERAL */
-/* Tailwind = lg: */ 
-@media (min-width: 1024px) {
-  .h1,
-  .text h1 {
-    letter-spacing: -.24rem;
-  }
-
-  .h2,
-  .text h2 {
-    font-weight: 400;
-    line-height: 120%;
-    letter-spacing: -2px;
-  }
-
-  .h3,
-  .text h3 {
-    /* SG/Head 3 */
-    font-size: 26px;
-    font-weight: 400;
-    line-height: 124%;
-    /* 32.24px */
-    letter-spacing: -1.04px;
-  }
-
-  .h4,
-  .text h4 {
-    /* SG/Head 4 */
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 132%;
-    /* 26.4px */
-    letter-spacing: -0.8px;
-  }
-
-  .h5,
-  .text h5 {
-    /* SG/Head 5 */
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 132%;
-    /* 26.4px */
-    letter-spacing: -0.4px;
-  }
-
-  .h6,
-  .text h6 {
-    /* SG/Head 6 */
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 132%;
-    /* 21.12px */
-    letter-spacing: -0.32px;
-  }
-
-  .p1, .p1 p {
-
-    /* SG/Body 1 */
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 140%;
-    /* 22.4px */
-    letter-spacing: -0.32px;
-  }
-
-  .p2 , .p2 p {
-
-    /* SG/Body 2 */
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 132%;
-    /* 18.48px */
-    letter-spacing: -0.28px;
-  }
-
-  .button1 {
-
-    /* SG/Bouton 1 */
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 100%;
-    /* 16px */
-    letter-spacing: -0.32px;
-  }
-
-  .button2 {
-
-    /* SG/Bouton 2 */
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 100%;
-    /* 16px */
-    letter-spacing: -0.32px;
-  }
-
-  .quote {
-    /* SG/Quote 1 */
-    font-size: 5rem;
-    font-weight: 300;
-    line-height: 120%;
-    /* 96px */
-  }
-
-  p,
-  li {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 132%;
-    /* 18.48px */
-    letter-spacing: -0.28px;
-  }
-  
-}
 
 .h1,
 .text h1 {
   /* SG/Head 1 */
-  font-family: Inter;
-  @apply text-4xl md:text-6xl;
-  font-style: normal;
-  font-weight: 400;
+  @apply text-4xl md:text-[4rem];
   line-height: 112%;
-  /* 71.68px */
-  letter-spacing: -.12rem;
+  letter-spacing: -0.24rem;
 }
 
 .h2,
 .text h2 {
   /* SG/Head 2 */
-  font-family: Inter;
-  @apply  md:text-[2.5rem] text-3xl;
-  font-style: normal;
-  font-weight: 400;
+  @apply  text-3xl md:text-[2.5rem];
   line-height: 124%;
-  /* 48px */
-  letter-spacing: -1.3px;
+  letter-spacing: -0.125rem;
 }
 
 .h3,
 .text h3 {
   /* SG/Head 3 */
-  font-family: Inter;
-  font-size: 26px;
-  font-style: normal;
-  font-weight: 400;
+  font-size: 1.625rem;
   line-height: 124%;
-  /* 32.24px */
-  letter-spacing: -1.04px;
+  letter-spacing: -0.065rem;
 }
 
 .h4,
 .text h4 {
   /* SG/Head 4 */
-  font-family: Inter;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
+  @apply text-xl; 
   line-height: 132%;
-  /* 26.4px */
-  letter-spacing: -0.8px;
+  font-weight: 500;
+  letter-spacing: -0.05rem;
 }
 
 .h5,
 .text h5 {
   /* SG/Head 5 */
-  font-family: Inter;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
+  @apply text-xl; 
   line-height: 132%;
-  /* 26.4px */
-  letter-spacing: -0.4px;
+  letter-spacing: -0.025rem;
 }
 
 .h6,
 .text h6 {
   /* SG/Head 6 */
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
+  @apply text-base;
   font-weight: 500;
   line-height: 132%;
-  /* 21.12px */
-  letter-spacing: -0.32px;
+  letter-spacing: -0.02rem;
 }
 
+.page p, .page li,
 .p1, .p1 p {
-  color: var(--sg-gris-hard, #505050);
-
-  /* SG/Body 1 */
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
+  color: #505050;
+  @apply text-base;
   line-height: 140%;
-  /* 22.4px */
-  letter-spacing: -0.32px;
+  letter-spacing: -0.02rem;
 }
 
 .p2 , .p2 p {
-  /* color: var(--sg-gris-hard, #505050); */
-
-  /* SG/Body 2 */
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
+  @apply text-sm;
   line-height: 132%;
-  /* 18.48px */
-  letter-spacing: -0.28px;
+  letter-spacing: -0.0175rem;
 }
-
-.button1 {
-  color: var(--sg-noir-texte, #1E1E1E);
-
-  /* SG/Bouton 1 */
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 100%;
-  /* 16px */
-  letter-spacing: -0.32px;
-}
-
-.button2 {
-  color: var(--sg-noir-texte, #1E1E1E);
-
-  /* SG/Bouton 2 */
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 100%;
-  /* 16px */
-  letter-spacing: -0.32px;
-}
-
-.quote {
-  color: var(--sg-noir-texte, #666);
-
-  /* SG/Quote 1 */
-  font-family: Inter;
-  font-size: 5rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 120%;
-  /* 96px */
-}
-
-blockquote h4:before, 
-blockquote h4:after {
-  @apply quote;
-}
-
-.page p,
-.page li {
-  color: var(--sg-gris-texte, #505050);
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 132%;
-  letter-spacing: -0.28px;
-}
-
-
 
 /* FIXES */
 
@@ -288,6 +86,19 @@ blockquote h4:after {
   /* à voir*/
   max-width: 1440px !important;
   margin: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--sg-color-styles-noir-texte, #1E1E1E);
 }
 
 h1,
