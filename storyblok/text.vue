@@ -1,5 +1,5 @@
 <template>
-  <div class="text" :class="blok.tight ? 'tight' : ''" :style="'columns : ' + blok.Columns" v-html="content">
+  <div class="text" :class="classes" v-html="content">
   </div>
 </template>
 
@@ -62,6 +62,14 @@
 </style>
  
 <script setup>
+
 const props = defineProps({ blok: Object })
 const content = computed(() => renderRichText(props.blok.content));
+const classes = computed(() => {
+  let ret = ''
+  if (props.blok.tight) ret += 'tight '
+  if (props.blok.Columns) ret += `md:columns-${props.blok.Columns}`
+  console.log(ret)
+  return ret
+});
 </script>

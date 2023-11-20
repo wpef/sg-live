@@ -53,7 +53,7 @@ const isTitle =  computed(()=>{
 <style scoped>&
 
 .textSectionContainer {
-  @apply flex flex-wrap py-10;
+  @apply flex flex-wrap md:flex-nowrap py-10;
   border-color: rgba(255, 255, 255, 0.20);  
 }
 
