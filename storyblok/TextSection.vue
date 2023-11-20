@@ -42,7 +42,7 @@ const isTitle =  computed(()=>{
 <style scoped>&
 
 .textSectionContainer {
-  @apply flex py-10;
+  @apply flex flex-wrap py-10;
   border-color: rgba(255, 255, 255, 0.20);  
 }
 
@@ -50,7 +50,7 @@ const isTitle =  computed(()=>{
   @apply flex-col lg:flex-row gap-12;
 }
 .textSectionContainer.isTitle {
- @apply flex-row flex-wrap gap-4;  /*A voir*/
+ @apply flex-row gap-4;  /*A voir*/
  @apply pb-2;
 }
 
