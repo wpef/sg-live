@@ -41,23 +41,6 @@
   @apply pr-8 md:pr-56;
 }
 
-.text-white p,
-.text-white h1,
-.text-white h2,
-.text-white h3,
-.text-white h4,
-.text-white h5,
-.text-white h6,
-.text-white .text p,
-.text-white .text h1,
-.text-white .text h2,
-.text-white .text h3,
-.text-white .text h4,
-.text-white .text h5,
-.text-white .text h6
-{
-  color : white;
-}
 
 </style>
  

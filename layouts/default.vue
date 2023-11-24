@@ -118,14 +118,15 @@ a {
 }
 
 /*forcing*/
-.p1.text-white,
-.p2.text-white,
-.text.text-white p, 
-.text.text-white h2,
-.text.text-white h3,
-.text.text-white h4,
-.text.text-white h5,
-.text.text-white h6 {
+.p1.text-white, .p2.text-white,
+.text.text-white p, .text-white p,
+.text-white h1, .text.text-white h1,
+.text.text-white h2, .text-white h2,
+.text.text-white h3, .text-white h3,
+.text.text-white h4, .text-white h4,
+.text.text-white h5, .text-white h5,
+.text.text-white h6, .text-white h6
+{
   color : white;
 }
 
