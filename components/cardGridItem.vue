@@ -38,9 +38,12 @@ const style = computed(() => {
   @apply transition-all	delay-0;
 }
 
-
 .cardGridItem:hover {
   background-color: var(--bg-hover-color);
+}
+
+.cardGridItem .content {
+  @apply mb-10;
 }
 
 p.number,

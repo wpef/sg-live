@@ -61,7 +61,7 @@ const isTitle =  computed(()=>{
   @apply flex-col lg:flex-row gap-12;
 }
 .textSectionContainer.isTitle {
- @apply flex-row gap-4;  /*A voir*/
+ @apply flex-row gap-4;   /* A voir : flex-col */
  @apply pb-2;
 }
 
@@ -70,7 +70,7 @@ const isTitle =  computed(()=>{
 }
 
 .textSectionContainer.textSectionContainer.isText.isWhite {
-  @apply py-20 lg:pt-32;
+  @apply py-14 lg:pt-32;
 }
 
 .textSectionTitle > * {
