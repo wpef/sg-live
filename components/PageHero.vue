@@ -1,7 +1,5 @@
 <script setup>
 const props = defineProps({ blok: Object })
-console.log(props.blok.heroMobile?.filename );
-console.log(props.blok.heroImage?.filename);
 const bgMobile = props.blok.heroMobile?.filename !== null && props.blok.heroMobile?.filename !== undefined ? props.blok.heroMobile?.filename : props.blok.heroImage?.filename
 const bgDefault =  props.blok.heroImage?.filename && props.blok.heroImage.filename !== "" ? props.blok.heroImage?.filename : ''
 const bgStyle = { 
@@ -45,7 +43,12 @@ div.hero {
   max-width: 1440px;
 }
 
-.hero .heroTitle h1 {
-  @apply pb-6;
+.hero.h-screen .heroTitle h1 {
+  @apply pb-4;
 }
+
+.hero .heroTitle h2 {
+  @apply pt-2 pb-8;
+}
+
 </style>
