@@ -23,7 +23,7 @@ const handleScroll = (header) => {
   if(window.scrollY == 0) {
     header.classList.remove('sticked');
   }
-  else if (!header.classList.contains('sticked'))
+  else if (!header.classList.contains('sticked') && !burgerOpen.value)
     header.classList.add('sticked');
 }
 
@@ -78,6 +78,10 @@ onMounted(() => {
 
 const toggleBurger = () => {
   burgerOpen.value = burgerOpen.value ? null : true;
+  if (burgerOpen)
+    header.classList.remove('sticked');
+  else if (window.scrollY != 0)
+    header.classList.add('sticked');
 }
 
 </script>
