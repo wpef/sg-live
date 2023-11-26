@@ -19,16 +19,16 @@
 .text h1 {
   /* SG/Head 1 */
   @apply text-4xl md:text-[4rem];
+  @apply tracking-[-.12rem] lg:tracking-[-.24rem];
   line-height: 112%;
-  letter-spacing: -0.24rem;
 }
 
 .h2,
 .text h2 {
   /* SG/Head 2 */
   @apply  text-3xl md:text-[2.5rem];
+  @apply tracking-[-.08125rem] lg:tracking-[-.125rem];
   line-height: 124%;
-  letter-spacing: -0.125rem;
 }
 
 .h3,
