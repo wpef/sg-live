@@ -23,7 +23,7 @@ const props = defineProps({ blok: Object });
 }
 
 img {
-  height: 33.5rem;
-  object-fit: cover;
+  @apply aspect-square md:aspect-auto md:h-[33.5rem];
+  @apply object-cover;
 }
 </style>
