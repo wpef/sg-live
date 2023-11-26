@@ -49,7 +49,7 @@ const style = computed(() => {
 }
 
 .cardListItem p {
-  @apply xl:pl-12 pb-2 pt-4;
+  @apply xl:pl-12 pb-2 lg:pt-4;
 }
 
 .title {
