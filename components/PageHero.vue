@@ -1,16 +1,17 @@
 <script setup>
 const props = defineProps({ blok: Object })
-const backgroundStyle = computed(() => {
-  const bgImage = props.blok.heroMobile?.filename !== undefined && props.blok.heroMobile?.filename !== '' ? props.blok.heroMobile.filename : props.blok.heroImage?.filename
-  return {
-      backgroundColor: props.blok.heroBgColor !== undefined && props.blok.heroBgColor !== '' ? props.blok.heroBgColor : '#003966',
-      backgroundImage: `url(${bgImage})`
-    }
-})
+console.log(props.blok.heroMobile?.filename );
+console.log(props.blok.heroImage?.filename);
+const bgMobile = props.blok.heroMobile?.filename !== null && props.blok.heroMobile?.filename !== undefined ? props.blok.heroMobile?.filename : props.blok.heroImage?.filename
+const bgDefault =  props.blok.heroImage?.filename
+const bgStyle = { 
+  '--bg-img-default' : `url('${bgDefault}')`,
+  '--bg-img-mobile' : `url('${bgMobile}')`
+}
 </script>
 
 <template>
-  <div v-editable="blok" class="hero" :class="blok.fullHeight ? 'h-screen' : 'h-[30rem]'" :style="backgroundStyle">
+  <div v-editable="blok" class="hero" :style="bgStyle" :class="(blok.fullHeight ? 'h-screen' : 'h-[30rem]') + ' bg-[image:var(--bg-img-mobile)] lg:bg-[image:var(--bg-img-default)]'" >
       <div class="container">
         <div class="heroTitle text-white">
           <h1 class="h1" 
