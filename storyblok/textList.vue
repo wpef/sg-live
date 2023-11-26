@@ -1,5 +1,5 @@
 <template>
-    <ul v-editable="blok" class="textList mb-4" :class="blok.columns == 2 ? 'columns-2' : ''">
+    <ul v-editable="blok" class="textList mb-4" :class="blok.columns == 2 ? 'md:columns-2' : ''">
       <li :class="blok.number ? 'number' : 'icon'" v-for="item in content">{{ item }}</li>
     </ul>
 </template>
