@@ -161,11 +161,18 @@ header.sticked {
   @apply h-20;
 }
 
-header.hover, header.sticked {
+header.sticked {
   @apply text-black;
   @apply border-b border-[#E6E6E6];
   @apply bg-white;
 }
+
+header.hover {
+  @apply md:text-black;
+  @apply md:border-b md:border-[#E6E6E6];
+  @apply md:bg-white;
+}
+
 
 header:not(.sticked)~.burgerIconWhite,
 header.sticked~.burgerIconBlack {
@@ -182,12 +189,18 @@ header:not(.sticked)~.burgerIconBlack {
   opacity : 0
 }
 
-header.hover #logo-full,
+header.hover #logo-full {
+  @apply md:opacity-100;
+}
+
 header.sticked #logo-full {
   @apply opacity-100;
 }
 
-header.hover #logo-white,
+header.hover #logo-white
+{
+  @apply md:opacity-0;
+}
 header.sticked #logo-white,
 #logo-full
 {
