@@ -9,7 +9,7 @@
           <div class="serviceContent relative">
             <h4 class="text-white h5 mb-4">{{ item.title }}</h4>
             <p class="text-white p2">{{ item.description }}</p>
-            <img class="absolute bottom-0" width="32px" :src="item.image.filename" />
+            <img class="absolute bottom-0" width="32" :src="item.image.filename" />
           </div>
         </div>
       </div>
