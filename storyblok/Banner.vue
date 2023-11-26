@@ -3,8 +3,8 @@
       backgroundColor: blok.bgColor !== '' ? blok.bgColor : '#003966',
       backgroundImage: `url(${blok.bgImage.filename})`,
     }">
-      <div class="container">
-        <div class="wrapper">
+      <div class="">
+        <div class="container wrapper">
 
           <h2 class="h3 text-white" 
           v-if="blok.title" 
@@ -26,17 +26,13 @@ defineProps({ blok: Object })
 <style scoped>
 .banner {
   @apply h-96;
-  @apply relative bg-cover bg-center;
+  @apply relative bg-cover bg-[right_20%_top] md:bg-center;
   margin-top: 0 !important;
-}
-
-.container {
-  max-width: 1440px;
 }
 
 .wrapper {
   @apply max-w-2xl lg:pr-14;
-  @apply absolute bottom-14;
+  @apply absolute bottom-4 lg:bottom-14;
 }
 
 h2 {
