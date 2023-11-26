@@ -15,7 +15,7 @@
       <CTA class="hidden lg:flex" v-if="blok.cta[0]" :blok="blok.cta[0]" />
     </div>
     <p v-if="blok.description" class="p2 w-full lg:w-1/3">{{ blok.description }}</p>
-    <CTA class="lg:hidden" v-if="blok.cta[0]" :blok="blok.cta[0]" />
+    <CTA class="lg:hidden pb-4" v-if="blok.cta[0]" :blok="blok.cta[0]" />
   </div>
 </template>
 
@@ -32,7 +32,7 @@ const style = computed(() => {
 <style scoped>
 .cardListItem {
   @apply flex flex-col flex-wrap lg:flex-nowrap lg:flex-row;
-  @apply py-6 gap-4 lg:gap-12;
+  @apply gap-4 lg:py-6 lg:gap-12;
   @apply border-b;
   @apply transition-all duration-75;
 }
