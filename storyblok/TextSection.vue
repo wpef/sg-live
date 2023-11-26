@@ -87,6 +87,6 @@ const isTitle =  computed(()=>{
 .line {
   height : 1px;
   background-color: #CCCCCC;
-  @apply -mb-0 md:-mb-20;
+  @apply -mb-10 md:-mb-20;
 }
 </style>
