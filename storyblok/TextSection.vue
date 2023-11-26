@@ -58,7 +58,7 @@ const isTitle =  computed(()=>{
 }
 
 .textSectionContainer.isText {
-  @apply flex-col lg:flex-row gap-12;
+  @apply flex-col lg:flex-row gap-4 lg:gap-12;
 }
 .textSectionContainer.isTitle {
  @apply flex-row gap-4;   /* A voir : flex-col */
@@ -78,6 +78,10 @@ const isTitle =  computed(()=>{
 }
 .textSectionContainer h2 {
   @apply pb-6;
+}
+
+.textSectionContainer h3 {
+  @apply pb-4;
 }
 
 .line {
