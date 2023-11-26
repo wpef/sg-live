@@ -3,10 +3,11 @@ const props = defineProps({ blok: Object })
 console.log(props.blok.heroMobile?.filename );
 console.log(props.blok.heroImage?.filename);
 const bgMobile = props.blok.heroMobile?.filename !== null && props.blok.heroMobile?.filename !== undefined ? props.blok.heroMobile?.filename : props.blok.heroImage?.filename
-const bgDefault =  props.blok.heroImage?.filename
+const bgDefault =  props.blok.heroImage?.filename && props.blok.heroImage.filename !== "" ? props.blok.heroImage?.filename : ''
 const bgStyle = { 
   '--bg-img-default' : `url('${bgDefault}')`,
-  '--bg-img-mobile' : `url('${bgMobile}')`
+  '--bg-img-mobile' : `url('${bgMobile}')`,
+  backgroundColor : props.blok.heroBgColor
 }
 </script>
 
