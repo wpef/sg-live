@@ -6,7 +6,7 @@
   <div class="container" v-editable="blok">
     <div v-if="blok.line === true" class="line"></div>
     <div class="textSectionContainer" :class="sectionClasses">      
-      <div v-if="blok.title || blok.subtitle" class="textSectionTitle lg:w-1/2" :class="blok.white ? 'text-white' : ''" >
+      <div class="textSectionTitle lg:w-1/2" :class="blok.white ? 'text-white' : '' + !blok.title && !blok.subtitle ? 'hidden lg:block' : ''" >
         <h2 v-if="blok.title" class="h2"  data-aos="fade-up">{{ blok.title }}</h2>
         <h3 v-if="blok.subtitle" :class="blok.title ? 'h5' : 'h4'"  data-aos="fade-up">{{ blok.subtitle }}</h3>
       </div>
