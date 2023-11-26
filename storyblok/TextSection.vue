@@ -6,7 +6,7 @@
   <div class="container" v-editable="blok">
     <div v-if="blok.line === true" class="line"></div>
     <div class="textSectionContainer" :class="sectionClasses">      
-      <div class="textSectionTitle lg:w-1/2" :class="blok.white ? 'text-white' : '' + !blok.title && !blok.subtitle ? 'hidden lg:block' : ''" >
+      <div class="textSectionTitle lg:w-1/2" :class="(blok.white ? 'text-white' : '') + ' ' + (!blok.title && !blok.subtitle ? 'hidden lg:block' : '')" >
         <h2 v-if="blok.title" class="h2"  data-aos="fade-up">{{ blok.title }}</h2>
         <h3 v-if="blok.subtitle" :class="blok.title ? 'h5' : 'h4'"  data-aos="fade-up">{{ blok.subtitle }}</h3>
       </div>
@@ -61,7 +61,7 @@ const isTitle =  computed(()=>{
   @apply flex-col lg:flex-row gap-4 lg:gap-12;
 }
 .textSectionContainer.isTitle {
- @apply flex-row gap-4;   /* A voir : flex-col */
+ @apply lg:flex-col gap-4;
  @apply pb-2;
 }
 
