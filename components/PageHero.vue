@@ -1,6 +1,7 @@
 <script setup>
 const props = defineProps({ blok: Object })
-const bgMobile = props.blok.heroMobile?.filename !== null && props.blok.heroMobile?.filename !== undefined ? props.blok.heroMobile?.filename : props.blok.heroImage?.filename
+console.log("foulk", props.blok.heroMobile?.filename);
+const bgMobile = props.blok.heroMobile?.filename !== null && props.blok.heroMobile?.filename !== undefined && props.blok.heroMobile?.filename !== "" ? props.blok.heroMobile?.filename : props.blok.heroImage?.filename
 const bgDefault =  props.blok.heroImage?.filename && props.blok.heroImage.filename !== "" ? props.blok.heroImage?.filename : ''
 const bgStyle = { 
   '--bg-img-default' : `url('${bgDefault}')`,
