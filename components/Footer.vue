@@ -39,7 +39,7 @@ const partnerBanner = data.story.content.partnersBanner
             <p class="pt-6 text-[#505050]">© {{copyright}}</p>
           </div>
           <div class="w-1/2">
-            <PartnerBanner :logos="partnerBanner" />
+            <LogoBanner :logos="partnerBanner" />
           </div>
       </div>    
     </div>

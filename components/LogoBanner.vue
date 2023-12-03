@@ -5,12 +5,6 @@
     </div>
   </div>
 </template>
-
-<style scoped>
-.PartnerBanner.wrapper {
-  /* @apply flex flex-row gap-8; DONT WORK FOR SOME REASON */
-}
-</style>
  
 <script setup>
 const props = defineProps({
