@@ -52,7 +52,6 @@ const classes = computed(() => {
   let ret = ''
   if (props.blok.tight) ret += 'tight '
   if (props.blok.Columns) ret += `md:columns-${props.blok.Columns}`
-  console.log(ret)
   return ret
 });
 </script>
