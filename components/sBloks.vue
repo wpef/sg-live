@@ -16,14 +16,18 @@ const toUrl = function (blokCta) {
   const link = blokCta.link;
   const https = "https://";
 
-  if (link.linktype === 'story') {
-    return '/' + link.cached_url
+
+  switch (link.linktype) {
+    case 'story': 
+      return '/' + link.cached_url
+    case 'url' : 
+      return link.url.startsWith(https) ? link.url : https+link.url
+    case 'email' : 
+      return 'mailto:' + link.email
+    default: 
+      return '#'
   }
-  if (link.linktype == 'url') {
-    if (link.url.startsWith(https))
-      return link.url
-    return https + link.url
-  }
+  els 
 }
 </script>
 
