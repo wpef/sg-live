@@ -2,7 +2,7 @@
   <div class="SocialBar wrapper">
     <div class="item" v-for="item in iconLinks">
     <NuxtLink class="text-white" :to="item.link?.url" target="_blank" :title="item.label">
-      <Icon :name="'sg-'+item.icon" :size="20" color="white" />
+      <Icon :name="item.icon" :size="20" color="white" />
     </NuxtLink>
     </div>
   </div>
