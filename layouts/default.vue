@@ -3,9 +3,13 @@
     <Header />
     <slot />
     <Footer />
-    <Whatsapp class="fixed bottom-4 right-4"/>
+    <Whatsapp v-if="$nuxt._route.fullPath === '/'" class="fixed bottom-4 right-4"/>
   </main>
 </template>
+
+<script setup>
+console
+</script>
 
 <style>
 /*global*/
