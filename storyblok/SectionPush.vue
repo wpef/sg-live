@@ -16,6 +16,7 @@
         data-aos="fade-up"
         :data-aos-delay="100*index"
         v-editable="push"
+        @click="push.link ? navigateTo( '/' + push.link?.cached_url) : ''"
       >
       <div class="background" :style="{ backgroundImage : `url(${push.background.filename})`}"></div>
 
@@ -32,6 +33,7 @@
  
 <script setup>
 defineProps({ blok: Object })
+const navigateTo2 = (link) => console.log(link)
 </script>
 
 <style scoped>

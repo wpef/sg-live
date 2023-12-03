@@ -9,6 +9,7 @@
       :key="item._uid"
       :blok="item"
       data-aos="fade-up"
+      @click="item.cta[0] ? navigateTo('/' + item.cta[0]?.link.cached_url) : ''"
     />
   </div>
 </section>

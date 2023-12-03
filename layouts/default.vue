@@ -3,6 +3,7 @@
     <Header />
     <slot />
     <Footer />
+    <Whatsapp class="fixed bottom-4 right-4"/>
   </main>
 </template>
 

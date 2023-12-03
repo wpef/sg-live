@@ -1,13 +1,19 @@
 <template>
   <section class="footerPush container" v-editable="blok">
 
-    <footerPushItem v-for="(push, index) in blok.items" :key="blok._uid" :push="push" :index="index"/>
+    <footerPushItem v-for="(push, index) in blok.items" 
+      :key="blok._uid" 
+      :push="push" 
+      :index="index"
+      @click="push.cta[0] ? navigateTo('/' + push.cta[0]?.link.cached_url) : ''"
+    />
 
   </section>
 </template>
  
 <script setup>
 const props = defineProps({ blok: Object })
+const navigateTo2 = (link => console.log(link))
 </script>
 
 <style scoped>

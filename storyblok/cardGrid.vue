@@ -10,6 +10,7 @@
       :blok="blok"
       data-aos="fade-up"
       :data-aos-delay="100*index"
+      @click="blok.cta[0] ? navigateTo('/' + blok.cta[0]?.link.cached_url) : ''"
     />
   </div>
 </section>

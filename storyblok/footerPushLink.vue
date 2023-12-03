@@ -1,13 +1,20 @@
 <template>
   <section class="footerPush container" v-editable="blok">
 
-    <footerPushItem v-for="(push, index) in [data1, data2]" :key="index" :push="push.content.footerPush ? push.content.footerPush[0] : null" :index="index"/>
+    <footerPushItem v-for="(push, index) in [data1, data2]"
+      :key="index"
+      :push="push.content.footerPush ? push.content.footerPush[0] : null"
+      :index="index"
+      @click="push.full_slug ? navigateTo('/' + push.full_slug) : '' "
+    />
 
   </section>
 </template>
  
 <script setup>
 const props = defineProps({ blok: Object });
+
+const redirect = (link) => console.log('redirect : ', link)
 
 // I know... I've tried... 
 // const data = await Promise.all(
