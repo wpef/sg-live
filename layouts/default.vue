@@ -7,10 +7,6 @@
   </main>
 </template>
 
-<script setup>
-console
-</script>
-
 <style>
 /*global*/
 

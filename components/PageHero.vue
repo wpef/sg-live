@@ -10,7 +10,7 @@ const bgStyle = {
 </script>
 
 <template>
-  <div v-editable="blok" class="hero" :style="bgStyle" :class="(blok.fullHeight ? 'h-screen' : 'h-[30rem]') + ' bg-[image:var(--bg-img-mobile)] lg:bg-[image:var(--bg-img-default)]'" >
+  <div v-editable="blok" class="hero" :style="bgStyle" :class="(blok.fullHeight ? 'h-[90vh] md:h-screen' : 'h-[30rem]') + ' bg-[image:var(--bg-img-mobile)] lg:bg-[image:var(--bg-img-default)]'" >
       <div class="container">
         <div class="heroTitle text-white">
           <h1 class="h1" 
